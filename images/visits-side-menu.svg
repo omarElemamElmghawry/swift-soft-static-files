@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="visits-side-menu" transform="translate(-129 -6)">
+    <rect id="Rectangle_7524" data-name="Rectangle 7524" width="32" height="32" transform="translate(129 6)" fill="#232929" opacity="0"/>
+    <g id="calendar-days" transform="translate(132.25 10)">
+      <g id="Group_18818" data-name="Group 18818" transform="translate(1.5)">
+        <path id="Path_67079" data-name="Path 67079" d="M6.125,5.25A1.125,1.125,0,0,1,5,4.125v-3a1.125,1.125,0,0,1,2.25,0v3A1.125,1.125,0,0,1,6.125,5.25Z" transform="translate(0.25)" fill="#232929"/>
+        <path id="Path_67080" data-name="Path 67080" d="M12.625,5.25A1.125,1.125,0,0,1,11.5,4.125v-3a1.125,1.125,0,0,1,2.25,0v3A1.125,1.125,0,0,1,12.625,5.25Z" transform="translate(3.5)" fill="#232929"/>
+        <path id="Path_67081" data-name="Path 67081" d="M19.875,2H5.625A4.128,4.128,0,0,0,1.5,6.125v12.75A4.128,4.128,0,0,0,5.625,23h14.25A4.128,4.128,0,0,0,24,18.875V6.125A4.128,4.128,0,0,0,19.875,2Zm0,18.75H5.625A1.878,1.878,0,0,1,3.75,18.875V9.5h18v9.375A1.878,1.878,0,0,1,19.875,20.75Z" transform="translate(-1.5 1)" fill="#232929"/>
+        <path id="Path_67082" data-name="Path 67082" d="M9.5,8.25A1.5,1.5,0,1,0,11,9.75,1.5,1.5,0,0,0,9.5,8.25Z" transform="translate(1.75 4.125)" fill="#232929"/>
+        <path id="Path_67083" data-name="Path 67083" d="M13,11.25a1.5,1.5,0,1,0-1.5-1.5A1.5,1.5,0,0,0,13,11.25Z" transform="translate(3.5 4.125)" fill="#232929"/>
+        <path id="Path_67084" data-name="Path 67084" d="M9.5,11.25a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,9.5,11.25Z" transform="translate(1.75 5.625)" fill="#232929"/>
+        <path id="Path_67085" data-name="Path 67085" d="M6,11.25a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,6,11.25Z" transform="translate(0 5.625)" fill="#232929"/>
+        <path id="Path_67086" data-name="Path 67086" d="M13,11.25a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,13,11.25Z" transform="translate(3.5 5.625)" fill="#232929"/>
+      </g>
+    </g>
+  </g>
+</svg>

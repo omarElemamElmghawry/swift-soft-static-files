@@ -1,0 +1,481 @@
+:root {
+    --ep-heading-color: #ffffff;
+    --ep-vheight-50: 50vh;/* general 50 height  of viewport */
+    --ep-vheight-100: 100vh;/* general 100 height  of viewport */
+    --ep-offers-img-ratio: 1/0.667;/* general image ratio for offers section */
+    --ep-brand-color: #BD0D44;/* 1st color */
+    --ep-brand2-color: #E7695E;/* 2nd color */
+    --ep-brand3-color: #72C4C7;/* 3rd color */
+    --ep-brand4-color: #E0E0E0;
+    --ep-brand-bg: #BD0D44;/* background = 1st color */
+    --ep-onBrandBg-color: #ffffff;/* text color on up background */
+    --ep-brand2-bg: #E7695E;/* background = 2nd color */
+    --ep-brand3-bg: #72C4C7;/* background = 3rd color */
+    --ep-brand4-bg: #FAE1DF;
+    --ep-body-font-size: 16px;/* HTML , body fonts size */
+    --ep-body-bg: #d1d1d1;/* body background color */
+    --ep-body-color: #232929;/* body text color */
+    --ep-body-border-radius: 16px;
+    --ep-link-color: #BD0D44;/* "a" color */
+    --ep-colored-by-filter:brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(5483%) hue-rotate(359deg) brightness(94%) contrast(114%);
+    --ep-whited-by-filter:brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(7%) hue-rotate(19deg) brightness(103%) contrast(100%);
+    --ep-blacked-by-filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(7500%) hue-rotate(357deg) brightness(93%) contrast(103%);
+    /*لازم اللون ده يمشي على الغامق و الفاتح*/
+    --ep-link-hover-color: #07c59c;/* "a:hover" */
+    --ep-link-decoration: line-through;/* "a" decoration */
+    --ep-link-hover-decoration: none;/* "a:hover" decoration*/
+    --ep-link-underline: none;/*2px solid #ff00ff;/* "a" custom line */
+    --ep-link-underline-margin: -6px;/* "a" custom line position */
+    --ep-link-hover-underline: 2px solid #1900ff;/* "a:hover" custom line */
+    --ep-confirmed-bg: #E3F3F4;/* status confirmed not paid background */
+    --ep-confirmed-color: #72C4C7;/* status confirmed not paid text color */
+    --ep-confirmedPaid-bg: #E9F0E9;/* status confirmed paid background */
+    --ep-confirmedPaid-color: #226C1E;/* status confirmed paid color */
+    --ep-waiting-bg: #FDEFCC;/* status waiting background */
+    --ep-waiting-color: #E6A70D;/* status waiting color */
+    --ep-cancelled-bg: #FFDFDF;/* status cancelled background */
+    --ep-cancelled-color: #9B1C1C;/* status cancelled background */
+    
+    /*Typography*/
+    --ep-heading-color1: #BD0D44;/* header main color */
+    --ep-heading-color2: #BD0D44;/* if we need gradiant => color ELSE transparent */
+    --ep-headerGradiant-textFillColor: none;/*  if we need gradiant => transparent ELSE none*/
+    --ep-headerGradiant-fit-content: none;/*  if we need gradiant => fit-content ELSE none*/
+    --ep-heading-margin-bottom: 2.5rem;
+    --ep-heading-margin-bottom-resp: 1.25rem;
+    --ep-firstWord-color: #232929;/* if we need to colorfiy first word */
+    --ep-heading-underline: 0px solid #BD0D44;/* border | none */
+    --ep-heading-underline-width: 5%;/* px % 0*/
+    --ep-heading-underline-padding: 12px;/* px % 0*/
+    --ep-h1-font-size: 32px;/* "h1" font size at desktop */
+    --ep-h1-font-size-resp: 24px;/* "h1" font size at mobile */
+    --ep-h2-font-size: 28px;/* "h2" font size at desktop */
+    --ep-h2-font-size-resp: 20px;/* "h2" font size at mobile */
+    --ep-h3-font-size:  px;/* "h3" font size at desktop */
+    --ep-h3-font-size-resp: 16px;/* "h3" font size at mobile */
+    --ep-h4-font-size: 16px;/* "h4" font size at desktop */
+    --ep-h4-font-size-resp: 14px;/* "h4" font size at mobile */
+    --ep-h5-font-size: 15px;/* "h5" font size at desktop */
+    --ep-h5-font-size-resp: 14px;/* "h5" font size at mobile */
+    --ep-h6-font-size: 14px;/* "h6" font size at desktop */
+    --ep-h6-font-size-resp: 12px;/* "h6" font size at mobile */
+    --ep-p-font-size: 18px;/* "p" font size at desktop */
+    --ep-p-font-size-resp: 14px;/* "p" font size at mobile */
+    --ep-sub-font-size: 14px;/* "sub text" font size at desktop */
+    --ep-small-font-size: 12px;/* "small text" font size at desktop */
+
+    /* GENERAL BUTTONS */
+    --ep-btn-disabled-opacity: 0.3;/* disabled button opacity */
+    --ep-btn-disabled-filter: 1;/* disabled button grayscale 0-to-1 */
+    --ep-btn-font-size: 18px;/* button font size at desktop */
+    --ep-btn-font-size-resp: 14px;/* button font size at mobile */
+    --ep-btn-border-radius: 16px;/* button border radius at desktop */
+    --ep-btn-border-radius-resp: 12px;/* button border radius at mobile */
+    --ep-btn-padding: 14px 32px;/* button top & bottom padding at desktop */
+    --ep-btn-padding-resp: 6px 16px;/* button top & bottom padding at desktop */
+    --ep-btn-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    --ep-btnSm-font-size: 14px;/* small button "btn-sm" font size at all */
+    --ep-btnSm-padding: 11px 20px;/* small button "btn-sm" top & bottom padding at all */
+    --ep-btnSm-border-radius: 14px;/* small button "btn-sm" border radius at mobile */
+    --ep-btnXs-font-size: 12px;/* small button "btn-sm" font size at all */
+    --ep-btnXs-padding: 6px 16px;/* small button "btn-sm" top & bottom padding at all */
+    --ep-btnXs-border-radius: 12px;/* small button "btn-sm" border radius at mobile */
+    /* btn-primary */
+    --ep-btnPrimary-bg1: #BD0D44;/* primary button background first color */
+    --ep-btnPrimary-bg2: #BD0D44;/* primary button background second color if gradiant */
+    --ep-btnPrimary-hover-bg1: #D76E8F;/* primary button:hover background first color */
+    --ep-btnPrimary-hover-bg2: #D76E8F;/* primary button:hover background second color if gradiant */
+    --ep-btnPrimary-color: #fff;/* primary button text color */
+    --ep-btnPrimary-hover-color: #fff;/* primary button:hover text color */
+    --ep-btnPrimary-border: 1px solid #BD0D44;/* primary button border color */
+    --ep-btnPrimary-hover-border: 1px solid #D76E8F;/* primary button:hover border color */
+    /* btn-secondary */
+    --ep-btnSecondary-bg1: #E7695E;/* secondary button background first color */
+    --ep-btnSecondary-bg2: #E7695E;/* secondary button background second color if gradiant */
+    --ep-btnSecondary-hover-bg1: #F1A59E;/* secondary button:hover background first color */
+    --ep-btnSecondary-hover-bg2: #F1A59E;/* secondary button:hover background second color if gradiant */
+    --ep-btnSecondary-color: #fff;/* secondary button text color */
+    --ep-btnSecondary-hover-color: #fff;/* secondary button:hover text color */
+    --ep-btnSecondary-border: 1px solid #E7695E;/* secondary button border color */
+    --ep-btnSecondary-hover-border: 1px solid #F1A59E;/* secondary button:hover border color */
+
+    --ep-list-iconed-padding: 4px;
+
+    --ep-list-iconed2-padding: 4px;
+    --ep-list-iconed2-image: url(../images/list/list-icon-2.svg);
+    --ep-list-iconed2-bg: rgba(255, 255, 255, 0);
+    --ep-list-iconed2-value: var(--ep-brand2-color);
+
+    /*SECTIONS*/
+    --ep-section-border-radius: 16px;/* this border radius for BOXED section only*/
+    --ep-section-padding: 60px 0;/* section padding top at desktop*/
+    --ep-section-padding-resp: 40px 0;/* section padding top at desktop*/
+    /* if section is light style
+    لو الفاتح يبقى الهيدر هيخد اللون الطبيعي بتاع الهيدرات و التيكست هيخد لون الطبيعي بتاع النص بتاع البودي
+    */
+    --ep-sectionLight-bg1: rgb(255, 255, 255);/* sectionLight background first color */
+    --ep-sectionLight-bg2: rgba(255, 255, 255, 0.486);/* sectionLight background second color  if gradiant*/
+    --ep-sectionLight-color: inherit;/* sectionLight text color */
+    --ep-sectionLight-link-color: #faf60c;/* sectionLight link color */
+    --ep-sectionLight-link-hover-color: #ff00d4;/* sectionLight link:hover color */
+    --ep-sectionLight-background-image: url(../images/bg-extracted-from-brand.png);/* sectionLight background image ( URL | none ) */
+    /*designer upload to Umbraco then use it as url*/
+    --ep-sectionLight-background-mask: rgba(255, 255, 255, 0.4);/* sectionLight overlay mask ( alpha color | none ) */
+    --ep-sectionLight-background-position: left center;/* sectionLight background image position */
+    --ep-sectionLight-background-repeat: no-repeat;/* sectionLight background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
+    --ep-sectionLight-background-size: contain;/* sectionLight background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
+    /* --if section is dark style*/
+    --ep-sectionDark-bg1: #00000069;/* sectionDark background first color */
+    --ep-sectionDark-bg2: #BD0D448a;/* sectionDark background second color  if gradiant*/
+    --ep-sectionDark-color: #ffffff;/* sectionDark text color */
+    --ep-sectionDark-link-color: #ff00ff;/* sectionDark link color */
+    --ep-sectionDark-link-hover-color: #0004ff;/* sectionDark link:hover color */
+    --ep-sectionDark-background-image: url(../images/bg-extracted-from-brand.png);/* sectionDark background image ( URL | none ) */
+    --ep-sectionDark-background-mask: rgba(0, 0, 0, .6);/* sectionDark overlay mask ( alpha color | none ) */
+    --ep-sectionDark-background-position: center center;/* sectionDark background image position */
+    --ep-sectionDark-background-repeat: no-repeat;/* sectionDark background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
+    --ep-sectionDark-background-size: cover;/* sectionDark background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
+
+    /* GeneralCARD Addresses&Packages&Workers&x ==================================================================================================================== */
+    --ep-card-border-radius: 16px;/* card border radius  at desktop*/
+    --ep-card-border-radius-resp: 16px;/* card border radius  at mobile*/
+    --ep-card-padding: 32px 24px;/* card padding top at desktop*/
+    --ep-card-padding-resp: 16px;/* card padding top at mobile*/
+    --ep-card-borderTop: 0 solid #BD0D44;
+    --ep-card-borderRight: 10px solid #BD0D44;
+    --ep-card-borderBottom: 0 dashed #BD0D44;
+    --ep-card-borderLeft: 0 dashed #BD0D44;
+    --ep-card-bg1: rgb(255, 255, 255);/* card background first color */
+    --ep-card-bg2: rgb(255, 255, 255);/* card background second color  if gradiant*/
+    --ep-card-selected-bg1: var(--ep-card-bg1);/* card background first color */
+    --ep-card-selected-bg2: var(--ep-card-bg2);/* card background second color  if gradiant*/
+    --ep-card-selected-color: var(--ep-body-color);/* card text color */
+    --ep-card-background-image: none;/* card background image ( URL | none ) */
+    --ep-card-background-mask: rgba(0, 0, 0, .0001);/* card overlay mask ( alpha color | none ) */
+    --ep-card-background-position: center center;/* card background image position */
+    --ep-card-background-repeat: no-repeat;/* card background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
+    --ep-card-background-size: 100% 100%;/* card background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
+    --ep-card-font-size: 16px;/*not used*/
+    --ep-card-separator: 1px dashed #c4c4c4;/* --ep-card-value-color:#BD0D44; */
+    /* --ep-card-value-weight:700; */
+    --ep-card-color: #232929;/* card text color */
+    --ep-card-link-color: #BD0D44;/* card link color */
+    /* --ep-card-link-hover-color:#BD0D44; */
+    --ep-card-decoration: none;/* --ep-card-hover-decoration: none; */
+    --ep-card-underline: none;/* "a" custom line */
+    --ep-card-underline-margin: -4px;/* "a" custom line position */
+    --ep-card-hover-underline: none;/*2px solid #f0f;/* "a:hover" custom line */
+    --ep-card-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);/* see https://cssgenerator.org/box-shadow-css-generator.html */
+
+
+    /* servicesCARD ==================================================================================================================================================================== */
+    --ep-serviceCard-bg1: rgb(255, 255, 255);/* card background first color */
+    --ep-serviceCard-bg2: rgb(255, 255, 255);/* card background second color  if gradiant*/
+    --ep-serviceCard-background-image: none;/* card background image ( URL | none ) */
+    --ep-serviceCard-background-mask: rgba(0, 0, 0, .0001);/* card overlay mask ( alpha color | none ) */
+    --ep-serviceCard-background-position: center center;/* card background image position */
+    --ep-serviceCard-background-repeat: no-repeat;/* card background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
+    --ep-serviceCard-background-size: 100% 100%;/* card background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
+    --ep-serviceCard-link-color: #ff0000;/* card link color */
+    --ep-serviceCard-link-hover-color: #ff0000;/* card link:hover color */
+    --ep-serviceCardImage-width: 100%;
+    --ep-serviceCardImage-width-resp: 40%;
+    --ep-serviceCardImage-aspect-ratio: 1/1;
+    --ep-serviceCardImage-padding: 20px;
+    --ep-serviceCardImage-background: rgb(228, 228, 228);
+    --ep-serviceCardImage-border-radius: 50%;
+    --ep-serviceCardImage-object-fit: unset;
+
+    /* accordionCARD ================================================================================================================================================================= */
+    --ep-accordionCard-btn-size: 32px;
+    --ep-accordionCard-btn-bg: #BD0D44;
+    --ep-accordionCard-btn-border-radius: 50%;
+    --ep-accordionCard-btn-icon-size: unset;
+    --ep-accordionCard-btn-plus-icon: url(../images/accordion-plus.svg);
+    --ep-accordionCard-btn-minus-icon: url(../images/accordion-minus.svg);
+    --ep-accordionCard-outline-bg:transparent;
+    --ep-accordionCard-outline-color: #ffffff;
+    --ep-accordionCard-outline-border: 1px solid #ffffff3a;
+
+    /* address card css */
+    --ep-small-map-size: 100px;
+    --ep-small-map-iframe-border: 0px solid rgb(199, 199, 199);
+    --ep-small-map-iframe-border-radius: 8px;
+    --ep-address-badge-color: #fff;
+    --ep-address-badge-font-size: 12px;
+    --ep-address-badge-bg: #72C4C7;
+    --ep-address-badge-border-radius: 8px;
+    --ep-address-badge-padding: 4px 8px;
+    --ep-address-badge-top: 12px;
+    --ep-address-badge-end: 12px;
+
+    /* check in card  */
+    --ep-selectable-icon-bottom: 16px;
+    --ep-selectable-icon-end: 16px;
+    --ep-selectable-icon-size: 32px;
+    --ep-selectable-icon-bg: #F8E7EC;
+    --ep-selectable-checked-icon-bg: #BD0D44;
+    --ep-selectable-icon-border-radius: 90%;
+    --ep-selectable-icon-image: url(../images/selectable-icon.svg);
+
+    /* packages css */
+    --ep-discount-badge-color: rgb(255, 255, 255);
+    --ep-discount-badge-font-size: 12px;
+    --ep-discount-badge-bg: #E7695E;
+    --ep-discount-badge-border-radius: 8px;
+    --ep-discount-badge-padding: 8px 16px 4px;
+
+    --ep-grandPrice-color: #72C4C7;
+    --ep-grandPrice-font-size: 20px;
+    --ep-basicPrice-color: #D2D2D2;
+    --ep-basicPrice-font-size: 20px;
+    --ep-basicPrice-slash: 1px solid #E5154F;
+
+    /* worker card css */
+    --ep-user-image-zoom: url('../images/photo-zoom.svg');/* we need to generate dozen of outline icons to be used */
+    --ep-user-image-zoom-size: 80px;
+    --ep-user-image-border-radius: 40px;
+
+    --ep-status-badge-color: #E6A70D;/*waiting is default */
+    --ep-status-badge-font-size: 14px;
+    --ep-status-badge-bg: #FDEFCC;
+    --ep-status-badge-border-radius: 8px;
+    --ep-status-badge-padding: 4px 8px;
+    --ep-status-badge-top: 12px;
+    --ep-status-badge-end: 12px;
+    
+
+    --ep-status-confirmed-badge-color: #226C1E;
+    --ep-status-confirmed-badge-bg: #E9F0E9;
+    --ep-status-cancelled-badge-color: #9B1C1C;
+    --ep-status-cancelled-badge-bg: #FFDFDF;
+    --ep-status-confirmedNotPaid-badge-color: #72C4C7;
+    --ep-status-confirmedNotPaid-badge-bg: #E3F3F4;
+
+    --ep-side-user-menu-bg: #fff;
+    --ep-side-user-menu-hover-bg: #f5f5f5;
+    --ep-side-user-menu-color: #232929;
+    --ep-side-user-menu-link-color: #6B7280;    
+    --ep-side-user-menu-link-hover-color: #BD0D44;/* card link:hover color */
+
+    
+    /*if card has header*/
+    --ep-card-header-bg: #BD0D44;/*not used*/
+    --ep-card-header-color: #fff;/*not used*/
+
+    /* form */
+    --ep-formControl-basic-color: #6B7280;
+    --ep-formControl-border: 1px solid #C3C6CB;
+    --ep-formControl-focus-border: 1px solid #db4977;
+    --ep-formControl-background-color: #fff;
+    --ep-formControl-border-radius: 1rem;
+    --ep-formControl-label-color: #6B7280;
+    --ep-formControl-label-font-size: 14px;
+
+    /* popCard */
+    --ep-popupCard-heading: #232928;
+    --ep-popupCard-border: 0px solid #ff0000;
+    --ep-popupCard-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.0009);/* see https://cssgenerator.org/box-shadow-css-generator.html */
+    /* card in card */
+    --ep-innerCard-bg: rgb(255, 255, 255);/* card background first color */
+    --ep-innerCard-icon-direction: column;
+    --ep-innerCard-padding: 12px;
+    --ep-innerCard-border-radius: 12px;
+    --ep-innerCard-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.09);
+    --ep-innerCard-selected-bg: #BD0D44;
+    --ep-innerCard-selected-color: #fff;
+    /* filter chips */
+    --ep-filter-chip-bg: #ffffff;
+    --ep-filter-chip-color:  var(--ep-body-color);
+    --ep-filter-chip-selected-bg:var(--ep-brand-bg);
+    --ep-filter-chip-selected-color: #ffffff;
+    --ep-filter-chip-padding:8px 12px;
+    --ep-filter-chip-border-radius: 16px;
+    --ep-filter-chip-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.09);
+
+    /* tabs */
+    --ep-tabs-bg: #EBEBEB;
+    --ep-tabs-border-radius: 16px;
+    --ep-tabs-item-bg: #EBEBEB;
+    --ep-tabs-item-color: #000000;
+    --ep-tabs-op2-item-color: #8b8b8b;
+    --ep-tabs-op2-color: transparent;
+    --ep-tabs-item-color-active: #ffffff;
+    --ep-tabs-item-bg-active: #72C4C7;
+    --ep-tabs-item-border-radius: 12px;
+
+
+
+    /*pagination*/
+    --ep-pagination-border-radius:50%;
+    --ep-pagination-link-bg:#eee;
+    --ep-pagination-link-color:#464646;
+    --ep-pagination-link-active-bg:#E7695E;
+    --ep-pagination-link-active-color:#ffffff;
+    
+    /*alert */
+    --ep-alert-h4-font-size:14px;
+    --ep-alert-h4-sm-font-size:12px;
+    --ep-alert-p-font-size:14px;
+    --ep-alert-border-radius:4px;
+    --ep-alert-padding:12px;
+    --ep-alert-sm-padding:8px;
+    --ep-alert-danger-background-color:#FFE5E9;
+    --ep-alert-danger-border:1px solid #E6ABAE;
+    --ep-alert-danger-h4-color:#CC323F;
+    --ep-alert-danger-p-color:#AB000E;
+    --ep-alert-primary-background-color:#E6F4FF;
+    --ep-alert-primary-border:1px solid #AABACC;
+    --ep-alert-primary-h4-color:#00448D;
+    --ep-alert-primary-p-color:#00448D;
+    --ep-alert-success-background-color:#E7FFEC;
+    --ep-alert-success-border:1px solid #8FBDA1;
+    --ep-alert-success-h4-color:#1C8C3F;
+    --ep-alert-success-p-color:#1C8C3F;
+    --ep-alert-light-background-color:#FFFFFF;
+    --ep-alert-light-border:1px solid #CECECE;
+    --ep-alert-light-h4-color:#232929;
+    --ep-alert-light-p-color:#232929;
+    --ep-alert-warning-background-color:#FFF5E7;
+    --ep-alert-warning-border:1px solid #DBC5A7;
+    --ep-alert-warning-h4-color:#CB6A25;
+    --ep-alert-warning-p-color:#CB6A25;
+    
+
+    /*menu option#1*/
+    --ep-top-bg1: #92002e;
+    --ep-top-bg2: #92002e;
+    --ep-top-font-size: 14px;
+    --ep-top-scrolled-bg1: #92002e;
+    --ep-top-scrolled-bg2: #92002e;
+    --ep-top-color: #ffffff;
+    --ep-menu-bg: #ffffff;
+    --ep-menu-color: #232929;
+    --ep-menu-color-active: #92002e;
+    --ep-menu-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    --ep-menu-border-radius: 0;
+    --ep-menu-padding: 0;
+
+    --ep-menu-OP2-scrolled-bg: #ffffff;
+    --ep-menu-OP2-color: #ffff;
+    --ep-menu-OP2-scrolled-color: #232929;
+    --ep-menu-OP2-color-active: #bd0d44;
+    --ep-menu-OP2-scrolled-color-active: #bd0d44;
+
+    /*menu-option2 */
+    /*--ep-top-OP2-bg1:transparent;
+    --ep-top-OP2-bg2:transparent;
+    --ep-top-OP2-font-size:14px;
+    --ep-top-OP2-scrolled-bg1:#92002e;
+    --ep-top-OP2-scrolled-bg2:#92002e;
+    --ep-top-OP2-color:#ffffff;
+    --ep-menu-OP2-bg:transparent;
+    --ep-menu-OP2-color:#ffffff;
+    --ep-menu-OP2-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.0);
+    --ep-menu-OP2-border-radius:0;
+    --ep-menu-OP2-padding:0;*/
+    
+    /*mega menu */
+    --ep-mega-menu-card-bg:#F6F6F6;
+    --ep-mega-menu-card-color:#232929;
+    --ep-mega-menu-card-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    --ep-mega-menu-image-size: 80px;
+    --ep-mega-menu-imageLg-size: 240px;
+    
+    
+
+    /* hero header */
+    /* ep-slider option#1*/
+    --ep-sliderImg-sliderImg: 100vh;/*if customer design banner at same resolution => unset ELSE 100vh*/
+    --ep-sliderImg-sliderImg-resp: 80vh;/*if customer design banner at same resolution => unset ELSE 50vh*/
+    --ep-slider-control-icon-size: 40px;
+    --ep-slider-next-icon: url('../images/slider/next-1.svg');/* we need to generate dozen of outline icons to be used */
+    --ep-slider-prev-icon: url('../images/slider/prev-1.svg');/* we need to generate dozen of outline icons to be used */
+    --ep-slider-pagination-width: 12px;
+    --ep-slider-pagination-height: 12px;
+    --ep-slider-pagination-margin: 0 4px 0 4px;
+    --ep-slider-pagination-bg: #ffff;
+    --ep-slider-pagination-border-radius: 16px;
+    --ep-slider-h1-font-size: 40px;
+    --ep-slider-h1-font-size-resp: 24px;
+    --ep-carousel-caption-top: 50%;/*if we need to center vertically =>50% ELSE unset*/
+    --ep-carousel-caption-translateY: translateY(-50%);/*if we need to center vertically => translateY(-50%) ELSE unset*/
+    --ep-carousel-caption-bottom: unset;/*if we need to center vertically => unset ELSE 1.25rem*/
+    --ep-carousel-caption-justify-content: center;/*if we need to center content => center ELSE start*/
+    --ep-carousel-caption-bg: transform;
+    --ep-carousel-caption-text-align: center;/*if we need to center content => center ELSE start*/
+    --ep-carousel-caption-left: 25%;/*default 15%*/
+    --ep-carousel-caption-right: 25%;/*default 15%*/
+    --ep-carousel-caption-border-radius: 16px;/* ep-slider option#2*/
+    --ep-slider-OP2-h1-font-size: 40px;
+    --ep-slider-OP2-h1-font-size-resp: 24px;
+    --ep-slider-OP2-img-border-radius: 32px;
+    --ep-slider-OP2-img-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    --ep-carousel-OP2-caption-top: 50%;/*if we need to center vertically =>50% ELSE unset*/
+    --ep-carousel-OP2-caption-translateY: translateY(-50%);/*if we need to center vertically => translateY(-50%) ELSE unset*/
+    --ep-carousel-OP2-caption-bottom: unset;/*if we need to center vertically => unset ELSE 1.25rem*/
+
+    /* page titles */
+    --ep-innerTitle-xxx: 0;
+    --ep-innerTitle-h1-font-size: 28px;
+    --ep-innerTitle-h1-font-size-resp: 20px;
+
+    /* CONTACT US */
+    --ep-map-border-radius: var(--ep-body-border-radius);/* map border radius  at desktop*/
+
+    /*FOOTER */
+    --ep-footer-bg: #27272A;/* footer background background color */
+    --ep-footer-color: #ffffff;/* footer text color */
+    --ep-footer-color2: #ffffff;/* footer text secondary color */
+    --ep-footer-font-size: 14px;/* "footer default text" font  at desktop */
+    --ep-footerLink-color: #ffffff;/* footer link color */
+    --ep-footerLink-hover-color: #bd0d44;/* footer link:hover color */
+    /**/--ep-footerLinkIcons-color: #ffffff;/* footer SVG icon color */
+    --ep-footerHeaders-font-size: 16px;/* "footer headers" font size at desktop */
+    /**/--ep-footerHeaders-font-size-resp: 14px;/* "footer headers" font size at mobile */
+    --ep-footerHeaders-color: #ffffff;/* "footer headers" color */
+    --ep-footer-sub-header-color: #72C4C7;/* "footer sub headers" color */
+    --ep-footerInfo-part1-color: #E7695E;/* "footer info part1" color */
+    --ep-footerInfo-part2-color: #ffffff;/* "footer info part2" color */
+    --ep-footerInfo-font-size: 12px;/* informations in footer font size */
+    --ep-footerInfo-link-color: #72C4C7;/* informations in footer font size */
+    --ep-footerInfo-link-hover-color: #bd0d44;/* informations in footer font size */
+    --ep-footer-separator-color: #72C4C7;/*if border exist */
+    --ep-copyrights-bg: #2a272a94;/* informations in footer background color */
+    --ep-social-links-bg1: rgba(123, 42, 42, 0);
+    --ep-social-links-bg2: rgba(255, 0, 0, 0);
+    --ep-social-links-hover-bg1: #f00;
+    --ep-social-links-hover-bg2: #f00;
+    --ep-social-links-border-radius: 0;
+    --ep-social-padding: 0;
+    --ep-footerLink-color: #ffffff;/* footer link color */
+    --ep-footerLinkIcons-color: #ffffff;/* footer SVG icon color */
+
+    /* footer option2 */
+    --ep-footer-OP2-bg: #710829;/* footer-OP2 background background color */
+    --ep-footer-OP2-sub-header-color: #ffffff;/* "footer-OP2 sub headers" color */
+    --ep-footerLink-OP2-color: #ffffff;/* footer link color */
+    --ep-footerLink-OP2-hover-color: #bd0d44;
+    --ep-footerInfo-OP2-part1-color: #ffffff;/* "footer-OP2 info part1" color */
+    --ep-footerInfo-OP2-part2-color: #ffffff;/* "footer-OP2 info part2" color */
+    --ep-footerLink-OP2-color: #ffffff;/* footer link color */
+    --ep-footerLink-OP2-hover-color: #72C4C7;/* footer link color */
+    --ep-footer-OP2-separator-color: #fff;/*if border exist */
+    --ep-copyrights-OP2-bg: #00000013;/* informations in footer background color */
+
+    --ep-loader-bg: #000000;/* loader background color */
+
+    /* stepper */
+    --ep-stepper-bg: #aaaaaa;/* stepper background color */
+    --ep-stepper-bg-previous: #e7695e;/* stepper background color */
+    --ep-step-current-bg: #bd0d44;/* stepper background color */
+    --ep-stepper-color: #ffffff;/* stepper text color */
+    --ep-circle-border-radius: 50%;/* stepper circle border radius */
+    
+
+    /* stepper option2 */
+    --ep-circle-OP2-border-radius: 12%;/* stepper circle border radius */
+
+    /* hourly */
+    --ep-hourly-filter-btn-color: #999999;
+}

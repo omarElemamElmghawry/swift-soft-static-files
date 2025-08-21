@@ -1,0 +1,9 @@
+<svg id="information-side-menu" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="Rectangle_7524" data-name="Rectangle 7524" width="32" height="32" fill="#232929" opacity="0"/>
+  <g id="Group_18815" data-name="Group 18815" transform="translate(4 4)">
+    <rect id="Rectangle_7528" data-name="Rectangle 7528" width="11" height="11" fill="#232929"/>
+    <rect id="Rectangle_7531" data-name="Rectangle 7531" width="11" height="11" transform="translate(0 13)" fill="#232929"/>
+    <rect id="Rectangle_7529" data-name="Rectangle 7529" width="11" height="11" transform="translate(13)" fill="#232929"/>
+    <rect id="Rectangle_7530" data-name="Rectangle 7530" width="11" height="11" transform="translate(13 13)" fill="#232929"/>
+  </g>
+</svg>

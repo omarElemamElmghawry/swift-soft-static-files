@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="path11602" d="M24-85.312H0v24H24Z" transform="translate(0 85.312)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="account" transform="translate(-8)">
+    <rect id="Rectangle_7524" data-name="Rectangle 7524" width="24" height="24" transform="translate(8)" fill="#fff" opacity="0"/>
+    <g id="g11596" transform="translate(8 0)">
+      <g id="g11598" transform="translate(0 0)">
+        <g id="g11600" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path id="Union_1" data-name="Union 1" d="M4.9,1.263a8.361,8.361,0,0,0-4.088,3.1,5.6,5.6,0,0,0-.8,3.185,4.489,4.489,0,0,0,1.981,3.606,4.489,4.489,0,0,0,2.665.622,11.444,11.444,0,0,0,3.121-.746,8.272,8.272,0,0,1,2.423-.6,3.221,3.221,0,0,1,.789.071,13.553,13.553,0,0,1,1.864.6l.612.221a6.071,6.071,0,0,0,3.311.415A4.467,4.467,0,0,0,20.061,8.4c.673-2.843-1.026-5.473-4.546-7.035A14,14,0,0,0,10.381,0c-.064,0-.146,0-.229,0A13.161,13.161,0,0,0,4.9,1.263Zm.539,15.95A4.663,4.663,0,1,0,10.1,12.519,4.684,4.684,0,0,0,5.439,17.214Z" transform="translate(21.75 22.658) rotate(180)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
