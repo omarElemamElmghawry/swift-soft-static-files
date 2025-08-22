@@ -12,6 +12,7 @@
 /* 1- General classes ************************************************************ */
 /* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
 /* if custom font , we will upload to CMS storage */
+@import "ep-main.css";
 
 :root {
   /*  FONTS
@@ -23,18 +24,28 @@
     --ep-med-font-weight: '500';
     --ep-bld-font: 'Alexandria';
     --ep-bld-font-weight: '700';*/
-<<<<<<< HEAD
-  --ep-main-font: "custom-font-reg";
-  --ep-main-font-weight: "300";
-  --ep-bld-font: "custom-font-bold";
-  --ep-bld-font-weight: "300";
-  --bs-primary-rgb: 189, 13, 68 !important;
-=======
+
     --ep-main-font: 'custom-font-reg';
     --ep-main-font-weight: '300';
     --ep-bld-font: 'custom-font-bold';
     --ep-bld-font-weight: '300';
     --bs-primary-rgb: 189, 13, 68 !important;
+}
+
+@font-face {
+  font-family: 'custom-font-reg';
+  src: url('../fonts/custom-font-reg.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'custom-font-bold';
+  src: url('../fonts/custom-font-bold.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 html,
@@ -89,7 +100,6 @@ body.mode-difference {
 
 .fs-12 {
     font-size: 12px !important;
->>>>>>> main
 }
 
 h1,
@@ -333,10 +343,14 @@ select option {
 
 .form-control,
 .form-select {
-  color: var(--ep-formControl-basic-color) !important;
-  border: var(--ep-formControl-border) !important;
-  background-color: var(--ep-formControl-background-color) !important;
-  border-radius: var(--ep-formControl-border-radius) !important;
+    color: var(--ep-formControl-basic-color) !important;
+    border: var(--ep-formControl-border) !important;
+    background-color: var(--ep-formControl-background-color) !important;
+    border-radius: var(--ep-formControl-border-radius) !important;
+    padding: 10px 16px !important;
+    height: 48px !important;
+    min-height: unset !important;
+    line-height: 3.6 !important;
 }
 
 .form-floating > label {
@@ -2482,3 +2496,126 @@ i.ep-footer-vseparator {
   text-decoration: none;
   font-size: 18px;
 }
+
+/* start hourly fixed package */
+.filter-btns {
+    gap: 32px;
+}
+
+.ep-section .checbox-filter-btn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: var(--ep-hourly-filter-btn-color);
+}
+
+.ep-section .checbox-filter-btn.active {
+    color: var(--ep-brand-bg);
+    position: relative;
+}
+
+.ep-section .checbox-filter-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background-color: var(--ep-brand-bg);
+}
+
+.ep-section .checbox-filter-btn span {
+    position: relative;
+    top: 5px;
+}
+
+.next-btn {
+    padding-left: 56px !important;
+    padding-right: 56px !important;
+}
+/* end hourly fixed package */
+
+/* start padding*/
+.px-20 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.px-16 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+/* end padding */
+
+
+/* start customize package */
+.custom-input-group-button {
+    background-color: var(--ep-brand-color);
+    width: 27px;
+    height: 27px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.custom-input-group-button span {
+    position: relative;
+    top: 5px;
+    font-size: 30px;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-input-group-label {
+        flex-basis: 40%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .custom-input-group-label {
+        flex-basis: 60%;
+    }
+}
+
+.custom-input-group-value {
+    word-spacing: 3px;
+}
+
+.buttons-group-input {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    height: auto !important;
+    align-items: flex-start !important;
+}
+
+.buttons-group-input .custom-input-group-label {
+    flex-basis: 40% !important;
+    line-height: normal !important;
+}
+
+.check-button-group .check-button {
+    background-color: transparent;
+    border: 1px solid var(--ep-brand-bg);
+    outline: none;
+    border-radius: 16px;
+    height: 32px;
+    padding: 4px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ep-brand-bg);
+}
+
+.check-button-group .check-button.selected {
+    background-color: var(--ep-brand-bg);
+    color: #fff;
+}
+
+/* end customize package */
