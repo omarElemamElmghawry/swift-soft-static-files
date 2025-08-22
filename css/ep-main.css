@@ -12,7 +12,7 @@
   --ep-brand3-bg: #12aae3; /* background = 3rd color */
   --ep-brand4-bg: #dfe1fa;
   --ep-body-font-size: 16px; /* HTML , body fonts size */
-  --ep-body-bg: #d1d1d1; /* body background color */
+  --ep-body-bg: #fff;/* body background color */
   --ep-body-color: #313131; /* body text color */
   --ep-body-border-radius: 16px;
   --ep-link-color: #12aae3; /* "a" color */

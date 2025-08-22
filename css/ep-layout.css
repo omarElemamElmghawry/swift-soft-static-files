@@ -23,11 +23,73 @@
     --ep-med-font-weight: '500';
     --ep-bld-font: 'Alexandria';
     --ep-bld-font-weight: '700';*/
+<<<<<<< HEAD
   --ep-main-font: "custom-font-reg";
   --ep-main-font-weight: "300";
   --ep-bld-font: "custom-font-bold";
   --ep-bld-font-weight: "300";
   --bs-primary-rgb: 189, 13, 68 !important;
+=======
+    --ep-main-font: 'custom-font-reg';
+    --ep-main-font-weight: '300';
+    --ep-bld-font: 'custom-font-bold';
+    --ep-bld-font-weight: '300';
+    --bs-primary-rgb: 189, 13, 68 !important;
+}
+
+html,
+body {
+    font-size: var(--ep-body-font-size) !important;
+    font-family: var(--ep-main-font) !important;
+    font-weight: var(--ep-main-font-weight) !important;
+    color: var(--ep-body-color) !important;
+    background-color: var(--ep-body-bg) !important;
+    line-height: 1.5 !important;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.mode-luminosity {
+    mix-blend-mode: luminosity;
+}
+
+body.mode-difference {
+    mix-blend-mode: difference;
+}
+
+.fw-medium {
+    font-family: var(--ep-med-font) !important;
+    font-weight: var(--ep-med-font-weight) !important
+}
+
+.fw-bold {
+    font-family: var(--ep-bld-font) !important;
+    font-weight: var(--ep-bld-font-weight) !important
+}
+
+.ep-vh-50 {
+    height: var(--ep-vheight-50);
+}
+
+.ep-vh-100 {
+    height: var(--ep-vheight-100);
+}
+
+.ep-translateY--50 {
+    transform: translateY(-50%);
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+>>>>>>> main
 }
 
 h1,
