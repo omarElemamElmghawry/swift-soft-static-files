@@ -242,7 +242,7 @@
   <!-- page title option#1 -->
   <section class="ep-section ep-section-dark ep-page-title pb-3">
     <div class="container text-center">
-      <h1 class="mb-3 mt-3 mt-lg-5 pt-lg-5">إضافة عنوان جديد</h1>
+      <h1 class="mb-3 mt-3 mt-lg-5 pt-lg-5">صمم باقتك الخاصة</h1>
     </div>
   </section>
   <!-- start customize package content -->
@@ -361,14 +361,179 @@
         </div>
         <!-- end contract duration -->
 
+        <!-- start delivery dates -->
+        <div class="col-12 mb-4">
+          <div class="notes form-control">
+            <label class="fs-12">مواعيد التوصيل</label>
+            <div class="notes-desc d-flex gap-2 gap-md-5 flex-wrap">
+              <div class="note d-flex gap-2 align-items-center">
+                <img src="images/hourly/alert.svg" alt="">
+                <span class="fs-14">مواعيد التوصيل 7:00 : 9:00</span>
+              </div>
+              <div class="note d-flex gap-2 align-items-center">
+                <img src="images/hourly/alert.svg" alt="">
+                <span class="fs-14">يبدأ احتساب وقت الزيارة من وقت وصول العاملة</span>
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- end delivery dates -->
+
+         <!-- start favorite nationality -->
+         <div class="col-lg-6 mb-4">
+          <div class="custom-input-group buttons-group-input d-flex form-control justify-content-between align-items-center">
+            <!-- start custom-input-group-label -->
+            <div class="custom-input-group-label">
+              <label class="fs-16">الجنسية المفضلة</label>
+            </div>
+            <!-- end custom-input-group-label -->
+
+            <!-- start custom-input-group-input -->
+            <div class="check-button-group d-flex align-items-center gap-3 justify-content-start flex-grow-1 flex-wrap">
+              <button class="check-button fs-14 selected"><span> المصرية </span></button>
+              <button class="check-button fs-14"><span> السعودية </span></button>
+              <button class="check-button fs-14"><span> العربية </span></button>
+
+            </div>
+            <!-- end custom-input-group-input -->
+          </div>
+        </div>
+        <!-- end favorite nationality -->
+
+        <!-- start first visit date -->
+        <div class="col-lg-6 mb-4">
+          <div class="form-floating ">
+            <select class="form-select fs-14" id="city" aria-label="اختيار تاريخ أول زيارة">
+              <option value="الرياض">الأحد</option>
+              <option value="جدة">الأثنين</option>
+              <option value="الدمام">الثلاثاء</option>
+              <option value="الدمام">الأربعاء</option>
+              <option value="الدمام">الخميس</option>
+              <option value="الدمام">الجمعة</option>
+              <option value="الدمام">السبت</option>
+            </select>
+            <label for="city">تاريخ أول زيارة</label>
+          </div>
+        </div>
+        <!-- end first visit date -->
+
+        <!-- start preferred date -->
+        <div class="mb-4">
+          <div class="custom-input-group large buttons-group-input d-flex form-control justify-content-between align-items-center">
+            <!-- start custom-input-group-label -->
+            <div class="custom-input-group-label">
+              <label class="fs-16">تاريخ الزيارة المفضل</label>
+            </div>
+            <!-- end custom-input-group-label -->
+
+            <!-- start custom-input-group-input -->
+            <div class="check-button-group d-flex align-items-center gap-3 justify-content-start flex-grow-1 flex-wrap">
+              <button class="check-button fs-14 selected"><span> السبت 22/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الأحد 23/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الأثنين 24/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الثلاثاء 25/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الأربعاء 26/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الخميس 27/8/2025 </span></button>
+              <button class="check-button fs-14"><span> الجمعة 28/8/2025 </span></button>
+              <button class="check-button fs-14"><span> السبت 29/8/2025 </span></button>
+
+            </div>
+            <!-- end custom-input-group-input -->
+          </div>
+        </div>
+        <!-- end preferred date -->
+
+        <!-- start promotion code -->
+        <div class="col-lg-6 mb-4">
+          <div class="form-floating position-relative">
+            <input type="text" class="form-control code-promotion-input" id="promotion-code" placeholder="كود الخصم">
+            <label for="promotion-code">كود الخصم</label>
+            <span class="promotion-note fs-14">سعر الزيارة 68.70 ريال</span>
+          </div>
+        </div>
+        <!-- end promotion code -->
 
       </div>
       <div class="row">
-        <div class="col-12 text-center text-lg-end mt-3" data-aos="fade-right" data-aos-offset="0" data-aos-anchor-placement="top-bottom">
-          <a href="individual-select-packge-1.html" class="btn btn-primary">حفظ</a>
+        <!-- start card -->
+        <div class="col-lg-4 col-xxl-3 col-md-6 mb-3" data-aos="fade-right" data-aos-offset="0" data-aos-anchor-placement="top-bottom">
+          <div class="ep-card ep-card-selectable selected p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="">
+              <!-- start package header -->
+              <div class="fw-bold d-flex gap-1 align-items-start">
+                <img src="/images/hourly/morning-icon.svg" alt="checkbox-filter">
+                <span>باقة العاملة المنزلية المحترفة لمدة عام
+                واحد بدون سند امر </span>
+                </div>
+              <div class="ep-discount-badge">خصم 323 ريال</div>
+              <hr class="ep-dashed-separator">
+              <!-- end package header -->
+
+              <!-- start package prices -->
+              <div class="ep-prices-summary mb-3">
+                <span class="ep-grandPrice fw-bold">5,000<span class="ep-currency"><svg id="Component_93_2"
+                      data-name="Component 93 – 2" xmlns="http://www.w3.org/2000/svg" width="17.015" height="18.252"
+                      viewBox="0 0 17.015 18.252">
+                      <rect id="Rectangle_8302" data-name="Rectangle 8302" width="16" height="16"
+                        transform="translate(1.015)" fill="#72c4c7" opacity="0"></rect>
+                      <g id="Saudi_Riyal_Symbol-2" transform="translate(0.01)">
+                        <path id="Path_68209" data-name="Path 68209"
+                          d="M661.778,1024.092h0a6.689,6.689,0,0,0-.558,2.083l6.167-1.311a6.685,6.685,0,0,0,.558-2.083Z"
+                          transform="translate(-651.624 -1007.923)" fill="#72c4c7"></path>
+                        <path id="Path_68210" data-name="Path 68210"
+                          d="M15.763,13.014a6.685,6.685,0,0,0,.558-2.083l-4.8,1.022V9.988l4.246-.9A6.685,6.685,0,0,0,16.321,7l-4.8,1.021V.961A6.778,6.778,0,0,0,9.6,2.573v5.86l-1.921.408V0A6.776,6.776,0,0,0,5.753,1.612V9.249l-4.3.913A6.689,6.689,0,0,0,.9,12.246l4.857-1.032v2.473L.548,14.793A6.685,6.685,0,0,0-.01,16.876l5.448-1.158A1.731,1.731,0,0,0,6.511,15l1-1.481h0a.955.955,0,0,0,.164-.537V10.805L9.6,10.4v3.928l6.167-1.312Z"
+                          fill="#72c4c7"></path>
+                      </g>
+                    </svg>
+                  </span></span><span class="text-muted small">بدلا
+                  عن</span><span class="ep-basicPrice fw-bold">6,000</span>
+              </div>
+              <!-- end package prices -->
+
+              <!-- start package list info -->
+              <ul class="ep-list-iconed2 list-unstyled mb-4">
+                <li>المهنة : <span class="li-value">عاملة نظافة</span></li>
+                <li>السعر شامل الضريبة : <span class="li-value">5,500
+                  </span></li>
+                <li>المبلغ المطلوب دفعه: <span class="li-value">5,000
+                  </span></li>
+                <li>بداية التعاقد : <span class="li-value">1/29/2025</span></li>
+                <li>نهاية التعاقد : <span class="li-value">12/11/2026</span></li>
+              </ul>
+              <!-- end package list info -->
+
+              <div class="fs-12">السعر شامل الخصم و الضريبة المضافة</div>
+
+              <!-- start package footer -->
+              <div class="ep-package-footer d-flex gap-3 justify-content-end mt-4 mb-3 px-2">
+                <img src="images/hourly/not-selected.svg" alt="">
+              </div>
+              <!-- end package footer -->
+            </div>
+          </div>
         </div>
+        <!-- end card -->
+
+        <!-- start terms and conditions -->
+        <div class="col-12 mt-2 mb-4">
+          <div class="d-flex gap-1 align-items-center">
+            <img src="images/hourly/selected.svg" alt="">
+            <span class="fs-16 terms-conditions-text">
+              موافق على الشروط والاحكام
+            </span>
+          </div>
+        </div>
+        <!-- end terms and conditions -->
       </div>
 
+      <!-- start buttons -->
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between mt-4">
+          <a href="#" onclick="history.back(); return false;" class="btn btn-secondary" data-aos="fade-left" data-aos-offset="0" data-aos-anchor-placement="top-bottom">السابق</a>
+          <a href="mediation-add-address-1.html" class="btn btn-primary" data-aos="fade-right" data-aos-offset="0" data-aos-anchor-placement="top-bottom">التالى</a>
+        </div>
+      </div>
+      <!-- end buttons -->
     </div>
 
   </section>

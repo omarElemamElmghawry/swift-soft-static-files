@@ -2511,6 +2511,7 @@ i.ep-footer-vseparator {
     padding-bottom: 7px !important;
     height: auto !important;
     align-items: flex-start !important;
+    gap: 24px;
 }
 
 .buttons-group-input .custom-input-group-label {
@@ -2518,12 +2519,19 @@ i.ep-footer-vseparator {
     line-height: normal !important;
 }
 
+
+
+.check-button-group  {
+    flex-basis: 60%;
+}
+
 .check-button-group .check-button {
     background-color: transparent;
     border: 1px solid var(--ep-brand-bg);
     outline: none;
     border-radius: 16px;
-    height: 32px;
+    min-height: 32px;
+    height: auto;
     padding: 4px 24px;
     display: flex;
     align-items: center;
@@ -2531,9 +2539,68 @@ i.ep-footer-vseparator {
     color: var(--ep-brand-bg);
 }
 
+.check-button-group .check-button span {
+    line-height: normal;
+}
+
 .check-button-group .check-button.selected {
     background-color: var(--ep-brand-bg);
     color: #fff;
 }
 
+@media screen and (min-width: 992px) {
+    .buttons-group-input.large .custom-input-group-label {
+        flex-basis: 19% !important;
+    }
+
+    .buttons-group-input.large .check-button-group {
+        flex-basis: 81% !important;
+    }
+}
+
+.notes {
+    position: relative;
+    height: auto !important;
+}
+
+.notes label {
+    position: absolute;
+    top: -5px;
+    color: var(--ep-brand-bg);
+}
+
+.notes .notes-desc {
+    position: relative;
+    top: 9px;
+}
+
+.notes .note span {
+    color: var(--ep-brand-bg);
+    line-height: normal;
+}
+
+.promotion-note {
+    position: absolute;
+    font-size: 16px !important;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    background-color: var(--ep-brand-color);
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 16px;
+}
+
+.code-promotion-input {
+    padding-top: 30px !important;
+}
+
+.terms-conditions-text {
+    color: var(--ep-formControl-label-color);
+}
 /* end customize package */
