@@ -12,9 +12,9 @@
 /* 1- General classes ************************************************************ */
 /* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
 /* if custom font , we will upload to CMS storage */
-@import "ep-main.css";
+/* @import "ep-main.css"; */
 
-@font-face {
+/* @font-face {
   font-family: 'custom-font-bold';
   src: url('/fonts/FFShamelFamily-SansOneBold.eot');
   src: url('/fonts/FFShamelFamily-SansOneBold.eot?#iefix') format('embedded-opentype'),
@@ -38,7 +38,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 :root {
   /*  FONTS
@@ -58,7 +58,7 @@
     --bs-primary-rgb: 189, 13, 68 !important;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'custom-font-reg';
   src: url('../fonts/custom-font-reg.woff2') format('woff2');
   font-weight: 300;
@@ -72,7 +72,7 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 html,
 body {
@@ -379,9 +379,24 @@ select option {
     line-height: 3.6 !important;
 }
 
+.form-select {
+  line-height: 3 !important;
+  font-size: 14px;
+}
+
+.form-floating .form-select {
+  padding-top: 10px !important;
+}
+
+.form-floating .form-control {
+  padding-top: 1.85rem !important;
+}
+
+
 .form-floating > label {
   color: var(--ep-formControl-label-color) !important;
   font-size: var(--ep-formControl-label-font-size) !important;
+  top: -3px !important;
 }
 
 .page-link:focus {
