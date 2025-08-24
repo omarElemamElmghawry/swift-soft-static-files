@@ -419,6 +419,40 @@ select option {
   transform: scale(0.75) translateY(-0.5rem) translateX(-0.15rem) !important;
 }
 
+/* START CUSTOM DATE INPUT */
+/* Hide the default calendar icon */
+.custom-date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Optional: hide clear button in Chrome */
+  .custom-date-input::-webkit-clear-button {
+    display: none;
+  }
+
+  /* Add custom icon */
+  :lang(ar) .custom-date-input {
+    text-align: right;
+    background: url('../images/hourly/calendar.svg') no-repeat left 16px center;
+    padding-right: 35px; /* space for the icon */
+
+  }
+  :lang(en) .custom-date-input {
+    text-align: left;
+    background: url('../images/hourly/calendar.svg') no-repeat right 16px center;
+    padding-left: 35px; /* space for the icon */
+  }
+  .custom-date-input {
+    position: relative;
+    background-size: 20px 20px;
+  }
+/* END CUSTOM DATE INPUT */
+
 .ep-code-input {
   padding-top: 14px;
   font-size: 1.25rem;
@@ -1803,6 +1837,11 @@ i.ep-footer-vseparator {
 .ep-status-cancelled {
   color: var(--ep-status-cancelled-badge-color);
   background-color: var(--ep-status-cancelled-badge-bg);
+}
+
+.ep-status-primary {
+    color: var(--ep-brand-color);
+    background-color: var(--ep-status-primary-badge-bg);
 }
 
 .ep-side-user-menu {
