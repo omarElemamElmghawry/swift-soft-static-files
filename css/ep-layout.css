@@ -379,6 +379,18 @@ select option {
     line-height: 3.6 !important;
 }
 
+.form-control-iconed,
+.form-select-iconed {
+    color: var(--ep-formControl-basic-color) !important;
+    border: var(--ep-formControl-border) !important;
+    background-color: var(--ep-formControl-background-color) !important;
+    border-radius: var(--ep-formControl-border-radius) !important;
+    padding: 25px 45px 5px 20px !important;
+    height: 55px !important;
+    min-height: unset !important;
+    line-height: 3.6 !important;
+}
+
 .form-select {
   line-height: 3 !important;
   font-size: 14px;
