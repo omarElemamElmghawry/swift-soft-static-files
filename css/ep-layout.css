@@ -2456,43 +2456,43 @@ i.ep-footer-vseparator {
 
 /* start hourly fixed package */
 .filter-btns {
-    gap: 32px;
+  gap: 32px;
 }
 
-.ep-section .checbox-filter-btn {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    color: var(--ep-hourly-filter-btn-color);
+.checbox-filter-btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--ep-hourly-filter-btn-color);
 }
 
-.ep-section .checbox-filter-btn.active {
-    color: var(--ep-brand-bg);
-    position: relative;
+.checbox-filter-btn.active {
+  color: var(--ep-brand-bg);
+  position: relative;
 }
 
-.ep-section .checbox-filter-btn.active::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 1px;
-    background-color: var(--ep-brand-bg);
+.checbox-filter-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background-color: var(--ep-brand-bg);
 }
 
-.ep-section .checbox-filter-btn span {
-    position: relative;
-    top: 5px;
+.checbox-filter-btn span {
+  position: relative;
+  top: 5px;
 }
 
 .next-btn {
-    padding-left: 56px !important;
-    padding-right: 56px !important;
+  padding-left: 56px !important;
+  padding-right: 56px !important;
 }
 /* end hourly fixed package */
 
