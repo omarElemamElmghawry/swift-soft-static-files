@@ -612,7 +612,7 @@ fieldset:disabled .btn {
 }
 
 .ep-list-iconed2 .li-value {
-    color: var(--ep-list-iconed2-value);
+    color: #232929;
 }
 
 .dropdown-menu.ep-dropdown-user-menu {
