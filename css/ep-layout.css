@@ -334,13 +334,15 @@ select option {
     padding: 10px 16px !important;
     height: 48px !important;
     min-height: unset !important;
-    line-height: 3.6 !important;
+    line-height: 2.8 !important;
+    font-size: 14px;
 
 }
 
 .form-floating>label {
     color: var(--ep-formControl-label-color) !important;
     font-size: var(--ep-formControl-label-font-size) !important;
+    padding-top: 1rem !important;
 }
 
 .page-link:focus {
