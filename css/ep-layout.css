@@ -384,7 +384,7 @@ select option {
 }
 
 .form-floating .form-select {
-    padding-top: 0 !important;
+    padding-top: 0.5rem !important;
 }
 
 .form-floating>label {
