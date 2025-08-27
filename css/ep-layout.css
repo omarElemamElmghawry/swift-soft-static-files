@@ -575,7 +575,7 @@ fieldset:disabled .btn {
     content: "";
     width: calc(var(--ep-list-iconed-padding)*2 + 8px);
     height: calc(var(--ep-list-iconed-padding)*2 + 8px);
-    background: var(--ep-brand-bg) no-repeat center;
+    /* background: var(--ep-brand-bg) no-repeat center; */
     position: absolute;
     right: 0;
     border-radius: calc(var(--ep-list-iconed-padding) + 4px);
