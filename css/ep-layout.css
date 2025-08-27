@@ -2780,3 +2780,9 @@ i.ep-footer-vseparator {
     color: var(--ep-formControl-label-color);
 }
 /* end customize package */
+
+.form-check-label-color {
+  color: var(--ep-form-check-label-color) !important;
+}
+
+

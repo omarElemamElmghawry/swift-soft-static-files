@@ -16,6 +16,7 @@
   --ep-body-color: #313131; /* body text color */
   --ep-body-border-radius: 16px;
   --ep-link-color: #12aae3; /* "a" color */
+  --ep-form-check-label-color:#023D59;
   --ep-colored-by-filter: brightness(0) saturate(100%) invert(10%) sepia(80%)
     saturate(5483%) hue-rotate(359deg) brightness(94%) contrast(114%);
   --ep-whited-by-filter: brightness(0) saturate(100%) invert(100%) sepia(2%)
