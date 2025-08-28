@@ -1551,7 +1551,9 @@ i.ep-footer-vseparator {
     font-size: var(--ep-footerInfo-font-size);
     background-color: var(--ep-copyrights-bg);
 }
-
+.ep-footer-iconFill{
+    fill: var(--ep-footerLinkIcons-color);
+}
 
 /*Footer option-2 */
 .ep-footer.ep-footer-2 {
