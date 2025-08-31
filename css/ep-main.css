@@ -111,8 +111,11 @@
 
   /*SECTIONS*/
   --ep-section-border-radius: 16px; /* this border radius for BOXED section only*/
-  --ep-section-padding: 60px 0; /* section padding top at desktop*/
-  --ep-section-padding-resp: 40px 0; /* section padding top at desktop*/
+  --ep-section-padding: 64px 0 0 0 ; /* section padding top at desktop*/
+  --ep-section-padding-resp: 40px 0 0 0 ; /* section padding top at desktop*/
+  --ep-section-padding-top-lg: 84px;
+  --ep-section-bottom-padding: 64px;
+  --ep-section-bottom-padding-lg: 84px;
   /* if section is light style
     لو الفاتح يبقى الهيدر هيخد اللون الطبيعي بتاع الهيدرات و التيكست هيخد لون الطبيعي بتاع النص بتاع البودي
     */
@@ -161,18 +164,15 @@
   /* GeneralCARD Addresses&Packages&Workers&x ==================================================================================================================== */
   --ep-card-border-radius: 16px; /* card border radius  at desktop*/
   --ep-card-border-radius-resp: 16px; /* card border radius  at mobile*/
-  --ep-card-padding: 32px 0 32px 24px; /* card padding top at desktop*/
+  --ep-card-padding: 32px 24px; /* card padding top at desktop*/
+  --ep-service-card-padding: 32px 0;
   --ep-card-padding-resp: 16px; /* card padding top at mobile*/
   --ep-card-borderTop: 0 solid #12aae3;
   --ep-card-borderRight: 10px solid #12aae3;
   --ep-card-borderBottom: 0 dashed #12aae3;
   --ep-card-borderLeft: 0 dashed #12aae3;
   --ep-card-bg1: rgb(255, 255, 255); /* card background first color */
-  --ep-card-bg2: rgb(
-    255,
-    255,
-    255
-  ); /* card background second color  if gradiant*/
+  --ep-card-bg2: rgb(255,255,255); /* card background second color  if gradiant*/
   --ep-card-selected-bg1: var(--ep-card-bg1); /* card background first color */
   --ep-card-selected-bg2: var(
     --ep-card-bg2
@@ -493,6 +493,7 @@
   --ep-social-padding: 0;
   --ep-footerLink-color: #594999; /* footer link color */
   --ep-footerLinkIcons-color: #594999; /* footer SVG icon color */
+  --ep-footer-padding-top:56px;
 
   /* footer option2 */
   --ep-footer-OP2-bg: #710829; /* footer-OP2 background background color */

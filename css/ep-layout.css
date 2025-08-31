@@ -1111,10 +1111,18 @@ fieldset:disabled .btn {
     background-size: var(--ep-sectionLight-background-size);
     position: relative;
     z-index: 2;
-    padding: var(--ep-section-padding-resp)
+    padding: var(--ep-section-padding-resp);
+    overflow: hidden;
 }
-
-
+.ep-section-top-padding-lg{
+    padding-top: var(--ep-section-padding-top-lg) !important;
+}
+.ep-section-bottom-padding{
+    padding-bottom: var(--ep-section-bottom-padding) !important;
+}
+.ep-section-bottom-padding-lg{
+    padding-bottom: var(--ep-section-bottom-padding-lg) !important;
+}
 
 .ep-section:after {
     position: absolute;
@@ -1184,7 +1192,7 @@ fieldset:disabled .btn {
 }
 
 .ep-section.ep-page-title {
-    padding-top: 6rem !important;
+    padding-top: 8rem !important;
 }
 
 .ep-section.ep-section-dark.ep-page-title {
@@ -1240,7 +1248,9 @@ fieldset:disabled .btn {
     -moz-box-shadow: var(--ep-card-shadow);
     height: 100%;
 }
-
+.ep-card.ep-service-card{
+    padding: var(--ep-service-card-padding);
+}
 .ep-card.ep-card-selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
@@ -1288,11 +1298,12 @@ fieldset:disabled .btn {
 
 
 .ep-serviceCard {
-    background-color: var(--ep-serviceCard-bg1);
-    background-image: linear-gradient(63deg, var(--ep-serviceCard-bg1) 0%, var(--ep-serviceCard-bg2) 100%), var(--ep-serviceCard-background-image);
-    background-position: var(--ep-serviceCard-background-position);
-    background-repeat: var(--ep-serviceCard-background-repeat);
-    background-size: var(--ep-serviceCard-background-size);
+    /* background-color: var(--ep-serviceCard-bg1); */
+    /* background-image: linear-gradient(63deg, var(--ep-serviceCard-bg1) 0%, var(--ep-serviceCard-bg2) 100%), var(--ep-serviceCard-background-image); */
+    /* background-position: var(--ep-serviceCard-background-position); */
+    /* background-repeat: var(--ep-serviceCard-background-repeat); */
+    /* background-size: var(--ep-serviceCard-background-size); */
+
 }
 
 /*statistics counters */
@@ -1406,15 +1417,19 @@ fieldset:disabled .btn {
 }
 
 .ep-serviceCard .ep-serviceCard-image {
-    width: var(--ep-serviceCardImage-width-resp);
+    /* width: var(--ep-serviceCardImage-width-resp);
     max-width: 100%;
     aspect-ratio: var(--ep-serviceCardImage-aspect-ratio);
     padding: var(--ep-serviceCardImage-padding);
     background-color: var(--ep-serviceCardImage-background);
     border-radius: var(--ep-serviceCardImage-border-radius);
-    object-fit: var(--ep-serviceCardImage-object-fit);
+    object-fit: var(--ep-serviceCardImage-object-fit); */
 }
-
+@media screen and (max-width: 576px) {
+  .ep-serviceCard .ep-serviceCard-image {
+      border-radius: 100%;
+  }
+}
 .ep-inner-svg,
 .ep-inner-svg2,
 .ep-inner-svg3 {
@@ -1480,6 +1495,7 @@ fieldset:disabled .btn {
     /* font-size: var(--ep-footer-font-size); */
     background-color: var(--ep-footer-bg);
     color: var(--ep-footer-color);
+    padding-top: var(--ep-footer-padding-top);
 }
 
 .ep-footer a {
@@ -1510,7 +1526,7 @@ fieldset:disabled .btn {
 
 .ep-footer-list a {
     color: var(--ep-footerInfo-link-color) !important;
-    font-weight: 500;
+    font-weight: 700;
     font-size: var(--ep-footerInfo-font-size);
 }
 
