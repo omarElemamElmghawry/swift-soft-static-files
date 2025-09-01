@@ -41,7 +41,7 @@
 } */
 
 /* start to be removed */
-@import "ep-main.css";
+/* @import "ep-main.css"; */
 
 /* INDEX */
 /*
@@ -57,7 +57,7 @@
 /* 1- General classes ************************************************************ */
 /* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
 /* if custom font , we will upload to CMS storage */
-@font-face {
+/* @font-face {
     font-family: 'custom-font-bold' !important;
     src: url('/fonts/FFShamelFamily-SansOneBold.eot') !important;
     src: url('/fonts/FFShamelFamily-SansOneBold.eot?#iefix') format('embedded-opentype'),
@@ -81,7 +81,7 @@
     font-weight: normal !important;
     font-style: normal !important;
     font-display: swap !important;
-}
+} */
 /* end to be removed */
 
 :root {
