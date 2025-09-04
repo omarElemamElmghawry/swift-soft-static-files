@@ -41,7 +41,7 @@
 } */
 
 /* start to be removed */
-@import "ep-main.css";
+/* @import "ep-main.css"; */
 
 /* INDEX */
 /*
@@ -57,7 +57,7 @@
 /* 1- General classes ************************************************************ */
 /* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
 /* if custom font , we will upload to CMS storage */
-@font-face {
+/* @font-face {
     font-family: 'custom-font-bold';
     src: url('/fonts/FFShamelFamily-SansOneBold.eot');
     src: url('/fonts/FFShamelFamily-SansOneBold.eot?#iefix') format('embedded-opentype'),
@@ -81,7 +81,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+} */
 /* end to be removed */
 
 :root {
@@ -375,10 +375,11 @@ select option {
     border: var(--ep-formControl-border) !important;
     background-color: var(--ep-formControl-background-color) !important;
     border-radius: var(--ep-formControl-border-radius) !important;
-    padding: 10px 16px !important;
+    padding: 21px 16px 8px 16px  !important;
     height: 48px !important;
     min-height: unset !important;
-    line-height: 3.6 !important;
+    font-size: 14px !important;
+    /* line-height: 3.6 !important; */
 }
 
 .form-control-iconed,
@@ -387,10 +388,11 @@ select option {
     border: var(--ep-formControl-border) !important;
     background-color: var(--ep-formControl-background-color) !important;
     border-radius: var(--ep-formControl-border-radius) !important;
-    padding: 25px 45px 5px 20px !important;
-    height: 55px !important;
+    padding: 21px 48px 8px 20px !important;
+    height: 48px !important;
     min-height: unset !important;
-    line-height: 3.6 !important;
+    font-size: 14px !important;
+    /* line-height: 3.6 !important; */
 }
 
 .form-select {
@@ -400,6 +402,7 @@ select option {
 
 .form-floating .form-select {
     padding-top: 0.5rem !important;
+    overflow: hidden !important;
 }
 
 .form-floating>label {
@@ -1379,7 +1382,7 @@ fieldset:disabled .btn {
 
 .ep-offer-separator {
     color: var(--ep-footer-separator-color);
-    height: 14px;
+    max-height: 14px;
 }
 
 .user-number {
@@ -1537,6 +1540,7 @@ fieldset:disabled .btn {
 
 i.ep-footer-vseparator {
     border-left: 1px solid var(--ep-footer-color);
+    height: 14px;
 }
 
 @media (min-width: 992px) {
@@ -1965,8 +1969,15 @@ i.ep-footer-vseparator {
     background-color: var(--ep-tabs-item-bg);
     color: var(--ep-tabs-item-color) !important;
     border-radius: var(--ep-tabs-item-border-radius);
-    padding: 12px 18px;
+    padding: 12px 18px !important;
     margin: 4px;
+}
+
+@media screen and(min-width:1200) {
+    .nav-link {
+        padding: 12px 20px !important;
+    }
+
 }
 
 .ep-tabs .nav-link.active {

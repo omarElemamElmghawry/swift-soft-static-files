@@ -43,8 +43,8 @@
   --ep-heading-color2: #12aae3; /* if we need gradiant => color ELSE transparent */
   --ep-headerGradiant-textFillColor: none; /*  if we need gradiant => transparent ELSE none*/
   --ep-headerGradiant-fit-content: none; /*  if we need gradiant => fit-content ELSE none*/
-  --ep-heading-margin-bottom: 2.5rem;
-  --ep-heading-margin-bottom-resp: 1.25rem;
+  --ep-heading-margin-bottom: 1.125rem;
+  --ep-heading-margin-bottom-resp: 1.125rem;
   --ep-firstWord-color: #313131; /* if we need to colorfiy first word */
   --ep-heading-underline: 0px solid #12aae3; /* border | none */
   --ep-heading-underline-width: 5%; /* px % 0*/
@@ -310,7 +310,7 @@
   --ep-formControl-background-color: #fff;
   --ep-formControl-border-radius: 1rem;
   --ep-formControl-label-color: #6b7280;
-  --ep-formControl-label-font-size: 14px;
+  --ep-formControl-label-font-size: 12px;
 
   /* popCard */
   --ep-popupCard-heading: var(--ep-body-color);
