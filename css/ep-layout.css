@@ -1428,7 +1428,7 @@ fieldset:disabled .btn {
     border-radius: var(--ep-serviceCardImage-border-radius);
     object-fit: var(--ep-serviceCardImage-object-fit); */
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .ep-serviceCard .ep-serviceCard-image {
       border-radius: 100%;
   }
@@ -2253,18 +2253,18 @@ i.ep-footer-vseparator {
     bottom: 20px;
     right: 20px;
     z-index: 1100;
-    padding: 13px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: bottom 0.3s ease-in-out;
+    /* padding: 13px !important; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+    /* transition: bottom 0.3s ease-in-out; */
 }
 
 .ep-body-scrolled .whatsapp-button {
-    bottom: 80px;
+    /* bottom: 80px; */
 }
 
 .whatsapp-button img {
-    width: 34px;
-    height: 34px;
+    width: 64px;
+    height: 64px;
 }
 
 .ep-links-to-sections {

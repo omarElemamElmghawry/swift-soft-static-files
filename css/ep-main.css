@@ -73,7 +73,7 @@
   --ep-btn-font-size-resp: 14px; /* button font size at mobile */
   --ep-btn-border-radius: 16px; /* button border radius at desktop */
   --ep-btn-border-radius-resp: 12px; /* button border radius at mobile */
-  --ep-btn-padding: 14px 32px; /* button top & bottom padding at desktop */
+  --ep-btn-padding: 12px 32px; /* button top & bottom padding at desktop */
   --ep-btn-padding-resp: 6px 16px; /* button top & bottom padding at desktop */
   --ep-btn-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
   --ep-btnSm-font-size: 14px; /* small button "btn-sm" font size at all */
@@ -165,7 +165,7 @@
   --ep-card-border-radius: 16px; /* card border radius  at desktop*/
   --ep-card-border-radius-resp: 16px; /* card border radius  at mobile*/
   --ep-card-padding: 32px 24px; /* card padding top at desktop*/
-  --ep-service-card-padding: 32px 0;
+  --ep-service-card-padding: 32px 16px;
   --ep-card-padding-resp: 16px; /* card padding top at mobile*/
   --ep-card-borderTop: 0 solid #12aae3;
   --ep-card-borderRight: 10px solid #12aae3;
