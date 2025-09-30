@@ -1797,7 +1797,13 @@ i.ep-footer-vseparator {
     font-family: var(--ep-main-font) !important;
     font-weight: 300 !important;
 }
-
+.ep-status-badge-default-position {
+  position: unset;
+  right: unset;
+  top: unset;
+  left: unset;
+  bottom: unset;
+}
 .ep-card-header {
     background-color: var(--ep-card-header-bg);
     color: var(--ep-card-header-color);
