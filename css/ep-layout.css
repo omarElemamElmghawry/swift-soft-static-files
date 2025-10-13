@@ -390,7 +390,10 @@ select option {
     min-height: unset !important;
     line-height: 3.6 !important;
 }
-
+:dir(ltr) .form-control-iconed,
+:dir(ltr) .form-select-iconed {
+    padding: 25px 20px 5px 45px !important;
+}
 .form-select {
   line-height: 3 !important;
   font-size: 14px;
@@ -1370,7 +1373,7 @@ fieldset:disabled .btn {
   top: 50%;
 
   left: 16px;
-  transform: translateY(-50%);
+  transform: translateY(-45%);
   pointer-events: none;
 }
 
@@ -1383,7 +1386,7 @@ fieldset:disabled .btn {
   position: absolute;
   top: 50%;
   right: 16px;
-  transform: translateY(-50%);
+  transform: translateY(-45%);
   background-size: cover;
   cursor: pointer;
   width: 24px;
