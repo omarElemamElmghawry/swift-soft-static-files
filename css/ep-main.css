@@ -285,7 +285,7 @@
   --ep-status-badge-padding: 4px 8px;
   --ep-status-badge-top: 12px;
   --ep-status-badge-end: 12px;
-  
+
 
   --ep-status-confirmed-badge-color: #226C1E;
   --ep-status-confirmed-badge-bg: #E9F0E9;
@@ -297,7 +297,7 @@
   --ep-side-user-menu-bg: #fff;
   --ep-side-user-menu-hover-bg: #f5f5f5;
   --ep-side-user-menu-color: #232929;
-  --ep-side-user-menu-link-color: #6B7280;    
+  --ep-side-user-menu-link-color: #6B7280;
   --ep-side-user-menu-link-hover-color: #BD0D44;/* card link:hover color */
 
   /*if card has header*/
@@ -414,7 +414,7 @@
     --ep-menu-OP2-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.0);
     --ep-menu-OP2-border-radius:0;
     --ep-menu-OP2-padding:0;*/
-    
+
   /*mega menu */
   --ep-mega-menu-card-bg:#F6F6F6;
   --ep-mega-menu-card-color:#232929;
@@ -494,6 +494,7 @@
   --ep-social-padding: 0;
   --ep-footerLink-color: #ffffff; /* footer link color */
   --ep-footerLinkIcons-color: #ffffff; /* footer SVG icon color */
+  --ep-footer-padding-top:56px;
 
   /* footer option2 */
   --ep-footer-OP2-bg: #710829; /* footer-OP2 background background color */
