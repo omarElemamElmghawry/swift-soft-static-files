@@ -560,7 +560,7 @@ a.ep-link:hover:after {
 
 @media (min-width: 992px) {
     .btn {
-        font-size: var(--ep-btn-font-size) !important;
+        font-size: var(--ep-btn-font-size-resp) !important;
         border-radius: var(--ep-btn-border-radius) !important;
         padding: var(--ep-btn-padding) !important
     }
