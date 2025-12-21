@@ -309,3 +309,7 @@ function getCookie(name) {
 }
 
 
+AOS.init({
+  duration: 800,
+  once: false,
+})
