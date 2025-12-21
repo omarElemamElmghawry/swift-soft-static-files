@@ -40,13 +40,13 @@
   --ep-cancelled-color: #9B1C1C; /* status cancelled background */
 
   /*Typography*/
-  --ep-heading-color1: #BD0D44; /* header main color */
+  --ep-heading-color1: #000; /* header main color */
   --ep-heading-color2: #BD0D44; /* if we need gradiant => color ELSE transparent */
   --ep-headerGradiant-textFillColor: none; /*  if we need gradiant => transparent ELSE none*/
   --ep-headerGradiant-fit-content: none; /*  if we need gradiant => fit-content ELSE none*/
   --ep-heading-margin-bottom: 2.5rem;
   --ep-heading-margin-bottom-resp: 1.25rem;
-  --ep-firstWord-color: #232929; /* if we need to colorfiy first word */
+  --ep-firstWord-color: #BD0D44; /* if we need to colorfiy first word */
   --ep-heading-underline: 0px solid #BD0D44; /* border | none */
   --ep-heading-underline-width: 5%; /* px % 0*/
   --ep-heading-underline-padding: 12px; /* px % 0*/
@@ -131,10 +131,11 @@
     255,
     0.486
   ); /* sectionLight background second color  if gradiant*/
+  --ep-section-bg2:#f7f7ff; /* section background second color  if gradiant*/
   --ep-sectionLight-color: inherit; /* sectionLight text color */
   --ep-sectionLight-link-color: #faf60c; /* sectionLight link color */
   --ep-sectionLight-link-hover-color: #ff00d4; /* sectionLight link:hover color */
-  --ep-sectionLight-background-image: url(../images/bg-extracted-from-brand.png);/* sectionLight background image ( URL | none ) */
+  /* --ep-sectionLight-background-image: url(../images/bg-extracted-from-brand.png);sectionLight background image ( URL | none ) */
   /*designer upload to Umbraco then use it as url*/
   --ep-sectionLight-background-mask: rgba(
     255,

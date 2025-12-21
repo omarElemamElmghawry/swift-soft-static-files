@@ -8,14 +8,6 @@ $(document).ready(function () {
       $('.ep-header-menu').removeClass('ep-header-menu-scrolled');
     }
   });
-
-  $('.ep-first-word-heading').html(function (_, html) {
-    return html.replace(/^(\S+)(\s|$)/, '<span class="ep-first-word">$1</span>$2');
-  });
-
-  $("#toggle-responsive-menu").click(function () {
-    $("#ep-side-user-menu").toggleClass("d-none");
-  });
 });
 // for toggle colors
 
@@ -206,7 +198,7 @@ $(document).ready(function () {
 
 
 
-// slick 
+// slick
 $(document).ready(function () {
   if ($('.responsiveSlider').length) {
     $('.responsiveSlider').slick({
