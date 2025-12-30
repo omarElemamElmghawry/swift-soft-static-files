@@ -96,9 +96,9 @@
     --ep-bld-font-weight: '700';*/
 
     --ep-main-font: 'custom-font-reg';
-    --ep-main-font-weight: '300';
+    --ep-main-font-weight: 300;
     --ep-bld-font: 'custom-font-bold';
-    --ep-bld-font-weight: '300';
+    --ep-bld-font-weight: 700;
     --bs-primary-rgb: 189, 13, 68 !important;
 }
 
