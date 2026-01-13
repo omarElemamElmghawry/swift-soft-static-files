@@ -3,6 +3,8 @@
   --ep-vheight-100: 100vh; /* general 100 height  of viewport */
   --ep-offers-img-ratio: 1/0.667; /* general image ratio for offers section */
   --ep-brand-color: #12aae3; /* 1st color */
+  /* RGB version of brand color for use with alpha (r, g, b) */
+  --ep-brand-color-rgb: 18, 170, 227;
   --ep-brand2-color: #594999; /* 2nd color */
   --ep-brand3-color: #12aae3; /* 3rd color */
   --ep-brand4-color: #e0e0e0;
@@ -166,19 +168,19 @@
   --ep-card-border-radius: 16px; /* card border radius  at desktop*/
   --ep-card-border-radius-resp: 16px; /* card border radius  at mobile*/
   --ep-card-padding: 32px 24px; /* card padding top at desktop*/
-  --ep-service-card-padding: 32px 16px;
-  --ep-card-padding-resp: 16px; /* card padding top at mobile*/
+  --ep-service-card-padding: 16px 12px;
+  --ep-card-padding-resp: 16px 12px; /* card padding top at mobile*/
   --ep-card-borderTop: 0 solid #12aae3;
-  --ep-card-borderRight: 10px solid #12aae3;
+  --ep-card-borderRight: 0px solid #12aae3;
   --ep-card-borderBottom: 0 dashed #12aae3;
   --ep-card-borderLeft: 0 dashed #12aae3;
   --ep-card-bg1: rgb(255, 255, 255); /* card background first color */
   --ep-card-bg2: rgb(255,255,255); /* card background second color  if gradiant*/
-  --ep-card-selected-bg1: var(--ep-card-bg1); /* card background first color */
+  --ep-card-selected-bg1: var(--ep-brand-color); /* card background first color */
   --ep-card-selected-bg2: var(
     --ep-card-bg2
   ); /* card background second color  if gradiant*/
-  --ep-card-selected-color: var(--ep-body-color); /* card text color */
+  --ep-card-selected-color: #fff; /* card text color */
   --ep-card-background-image: none; /* card background image ( URL | none ) */
   --ep-card-background-mask: rgba(
     0,
@@ -230,7 +232,8 @@
 
   /* accordionCARD ================================================================================================================================================================= */
   --ep-accordionCard-btn-size: 32px;
-  --ep-accordionCard-btn-bg: #12aae3;
+  --ep-accordionCard-btn-bg: #12AAE31A;
+  --ep-accordionCard-collapsed-btn-bg: #12aae3;
   --ep-accordionCard-btn-border-radius: 50%;
   --ep-accordionCard-btn-icon-size: unset;
   /* --ep-accordionCard-btn-icon: url(../images/accordion-arrow.svg);
@@ -255,10 +258,11 @@
   /* check in card  */
   --ep-selectable-icon-bottom: 16px;
   --ep-selectable-icon-end: 16px;
-  --ep-selectable-icon-size: 32px;
-  --ep-selectable-icon-bg: #f8e7ec;
-  --ep-selectable-checked-icon-bg: #12aae3;
+  --ep-selectable-icon-size: 40px;
+  --ep-selectable-icon-bg: transparent;
+  --ep-selectable-checked-icon-bg: transparent;
   --ep-selectable-icon-border-radius: 90%;
+  --ep-general-icon-bg:rgba(18, 170, 227, 0.10);
   /* --ep-selectable-icon-image: url(../images/selectable-icon.svg); */
 
   /* packages css */
@@ -306,7 +310,7 @@
 
   /* form */
   --ep-formControl-basic-color: var(--ep-body-color);
-  --ep-formControl-border: 1px solid #c3c6cb;
+  --ep-formControl-border: 0px solid #c3c6cb;
   --ep-formControl-focus-border: 1px solid #12AAE3;
   --ep-formControl-background-color: #fff;
   --ep-formControl-border-radius: 1rem;
@@ -392,7 +396,7 @@
   --ep-menu-color-active: #0a9cdc;
   --ep-menu-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
   --ep-menu-border-radius: 0;
-  --ep-menu-padding: 0;
+  --ep-menu-padding: 10px 16px;
 
   --ep-menu-OP2-scrolled-bg: #ffffff;
   --ep-menu-OP2-color: #ffff;
@@ -421,9 +425,10 @@
   --ep-mega-menu-imageLg-size: 240px;
 
   /* hero header */
+  --ep-navbar-height:80px ;/* used for the margin top of hero*/
   /* ep-slider option#1*/
-  --ep-sliderImg-sliderImg: 100vh; /*if customer design banner at same resolution => unset ELSE 100vh*/
-  --ep-sliderImg-sliderImg-resp: 80vh; /*if customer design banner at same resolution => unset ELSE 50vh*/
+  --ep-sliderImg-sliderImg: calc(100vh - var(--ep-navbar-height)); /*if customer design banner at same resolution => unset ELSE 100vh*/
+  --ep-sliderImg-sliderImg-resp: calc(100dvh - var(--ep-navbar-height)); /*if customer design banner at same resolution => unset ELSE 50vh*/
   --ep-slider-control-icon-size: 40px;
   /* --ep-slider-next-icon: url("../images/slider/next-1.svg"); we need to generate dozen of outline icons to be used */
   /* --ep-slider-prev-icon: url("../images/slider/prev-1.svg"); we need to generate dozen of outline icons to be used */
@@ -466,14 +471,14 @@
   ); /* map border radius  at desktop*/
 
   /*FOOTER */
-  --ep-footer-bg: #e7f7fc; /* footer background background color */
-  --ep-footer-color: #594999; /* footer text color */
+  --ep-footer-bg: linear-gradient(180deg, rgba(241, 245, 249, 0.80) 0%, rgba(226, 232, 240, 0.80) 100%); /* footer background background color */
+  --ep-footer-color: #000; /* footer text color */
   --ep-footer-color2: #12aae3; /* footer text secondary color */
   --ep-footer-font-size: 14px; /* "footer default text" font  at desktop */
   --ep-footerLink-color: #594999; /* footer link color */
   --ep-footerLink-hover-color: #12aae3; /* footer link:hover color */
   /**/
-  --ep-footerLinkIcons-color: #594999; /* footer SVG icon color */
+  --ep-footerLinkIcons-color: #12aae3; /* footer SVG icon color */
   --ep-footerHeaders-font-size: 16px; /* "footer headers" font size at desktop */
   /**/
   --ep-footerHeaders-font-size-resp: 14px; /* "footer headers" font size at mobile */
@@ -481,19 +486,21 @@
   --ep-footer-sub-header-color: #12aae3; /* "footer sub headers" color */
   --ep-footerInfo-part1-color: #594999; /* "footer info part1" color */
   --ep-footerInfo-part2-color: #594999; /* "footer info part2" color */
-  --ep-footerInfo-font-size: 12px; /* informations in footer font size */
+  --ep-footerInfo-font-size: 14px; /* informations in footer font size */
   --ep-footerInfo-link-color: #594999; /* informations in footer font size */
   --ep-footerInfo-link-hover-color: #12aae3; /* informations in footer font size */
   --ep-footer-separator-color: #12aae3; /*if border exist */
-  --ep-copyrights-bg: #e7f7fc; /* informations in footer background color */
-  --ep-social-links-bg1: rgba(123, 42, 42, 0);
+  --ep-copyrights-bg: var(--ep-footer-bg); /* informations in footer background color */
+  --ep-social-links-bg1: rgba(18, 170, 227, 0.10);
   --ep-social-links-bg2: rgba(255, 0, 0, 0);
   --ep-social-links-hover-bg1: #f00;
   --ep-social-links-hover-bg2: #f00;
-  --ep-social-links-border-radius: 0;
-  --ep-social-padding: 0;
+  --ep-social-links-border-radius: 50%;
+  --ep-social-links-padding: 10px;
+  --ep-social-links-height: 40px;
+  --ep-social-links-width: 40px;
   --ep-footerLink-color: #594999; /* footer link color */
-  --ep-footerLinkIcons-color: #594999; /* footer SVG icon color */
+  --ep-footerLinkIcons-color: #12aae3; /* footer SVG icon color */
   --ep-footer-padding-top:56px;
 
   /* footer option2 */
@@ -519,4 +526,12 @@
 
   /* stepper option2 */
   --ep-circle-OP2-border-radius: 12%; /* stepper circle border radius */
+
+  /* Btns */
+  --ep-action-btn-bg: var(--ep-brand-bg);
+  --ep-action-btn-hover-bg: var(--ep-brand2-bg);
+  --ep-action-btn-bg2: var(--ep-brand2-bg);
+  --ep-action-btn-hover-bg2: var(--ep-brand-bg);
+  --ep-action-btn-border-radius: 16px;
+  --ep-action-btn-color: white;
 }
