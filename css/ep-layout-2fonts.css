@@ -1676,15 +1676,15 @@ i.ep-footer-vseparator {
     bottom: var(--ep-selectable-icon-bottom);
     width: var(--ep-selectable-icon-size);
     height: var(--ep-selectable-icon-size);
+    background-image: var(--packageNotSelected) !important;
     border-radius: var(--ep-selectable-icon-border-radius);
-    background-color: var(--ep-selectable-icon-bg);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 100%;
     background-position: center;
 }
 
 .ep-card-selectable.selected .ep-selectable-icon {
-    background-color: var(--ep-selectable-checked-icon-bg);
+    background-image: var(--packageSelectedIcon) !important;
 }
 
 :dir(rtl) .ep-card-selectable .ep-selectable-icon {
