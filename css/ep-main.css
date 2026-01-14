@@ -280,8 +280,8 @@
 
   /* worker card css */
   /* --ep-user-image-zoom: url("../images/photo-zoom.svg"); we need to generate dozen of outline icons to be used */
-  --ep-user-image-zoom-size: 80px;
-  --ep-user-image-border-radius: 40px;
+  --ep-user-image-zoom-size: 64px;
+  --ep-user-image-border-radius: 12px;
 
   --ep-status-badge-color: #e6a70d; /*waiting is default */
   --ep-status-badge-font-size: 14px;

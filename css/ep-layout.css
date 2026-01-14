@@ -1365,7 +1365,6 @@ fieldset:disabled .btn {
 
 .ep-card-selectable.selected .ep-selectable-icon {
     background-image: var(--packageSelectedIcon) !important;
-
 }
 
 :dir(rtl) .ep-card-selectable .ep-selectable-icon {
@@ -1476,8 +1475,15 @@ fill: var(--ep-brand2-color);
   align-items:flex-start;
   column-gap: 12px;
 }
-
-
+.ep-indiv-worker-card .ep-list-iconed{
+  font-size: 14px;
+}
+.ep-indiv-worker-card .ep-dashed-separator{
+  border-top: 2px dashed #c4c4c4;
+}
+.ep-indiv-worker-card.selected .ep-dashed-separator{
+  border-top: 2px dashed #fff;
+}
 /* End Individual Worker Card */
 
 .ep-card:after {

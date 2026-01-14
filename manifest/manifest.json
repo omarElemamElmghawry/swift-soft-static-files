@@ -27,7 +27,11 @@
   ],
 
   "styles": [
-    { "href": "/media/wdpbwcqz/bundle.css" }
+    { "href": "/media/0frok33x/ep-main.css" },
+    { "href": "/media/tq3n0iw0/ep-layout.css" },
+    { "href": "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"},
+    { "href": "https://cdn.jsdelivr.net/npm/magniview@1.0.11/dist/magniview-min.css"},
+    { "href": "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" }
   ],
 
   "scripts": [
