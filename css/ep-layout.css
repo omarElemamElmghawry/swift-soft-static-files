@@ -1366,7 +1366,18 @@ fieldset:disabled .btn {
 .ep-card-selectable.selected .ep-selectable-icon {
     background-image: var(--packageSelectedIcon) !important;
 }
-
+.ep-card-selectable.selected .ep-prices-summary .ep-grandPrice {
+  color: #fff !important;
+}
+.ep-card-selectable.selected .ep-list-iconed svg *{
+  fill: #fff !important;
+}
+.ep-card-selectable.selected .ep-prices-summary .ep-grandPrice .ep-currency svg * {
+  fill: #fff !important;
+}
+.ep-card-selectable.selected .ep-dashed-separator{
+  border-top: 2px dashed #fff;
+}
 :dir(rtl) .ep-card-selectable .ep-selectable-icon {
     left: var(--ep-selectable-icon-end);
     right: unset;
@@ -1625,7 +1636,11 @@ fill: var(--ep-brand2-color);
 .ep-profession-card-content .profession-title{
   color: var(--ep-brand2-color);
 }
-
+.ep-profession-card-content .profession-desc{
+  color: #3F4B5D;
+  font-size: 14px;
+  line-height: 31.5px;
+}
 /* Hover = expand upward */
 .ep-profession-card:hover .ep-profession-card-content{
   max-height: 250px;
@@ -1646,6 +1661,9 @@ fill: var(--ep-brand2-color);
 }
 
 .ep-profession-card:hover .ep-profession-card-content .profession-title{
+  color:#fff;
+}
+.ep-profession-card:hover .ep-profession-card-content .profession-desc{
   color:#fff;
 }
 
