@@ -96,9 +96,9 @@
     --ep-bld-font: 'Alexandria';
     --ep-bld-font-weight: '700';*/
 
-    --ep-main-font: 'custom-font-reg';
+    --ep-main-font: 'custom-font';
     --ep-main-font-weight: 300;
-    --ep-bld-font: 'custom-font-bold';
+    --ep-bld-font: 'custom-font';
     --ep-bld-font-weight: 700;
     --bs-primary-rgb: 189, 13, 68 !important;
 }
@@ -1220,7 +1220,13 @@ fieldset:disabled .btn {
         padding: var(--ep-section-padding)
     }
 }
-
+.ep-app-section-inner{
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-size: cover;
+    background-position: center;
+    background-image: var(--ep-app-section-inner-bg-image);
+}
 .ep-section.ep-section-dark {
     color: var(--ep-sectionDark-color);
     background-color: var(--ep-sectionDark-bg1);
@@ -1628,7 +1634,7 @@ fill: var(--ep-brand2-color);
   align-items: center;
 }
 
-.ep-profession-card-content button{
+.ep-profession-card-content .ep-action-btn{
   margin-top: 10px;
   display: none;
 }
@@ -1651,12 +1657,12 @@ fill: var(--ep-brand2-color);
 }
 
 /* Button reveal */
-.ep-profession-card:hover .ep-profession-card-content button{
-  display: inline-block;
+.ep-profession-card:hover .ep-profession-card-content .ep-action-btn{
+  display: flex;
   color:#fff !important;
 }
 
-.ep-profession-card:hover .ep-profession-card-content button:hover{
+.ep-profession-card:hover .ep-profession-card-content .ep-action-btn:hover{
   color: var(--ep-brand-color) !important;
 }
 
@@ -2018,7 +2024,7 @@ section.ep-section .ep-blog-card.related-blog {
     border-radius: var(--ep-social-links-border-radius);
     width: var(--ep-social-links-width);
     height: var(--ep-social-links-height);
-    display: block;
+    display: inline;
   }
 
 .ep-footerHeaders {
@@ -3476,6 +3482,7 @@ i.ep-footer-vseparator {
   background: #FFF;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.10);
   padding: 16px 24px;
+  height: 100%;
 }
 
 .ep-branch-card img{

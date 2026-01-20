@@ -232,8 +232,8 @@
 
   /* accordionCARD ================================================================================================================================================================= */
   --ep-accordionCard-btn-size: 32px;
-  --ep-accordionCard-btn-bg: #12AAE31A;
-  --ep-accordionCard-collapsed-btn-bg: #12aae3;
+  --ep-accordionCard-btn-bg: #12aae3;
+  --ep-accordionCard-collapsed-btn-bg: #12AAE31A;
   --ep-accordionCard-btn-border-radius: 50%;
   --ep-accordionCard-btn-icon-size: unset;
   /* --ep-accordionCard-btn-icon: url(../images/accordion-arrow.svg);
@@ -475,7 +475,7 @@
   --ep-footer-color: #000; /* footer text color */
   --ep-footer-color2: #12aae3; /* footer text secondary color */
   --ep-footer-font-size: 14px; /* "footer default text" font  at desktop */
-  --ep-footerLink-color: #594999; /* footer link color */
+  --ep-footerLink-color: #000; /* footer link color */
   --ep-footerLink-hover-color: #12aae3; /* footer link:hover color */
   /**/
   --ep-footerLinkIcons-color: #12aae3; /* footer SVG icon color */
@@ -487,7 +487,7 @@
   --ep-footerInfo-part1-color: #594999; /* "footer info part1" color */
   --ep-footerInfo-part2-color: #594999; /* "footer info part2" color */
   --ep-footerInfo-font-size: 14px; /* informations in footer font size */
-  --ep-footerInfo-link-color: #594999; /* informations in footer font size */
+  --ep-footerInfo-link-color: #000; /* informations in footer font size */
   --ep-footerInfo-link-hover-color: #12aae3; /* informations in footer font size */
   --ep-footer-separator-color: #12aae3; /*if border exist */
   --ep-copyrights-bg: var(--ep-footer-bg); /* informations in footer background color */
@@ -499,7 +499,7 @@
   --ep-social-links-padding: 10px;
   --ep-social-links-height: 40px;
   --ep-social-links-width: 40px;
-  --ep-footerLink-color: #594999; /* footer link color */
+  --ep-footerLink-color: #000; /* footer link color */
   --ep-footerLinkIcons-color: #12aae3; /* footer SVG icon color */
   --ep-footer-padding-top:56px;
 
