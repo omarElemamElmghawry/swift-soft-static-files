@@ -95,9 +95,9 @@
     --ep-bld-font: 'Alexandria';
     --ep-bld-font-weight: '700';*/
 
-    --ep-main-font: 'custom-font-reg';
+    --ep-main-font: 'custom-font';
     --ep-main-font-weight: 300;
-    --ep-bld-font: 'custom-font-bold';
+    --ep-bld-font: 'custom-font';
     --ep-bld-font-weight: 700;
     --bs-primary-rgb: 189, 13, 68 !important;
 }
@@ -1251,9 +1251,7 @@ fieldset:disabled .btn {
     -moz-box-shadow: var(--ep-card-shadow);
     height: 100%;
 }
-.ep-card.ep-service-card{
-    padding: var(--ep-service-card-padding);
-}
+
 .ep-card.ep-card-selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
@@ -1273,13 +1271,13 @@ fieldset:disabled .btn {
     background-color: var(--ep-card-background-mask)
 }
 
-.ep-card a:not(.btn) {
+.ep-card a:not(.ep-action-btn) {
     color: var(--ep-card-link-color) !important;
     text-decoration: var(--ep-card-decoration) !important;
     position: relative
 }
 
-.ep-card a:not(.btn):after {
+.ep-card a:not(.ep-action-btn):after {
     content: "";
     position: absolute;
     left: 0;
@@ -1288,26 +1286,200 @@ fieldset:disabled .btn {
     border-bottom: var(--ep-card-underline)
 }
 
-.ep-card a:not(.btn):hover {
+.ep-card a:not(.ep-action-btn):hover {
     color: var(--ep-card-card-hover-color) !important;
     text-decoration: var(--ep-card-hover-decoration) !important
 }
 
-.ep-card a:not(.btn):hover:after {
+.ep-card a:not(.ep-action-btn):hover:after {
     border-bottom: var(--ep-card-hover-underline);
 }
 
-
-
-
-.ep-serviceCard {
-    /* background-color: var(--ep-serviceCard-bg1); */
-    /* background-image: linear-gradient(63deg, var(--ep-serviceCard-bg1) 0%, var(--ep-serviceCard-bg2) 100%), var(--ep-serviceCard-background-image); */
-    /* background-position: var(--ep-serviceCard-background-position); */
-    /* background-repeat: var(--ep-serviceCard-background-repeat); */
-    /* background-size: var(--ep-serviceCard-background-size); */
-
+/* Helper Classes */
+.ep-text-heading {
+  color: var(--ep-heading-color1) !important;
 }
+
+.ep-list-iconed li::before {
+  background: var(--listIcon1) var(--ep-brand-bg) no-repeat center;
+}
+
+.rounded-28 {
+  border-radius: 28px !important;
+}
+
+/* Base Service Card */
+.ep-service-card {
+  background-color: #f7f7f7 !important;
+  background: #f7f7f7 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 28px !important;
+  position: relative;
+  overflow: hidden; /* Ensures the sliding background stays inside the card */
+  z-index: 1;
+}
+
+/* Sliding Background Overlay */
+.ep-service-card:not(.no-hover)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-brand-color) !important;
+  background: var(--ep-brand-color) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  z-index: -1;
+  transition: all 0.3s ease;
+  right: -100%;
+  left: auto;
+}
+
+/* RTL Support for Overlay */
+[dir="rtl"] .ep-service-card:not(.no-hover)::before {
+  right: auto;
+  left: -100%;
+}
+
+/* Hover States - Sliding Animation */
+.ep-service-card:not(.no-hover):hover::after {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .ep-service-card:not(.no-hover):hover::before {
+  right: auto;
+  left: 0;
+}
+
+/* Hover States - Content Changes */
+.ep-service-card:not(.no-hover):hover .ep-text-heading {
+  color: white !important;
+}
+
+.ep-service-card:not(.no-hover):hover .ep-list-iconed li {
+  color: white !important;
+}
+
+/* Button States inside Card */
+.ep-service-card .ep-action-btn-outline {
+  background-color: white !important;
+  background: white !important;
+  color: var(--ep-brand-color) !important;
+  border: 1px solid var(--ep-brand-color) !important;
+}
+/* --- Blog Card Component --- */
+.ep-blog-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px !important;
+  z-index: 1;
+  overflow: hidden;
+  background: #f7f7f7 !important;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sliding Background Overlay */
+.ep-blog-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--ep-brand-color) !important;
+  border-radius: 8px !important;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+/* Card Hover Interactions */
+.ep-blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ep-blog-card:hover::after {
+  right: 0;
+}
+
+/* Text color changes on hover */
+.ep-blog-card:hover h4,
+.ep-blog-card:hover p {
+  color: white !important;
+}
+
+.ep-blog-card:hover small {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* --- Avatar Styles --- */
+.avatar {
+  min-width: 56px;
+  height: 56px;
+  margin: 8px;
+  border-radius: 50%;
+  background-color: var(--ep-brand-color);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--ep-brand-color) 15%, transparent);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.ep-blog-card:hover .avatar,
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Button Trigger Logic --- */
+/* This ensures the button inside the card animates when the card is hovered */
+/* .ep-action-btn-primary:hover::before {
+  right: 0 !important;
+  opacity: 1 !important;
+}
+
+/* Specifically for the blog button variant mentioned in your SCSS */
+.ep-action-btn-primary.blog-btn {
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+.ep-blog-card:hover .ep-action-btn-primary svg {
+  fill: white;
+  transform: scale(1.1);
+}
+
+
+/* Info Image Container */
+.info-image-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* No-Hover State Overrides */
+.ep-service-card.no-hover::after {
+  display: none !important;
+}
+
+.ep-service-card.no-hover:hover .ep-text-heading {
+  color: var(--ep-brand-color) !important;
+}
+
+.ep-service-card.no-hover:hover .ep-list-iconed li {
+  color: inherit !important;
+}
+
 
 /*statistics counters */
 .counter {
@@ -1405,34 +1577,6 @@ fieldset:disabled .btn {
     border-radius: 0;
 }
 
-
-
-.ep-serviceCard:after {
-    background-color: var(--ep-serviceCard-background-mask)
-}
-
-.ep-serviceCard a:not(.btn) {
-    color: var(--ep-serviceCard-link-color);
-}
-
-.ep-serviceCard a:not(.btn):hover {
-    color: var(--ep-serviceCard-card-hover-color);
-}
-
-.ep-serviceCard .ep-serviceCard-image {
-    /* width: var(--ep-serviceCardImage-width-resp);
-    max-width: 100%;
-    aspect-ratio: var(--ep-serviceCardImage-aspect-ratio);
-    padding: var(--ep-serviceCardImage-padding);
-    background-color: var(--ep-serviceCardImage-background);
-    border-radius: var(--ep-serviceCardImage-border-radius);
-    object-fit: var(--ep-serviceCardImage-object-fit); */
-}
-@media screen and (max-width: 768px) {
-  .ep-serviceCard .ep-serviceCard-image {
-      border-radius: 100%;
-  }
-}
 .ep-inner-svg,
 .ep-inner-svg2,
 .ep-inner-svg3 {
@@ -1486,10 +1630,6 @@ fieldset:disabled .btn {
 @media (min-width: 992px) {
     .ep-card {
         padding: var(--ep-card-padding)
-    }
-
-    .ep-serviceCard .ep-serviceCard-image {
-        width: var(--ep-serviceCardImage-width);
     }
 }
 
@@ -1678,13 +1818,11 @@ i.ep-footer-vseparator {
     height: var(--ep-selectable-icon-size);
     border-radius: var(--ep-selectable-icon-border-radius);
     background-color: var(--ep-selectable-icon-bg);
-    background-repeat: no-repeat;
-    background-size: 60%;
-    background-position: center;
+    background: var(--packageNotSelected) no-repeat center;
 }
 
 .ep-card-selectable.selected .ep-selectable-icon {
-    background-color: var(--ep-selectable-checked-icon-bg);
+    background: var(--packageSelectedIcon) no-repeat center;
 }
 
 :dir(rtl) .ep-card-selectable .ep-selectable-icon {
@@ -2756,3 +2894,170 @@ i.ep-footer-vseparator {
     color: var(--ep-formControl-label-color);
 }
 /* end customize package */
+/* Helper class */
+.rounded-28 {
+  border-radius: 28px !important;
+}
+
+/* Base Button Style (Structural) */
+.ep-action-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex; /* Use inline-flex so it doesn't take 100% width by default */
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 28px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  z-index: 1;
+  border: none; /* Reset default button border */
+  outline: none;
+}
+
+/* --- 1. PRIMARY (Original) --- */
+.ep-action-btn-primary {
+  background-color: var(--ep-brand-color);
+  color: white !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.ep-action-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background-color: var(--ep-brand2-color);
+  opacity: 0;
+  z-index: -1;
+  transition: right 0.3s ease-out, opacity 0.1s ease-out;
+}
+.ep-blog-card:hover .ep-action-btn-primary::before,
+.ep-service-card:hover .ep-action-btn-primary::before,
+.ep-action-btn-primary:hover::before {
+  right: 0;
+  opacity: 1;
+}
+
+/* --- 2. SECONDARY (Flipped) --- */
+.ep-action-btn-secondary {
+  background-color: var(--ep-brand2-color);
+  color: #fff !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--ep-brand2-color); /* Light border to define shape on white backgrounds */
+}
+.ep-action-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-brand-color); /* Slides in brand color */
+  opacity: 0;
+  z-index: -1;
+  transition: right 0.3s ease-out, opacity 0.1s ease-out;
+}
+.ep-action-btn-secondary:hover {
+  color: white !important;
+}
+.ep-action-btn-secondary:hover::before {
+  right: 0;
+  opacity: 1;
+}
+
+/* --- 3. TRANSPARENT --- */
+.ep-action-btn-transparent {
+  background-color: transparent;
+  color: var(--ep-brand-color) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.ep-action-btn-transparent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-brand-color);
+  opacity: 0;
+  z-index: -1;
+  transition: right 0.3s ease-out, opacity 0.1s ease-out;
+}
+.ep-action-btn-transparent:hover {
+  color: white !important;
+}
+.ep-action-btn-transparent:hover::before {
+  right: 0;
+  opacity: 1;
+}
+
+/* --- 4. OUTLINE --- */
+.ep-action-btn-outline {
+  background-color: transparent;
+  color: var(--ep-brand-color) !important;
+  border: 1px solid var(--ep-brand-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ep-action-btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ep-brand-color);
+  opacity: 0;
+  z-index: -1;
+  transition: right 0.3s ease-out, opacity 0.1s ease-out;
+}
+.ep-service-card:hover .ep-action-btn-outline,
+.ep-action-btn-outline:hover {
+  color: white !important;
+}
+.ep-service-card:hover .ep-action-btn-outline::before,
+.ep-action-btn-outline:hover::before {
+  right: 0;
+  opacity: 1;
+}
+
+/* Active and Disabled states */
+.ep-action-btn:active {
+  transform: scale(0.98);
+}
+
+.ep-action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Icon and Text handling */
+.ep-action-btn img,
+.ep-action-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.ep-action-btn img {
+  transition: transform 0.3s ease;
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+}
