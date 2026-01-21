@@ -1634,7 +1634,7 @@ fill: var(--ep-brand2-color);
   align-items: center;
 }
 
-.ep-profession-card-content .ep-action-btn{
+.ep-profession-card-content .ep-action-btn-transparent{
   margin-top: 10px;
   display: none;
 }
@@ -1657,13 +1657,15 @@ fill: var(--ep-brand2-color);
 }
 
 /* Button reveal */
-.ep-profession-card:hover .ep-profession-card-content .ep-action-btn{
+.ep-profession-card:hover .ep-profession-card-content .ep-action-btn-transparent{
   display: flex;
+  background-color: transparent;
   color:#fff !important;
 }
 
-.ep-profession-card:hover .ep-profession-card-content .ep-action-btn:hover{
+.ep-profession-card:hover .ep-profession-card-content .ep-action-btn-transparent:hover{
   color: var(--ep-brand-color) !important;
+  background-color: #fff !important;
 }
 
 .ep-profession-card:hover .ep-profession-card-content .profession-title{
@@ -1789,13 +1791,13 @@ section.ep-section .ep-blog-card.related-blog {
 
 .ep-blog-card:hover .ep-action-btn {
   background: var(--ep-action-btn-hover-bg);
-  color: var(--ep-action-btn-hover-color);
+  color: var(--ep-action-btn-hover-color, #fff) !important;
 }
 
 /* transparent variant behaves differently */
 .ep-blog-card:hover .ep-action-btn-transparent {
   background: #fff;
-  color: var(--ep-brand-color, #007bff) !important;
+  color: var(--ep-brand-color) !important;
   border-color: transparent;
 }
 
@@ -3260,6 +3262,7 @@ i.ep-footer-vseparator {
 /* custom Buttons */
 
 /* Action button: animated dash and background color fade; svg hides with fade */
+/* 1. SHARED BASE CLASS (Layout & Animations) */
 .ep-action-btn {
     display: inline-flex;
     align-items: center;
@@ -3267,16 +3270,53 @@ i.ep-footer-vseparator {
     padding: 10px 24px;
     border: none;
     border-radius: var(--ep-action-btn-border-radius);
-    background: var(--ep-action-btn-bg, #007bff);
-    color: var(--ep-action-btn-color, #fff) !important;
     cursor: pointer;
     font: inherit;
-    transition: background-color .28s ease, color .18s ease;
+    transition: background-color .28s ease, color .18s ease, border-color .28s ease;
     position: relative;
-    font-weight:700;
-    font-size:1rem;
-
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none; /* In case it's an <a> tag */
 }
+
+/* 2. PRIMARY VARIANT */
+.ep-action-btn-primary {
+    background: var(--ep-action-btn-bg, #007bff);
+    color: var(--ep-action-btn-color, #fff) !important;
+}
+
+.ep-action-btn-primary:hover,
+.ep-action-btn-primary:focus {
+    background: var(--ep-action-btn-hover-bg, #0056b3);
+    color: var(--ep-action-btn-hover-color, #fff);
+}
+
+/* 3. SECONDARY VARIANT */
+.ep-action-btn-secondary {
+    background: var(--ep-action-btn-bg2, --ep-brand2-color);
+    color: var(--ep-action-btn-color-secondary, #fff) !important;
+    border: 1px solid var(--ep-action-btn-color-secondary, #fff);
+}
+
+.ep-action-btn-secondary:hover,
+.ep-action-btn-secondary:focus {
+    background: var(--ep-action-btn-hover-bg2, #007bff);
+    color: var(--ep-action-btn-hover-color2, #fff) !important;
+}
+
+/* 4. Transparent VARIANT */
+.ep-action-btn-transparent {
+    background: var(--ep-action-btn-bg-transparent, transparent);
+    color: var(--ep-brand-color, #007bff) !important;
+    border: 1px solid var(--ep-action-btn-color-transparent, transparent);
+}
+.ep-action-btn-transparent:hover,
+.ep-action-btn-transparent:focus {
+    background: var(--ep-action-btn-hover-bg-transparent, #fff);
+    color: var(--ep-action-btn-hover-color-transparent, --ep-brand-color) !important;
+}
+/* --- ANIMATION LOGIC (Applies to all variants) --- */
+
 .ep-action-btn svg,
 .ep-action-btn img {
     width: 1em;
@@ -3286,31 +3326,25 @@ i.ep-footer-vseparator {
     opacity: 1;
     transform: translateX(0);
 }
-/* keep ::before present but hidden; animate into view on hover */
+
 .ep-action-btn::before {
     content: "\2014\00a0";
     display: none;
+}
 
-}
-.ep-action-btn:hover,
-.ep-action-btn:focus {
-    background: var(--ep-action-btn-hover-bg);
-    color: var(--ep-action-btn-hover-color);
-}
 .ep-action-btn:hover span,
-.ep-action-btn:focus span{
-  /* default (no dir) falls back to LTR */
-  animation: ep-btn-word-slide-ltr .36s cubic-bezier(.4,.9,.3,1) forwards;
+.ep-action-btn:focus span {
+    animation: ep-btn-word-slide-ltr .36s cubic-bezier(.4,.9,.3,1) forwards;
 }
 
 :dir(ltr) .ep-action-btn:hover span,
-:dir(ltr) .ep-action-btn:focus span{
-  animation: ep-btn-word-slide-ltr .36s cubic-bezier(.4,.9,.3,1) forwards;
+:dir(ltr) .ep-action-btn:focus span {
+    animation: ep-btn-word-slide-ltr .36s cubic-bezier(.4,.9,.3,1) forwards;
 }
 
 :dir(rtl) .ep-action-btn:hover span,
-:dir(rtl) .ep-action-btn:focus span{
-  animation: ep-btn-word-slide-rtl .36s cubic-bezier(.4,.9,.3,1) forwards;
+:dir(rtl) .ep-action-btn:focus span {
+    animation: ep-btn-word-slide-rtl .36s cubic-bezier(.4,.9,.3,1) forwards;
 }
 
 .ep-action-btn:hover svg,
@@ -3319,7 +3353,7 @@ i.ep-footer-vseparator {
 .ep-action-btn:focus img {
     opacity: 0;
     pointer-events: none;
-    display:none;
+    display: none;
 }
 
 :dir(ltr) .ep-action-btn:hover svg,
@@ -3355,76 +3389,27 @@ i.ep-footer-vseparator {
     animation: ep-dash-slide-rtl .36s cubic-bezier(.4,.9,.3,1) forwards;
 }
 
+/* Keyframes remain unchanged */
 @keyframes ep-dash-slide-ltr {
-    0% {
-        transform: translateX(-50%);
-        opacity: 0;
-    }
-    60% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    0% { transform: translateX(-50%); opacity: 0; }
+    60% { opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes ep-dash-slide-rtl {
-    0% {
-        transform: translateX(50%);
-        opacity: 0;
-    }
-    60% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    0% { transform: translateX(50%); opacity: 0; }
+    60% { opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
 }
+
 @keyframes ep-btn-word-slide-ltr {
-    0% {
-        transform: translateX(-1rem);
-    }
-    100% {
-        transform: translateX(0);
-    }
+    0% { transform: translateX(-1rem); }
+    100% { transform: translateX(0); }
 }
+
 @keyframes ep-btn-word-slide-rtl {
-    0% {
-        transform: translateX(1rem);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* Secondary variant: flipped background/text colors */
-.ep-action-btn-secondary {
-    background: var(--ep-action-btn-bg2, #fff);
-    color: var(--ep-action-btn-color, #007bff) !important;
-    border: 1px solid transparent;
-}
-.ep-action-btn-secondary:hover,
-.ep-action-btn-secondary:focus {
-    background: var(--ep-action-btn-hover-bg2, #0056b3);
-    color: var(--ep-action-btn-hover-color, #fff) !important;
-}
-
-.ep-action-btn-transparent {
-    background: transparent;
-    color: var(--ep-brand-color, #007bff) !important;
-    /* border: 1px solid var(--ep-brand-color, #007bff); */
-}
-.ep-action-btn-transparent svg,
-.ep-action-btn-transparent img {
-    fill: currentColor !important;
-}
-.ep-action-btn-transparent:hover,
-.ep-action-btn-transparent:focus {
-    background: #fff;
-    color: var(--ep-brand-color, #007bff) !important;
-    border-color: transparent;
+    0% { transform: translateX(1rem); }
+    100% { transform: translateX(0); }
 }
 
 /* Home Services Tabs */
