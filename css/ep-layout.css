@@ -1268,7 +1268,7 @@ fieldset:disabled .btn {
 }
 .ep-page-title-header {
   color:#fff;
-  font-size:24px;
+  font-size:24px !important;
   font-weight: 700;
 }
 .ep-page-title-header::before{
@@ -3135,7 +3135,7 @@ i.ep-footer-vseparator {
 
 .custom-input-group-button span {
     position: relative;
-    top: 5px;
+    /* top: 5px; */
     font-size: 30px;
     color: #fff;
 }
@@ -3315,6 +3315,11 @@ i.ep-footer-vseparator {
 .ep-action-btn-transparent:focus {
     background: var(--ep-action-btn-hover-bg-transparent, #fff);
     color: var(--ep-action-btn-hover-color-transparent, --ep-brand-color) !important;
+}
+:disabled.ep-action-btn{
+    background: var(--ep-action-btn-disabled-bg, #e0e0e0);
+    color: var(--ep-action-btn-disabled-color, #a0a0a0) !important;
+    cursor: not-allowed;
 }
 /* --- ANIMATION LOGIC (Applies to all variants) --- */
 
