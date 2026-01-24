@@ -1384,6 +1384,11 @@ fieldset:disabled .btn {
   flex-direction: column;
   align-items: center;
 }
+.ep-blog-card .ep-blog-card-image {
+  width: 100%;
+  border-radius: 8px 8px 0 0 !important;
+  overflow: hidden;
+}
 
 /* Sliding Background Overlay */
 .ep-blog-card::after {
@@ -2920,10 +2925,16 @@ i.ep-footer-vseparator {
   outline: none;
 }
 
+:disabled.ep-action-btn{
+    background: var(--ep-action-btn-disabled-bg, #e0e0e0);
+    color: var(--ep-action-btn-disabled-color, #a0a0a0) !important;
+    cursor: not-allowed;
+}
 /* --- 1. PRIMARY (Original) --- */
 .ep-action-btn-primary {
   background-color: var(--ep-brand-color);
   color: white !important;
+  fill: white !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
