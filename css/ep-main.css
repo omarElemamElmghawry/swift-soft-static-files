@@ -247,9 +247,12 @@
   --ep-small-map-size: 100px;
   --ep-small-map-iframe-border: 0px solid rgb(199, 199, 199);
   --ep-small-map-iframe-border-radius: 8px;
-  --ep-address-badge-color: #fff;
+  --ep-address-badge-color: var(--ep-brand-color);
+  --ep-address-badge-selected-color: #fff;
   --ep-address-badge-font-size: 12px;
-  --ep-address-badge-bg: #12aae3;
+  --ep-address-badge-bg: rgba(18, 170, 227, 0.10);
+  --ep-address-badge-selected-bg: rgba(255, 255, 255, 0.10);
+
   --ep-address-badge-border-radius: 8px;
   --ep-address-badge-padding: 4px 8px;
   --ep-address-badge-top: 12px;
