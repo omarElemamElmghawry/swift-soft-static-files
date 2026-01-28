@@ -3072,3 +3072,160 @@ i.ep-footer-vseparator {
 .rotate-icon {
   transform: rotate(180deg);
 }
+
+/* Pagination styles */
+.ngx-pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ngx-pagination li {
+  list-style: none;
+}
+
+.ngx-pagination li.small-screen {
+  display: none;
+}
+
+.ngx-pagination li::before,
+.ngx-pagination li::after {
+  display: none !important;
+  content: none !important;
+}
+
+.ngx-pagination li a,
+.ngx-pagination li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: var(--ep-pagination-border-radius) !important;
+  background-color: var(--ep-pagination-link-bg);
+  color: var(--ep-pagination-link-color);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ngx-pagination li a::before,
+.ngx-pagination li a::after,
+.ngx-pagination li span::before,
+.ngx-pagination li span::after {
+  display: none !important;
+  content: none !important;
+}
+
+.ngx-pagination li a .show-for-sr,
+.ngx-pagination li span .show-for-sr {
+  display: none;
+}
+
+.ngx-pagination li a {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ngx-pagination li a:hover {
+  background: var(--ep-pagination-link-bg);
+}
+
+.ngx-pagination li a:hover:not([aria-disabled="true"]) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ngx-pagination li a span {
+  box-shadow: none !important;
+}
+
+.ngx-pagination li a span:hover {
+  box-shadow: none !important;
+}
+
+.ngx-pagination li > span {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ngx-pagination li.current {
+  background: none;
+}
+
+.ngx-pagination li.current a,
+.ngx-pagination li.current span {
+  background-color: var(--ep-pagination-link-active-bg) !important;
+  color: var(--ep-pagination-link-active-color) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transform: scale(1.1);
+}
+
+.ngx-pagination li.disabled a,
+.ngx-pagination li.disabled span {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--ep-pagination-link-bg);
+  color: var(--ep-pagination-link-color);
+}
+
+.ngx-pagination li.disabled a:hover,
+.ngx-pagination li.disabled span:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--ep-pagination-link-bg);
+}
+
+.ngx-pagination li.pagination-next:not(.disabled) a,
+.ngx-pagination li.pagination-next:not(.disabled) span {
+  background-color: var(--ep-pagination-link-bg);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Responsive pagination for small screens */
+@media (max-width: 768px) {
+  .ngx-pagination {
+    gap: 8px;
+  }
+
+  .ngx-pagination li a,
+  .ngx-pagination li span {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* Hide all page numbers except current */
+  .ngx-pagination li:not(.current):not(.pagination-previous):not(.pagination-next):not(.disabled) {
+    display: none;
+  }
+
+  /* Show ellipsis items */
+  .ngx-pagination li.small-screen {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ngx-pagination {
+    gap: 6px;
+  }
+
+  .ngx-pagination li a,
+  .ngx-pagination li span {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .ngx-pagination li.pagination-next:not(.disabled) a,
+  .ngx-pagination li.pagination-next:not(.disabled) span {
+    font-size: 16px;
+  }
+}
+/* End Pagination styles */
