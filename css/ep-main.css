@@ -348,7 +348,7 @@
   --ep-tabs-item-color: #000000;
   --ep-tabs-op2-item-color: #8b8b8b;
   --ep-tabs-op2-color: transparent;
-  --ep-tabs-item-color-active: #ffffff;
+  --ep-tabs-item-color-active:var(--ep-brand-color);
   --ep-tabs-item-bg-active: #12aae3;
   --ep-tabs-item-border-radius: 12px;
 

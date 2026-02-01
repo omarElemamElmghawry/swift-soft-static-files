@@ -2471,30 +2471,49 @@ i.ep-footer-vseparator {
 }
 
 /* tabs */
+/* Updated ep-tabs to match ep-services-section-tabs style */
 .ep-tabs {
-    background-color: var(--ep-tabs-bg);
-    border-radius: var(--ep-tabs-border-radius);
+    background-color: transparent; /* Removed var(--ep-tabs-bg) */
+    border-bottom: 2px solid #E5E5E5;
+    border-radius: 0;
+    display: flex; /* Ensures gap works */
+    gap: 8px;
 }
 
 .ep-tabs .nav-link {
-    background-color: var(--ep-tabs-item-bg);
-    color: var(--ep-tabs-item-color) !important;
-    border-radius: var(--ep-tabs-item-border-radius);
-    padding: 12px 18px !important;
-    margin: 4px;
+    background-color: transparent !important;
+    color: #6C757D !important;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0 !important;
+    padding: 12px 24px !important;
+    margin: 0; /* Removed the 4px margin to align with the bottom border */
+    font-weight: 700;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: -2px; /* This overlaps the border-bottom of the parent container */
 }
 
-@media screen and(min-width:1200) {
-    .nav-link {
-        padding: 12px 20px !important;
-    }
-
+.ep-tabs .nav-link:hover {
+    color: var(--ep-brand-color) !important;
+    background-color: transparent !important;
 }
 
 .ep-tabs .nav-link.active {
-    background-color: var(--ep-tabs-item-bg-active);
-    color: var(--ep-tabs-item-color-active) !important;
+    background-color: transparent !important;
+    color: var(--ep-brand-color) !important;
+    border-bottom: 2px solid var(--ep-tabs-item-color-active) !important;
+    font-weight: 700;
 }
+
+/* Updated Media Query for consistency */
+@media screen and (min-width: 1200px) {
+    .ep-tabs .nav-link {
+        padding: 12px 24px !important; /* Aligned with service tabs */
+    }
+}
+
 
 .ep-tabs-2 {
     background-color: var(--ep-tabs-op2-color);
@@ -3566,7 +3585,7 @@ i.ep-footer-vseparator {
 }
 
 .ngx-pagination li a .show-for-sr,
-.ngx-pagination li span .show-for-sr {
+.ngx-pagination li>span .show-for-sr {
   display: none;
 }
 
@@ -3610,9 +3629,21 @@ i.ep-footer-vseparator {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .ngx-pagination { gap: 8px; }
-  .ngx-pagination li a, .ngx-pagination li span {
+  .ngx-pagination li a, .ngx-pagination li>span {
     width: 40px;
     height: 40px;
     font-size: 14px;
+  }
+  .ngx-pagination li:not(.current):not(.pagination-next):not(.pagination-previous) {
+    display: none;
+  }
+  .ngx-pagination li.current + li:not(.small-screen),
+  .ngx-pagination li:has(+ li.current):not(.small-screen) {
+    display: block !important;
+  }
+}
+@media (max-width: 425px) {
+  .ngx-pagination li:not(.current):not(.pagination-next):not(.pagination-previous) {
+    display: none !important;
   }
 }
