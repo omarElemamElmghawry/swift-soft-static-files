@@ -1320,6 +1320,11 @@ fieldset:disabled .btn {
   z-index: 1;
 }
 
+.ep-service-card-image{
+  max-width:168px;
+  max-height: 168px;
+}
+
 /* Sliding Background Overlay */
 .ep-service-card:not(.no-hover)::after {
   content: '';
