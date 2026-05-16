@@ -1,0 +1,11 @@
+{
+  "name": "swift-soft-static-files",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "bundle": "node bundle-css.js"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3"
+  }
+}
