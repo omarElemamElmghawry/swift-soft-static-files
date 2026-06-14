@@ -62,7 +62,7 @@
   --ep-h5-font-size-resp: 14px; /* "h5" font size at mobile */
   --ep-h6-font-size: 14px; /* "h6" font size at desktop */
   --ep-h6-font-size-resp: 12px; /* "h6" font size at mobile */
-  --ep-p-font-size: 18px; /* "p" font size at desktop */
+  --ep-p-font-size: 16px; /* "p" font size at desktop */
   --ep-p-font-size-resp: 14px; /* "p" font size at mobile */
   --ep-sub-font-size: 14px; /* "sub text" font size at desktop */
   --ep-small-font-size: 12px; /* "small text" font size at desktop */
@@ -70,7 +70,7 @@
   /* GENERAL BUTTONS */
   --ep-btn-disabled-opacity: 0.3; /* disabled button opacity */
   --ep-btn-disabled-filter: 1; /* disabled button grayscale 0-to-1 */
-  --ep-btn-font-size: 18px; /* button font size at desktop */
+  --ep-btn-font-size: 16px; /* button font size at desktop */
   --ep-btn-font-size-resp: 14px; /* button font size at mobile */
   --ep-btn-border-radius: 16px; /* button border radius at desktop */
   --ep-btn-border-radius-resp: 12px; /* button border radius at mobile */
@@ -103,10 +103,8 @@
   --ep-btnSecondary-hover-border: 1px solid #F1A59E; /* secondary button:hover border color */
 
   --ep-list-iconed-padding: 4px;
-  /* --ep-list-iconed-image: url(../images/list/list-icon-1.svg); */
 
   --ep-list-iconed2-padding: 4px;
-  --ep-list-iconed2-image: url(../images/list/list-icon-2.svg);
   --ep-list-iconed2-bg: rgba(255, 255, 255, 0);
   --ep-list-iconed2-value: var(--ep-brand2-color);
 
@@ -135,7 +133,6 @@
   --ep-sectionLight-color: inherit; /* sectionLight text color */
   --ep-sectionLight-link-color: #faf60c; /* sectionLight link color */
   --ep-sectionLight-link-hover-color: #ff00d4; /* sectionLight link:hover color */
-  /* --ep-sectionLight-background-image: url(../images/bg-extracted-from-brand.png);sectionLight background image ( URL | none ) */
   /*designer upload to Umbraco then use it as url*/
   --ep-sectionLight-background-mask: rgba(
     255,
@@ -152,7 +149,6 @@
   --ep-sectionDark-color: #ffffff; /* sectionDark text color */
   --ep-sectionDark-link-color: #ff00ff; /* sectionDark link color */
   --ep-sectionDark-link-hover-color: #0004ff; /* sectionDark link:hover color */
-  --ep-sectionDark-background-image: url(../images/bg-extracted-from-brand.png);/* sectionDark background image ( URL | none ) */
   --ep-sectionDark-background-mask: rgba(
     0,
     0,
@@ -234,8 +230,6 @@
   --ep-accordionCard-btn-bg: #BD0D44;
   --ep-accordionCard-btn-border-radius: 50%;
   --ep-accordionCard-btn-icon-size: unset;
-  --ep-accordionCard-btn-plus-icon: url(../images/accordion-plus.svg);
-  --ep-accordionCard-btn-minus-icon: url(../images/accordion-minus.svg);
   --ep-accordionCard-outline-bg:transparent;
   --ep-accordionCard-outline-color: #ffffff;
   --ep-accordionCard-outline-border: 1px solid #ffffff3a;
@@ -259,7 +253,6 @@
   --ep-selectable-icon-bg: #F8E7EC;
   --ep-selectable-checked-icon-bg: #BD0D44;
   --ep-selectable-icon-border-radius: 90%;
-  --ep-selectable-icon-image: url(../images/selectable-icon.svg);
 
   /* packages css */
   --ep-discount-badge-color: rgb(255, 255, 255);
@@ -275,7 +268,6 @@
   --ep-basicPrice-slash: 1px solid #e5154f;
 
   /* worker card css */
-  --ep-user-image-zoom: url('../images/photo-zoom.svg');/* we need to generate dozen of outline icons to be used */
   --ep-user-image-zoom-size: 80px;
   --ep-user-image-border-radius: 40px;
 
@@ -428,8 +420,6 @@
   --ep-sliderImg-sliderImg: 100vh; /*if customer design banner at same resolution => unset ELSE 100vh*/
   --ep-sliderImg-sliderImg-resp: 80vh; /*if customer design banner at same resolution => unset ELSE 50vh*/
   --ep-slider-control-icon-size: 40px;
-  --ep-slider-next-icon: url('../images/slider/next-1.svg');/* we need to generate dozen of outline icons to be used */
-  --ep-slider-prev-icon: url('../images/slider/prev-1.svg');/* we need to generate dozen of outline icons to be used */
   --ep-slider-pagination-width: 12px;
   --ep-slider-pagination-height: 12px;
   --ep-slider-pagination-margin: 0 4px 0 4px;

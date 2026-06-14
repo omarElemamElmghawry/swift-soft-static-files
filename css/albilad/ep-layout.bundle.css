@@ -1600,6 +1600,7 @@ fill: var(--ep-brand2-color);
   border-radius: 18px;
   overflow: visible;      /* IMPORTANT so content can sit outside */
   position: relative;
+  display: block;
 }
 
 /* Image wrapper = 85% */

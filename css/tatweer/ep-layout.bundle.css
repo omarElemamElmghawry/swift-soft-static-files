@@ -2,103 +2,7 @@
    Sources: ep-layout.css, ep-main.css
 */
 
-/* INDEX */
-/*
--- 1- General classes
--- 2- Top & Menu classes
-    - Top
-    - Menu
--- 3- Slider classes
--- 4- Page Title classes
--- 5- Page Content classes
-    - Section
-*/
-/* 1- General classes ************************************************************ */
-/* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
-/* if custom font , we will upload to CMS storage */
-/* @import "ep-main.css"; */
-
-/* @font-face {
-  font-family: 'custom-font-bold';
-  src: url('/fonts/FFShamelFamily-SansOneBold.eot');
-  src: url('/fonts/FFShamelFamily-SansOneBold.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/FFShamelFamily-SansOneBold.woff2') format('woff2'),
-      url('/fonts/FFShamelFamily-SansOneBold.woff') format('woff'),
-      url('/fonts/FFShamelFamily-SansOneBold.ttf') format('truetype'),
-      url('/fonts/FFShamelFamily-SansOneBold.svg#FFShamelFamily-SansOneBold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'custom-font-reg';
-  src: url('/fonts/FFShamelFamily-SansOneBook.eot');
-  src: url('/fonts/FFShamelFamily-SansOneBook.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/FFShamelFamily-SansOneBook.woff2') format('woff2'),
-      url('/fonts/FFShamelFamily-SansOneBook.woff') format('woff'),
-      url('/fonts/FFShamelFamily-SansOneBook.ttf') format('truetype'),
-      url('/fonts/FFShamelFamily-SansOneBook.svg#FFShamelFamily-SansOneBook') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-
-/* start to be removed */
-/* @import "ep-main.css"; */
-
-/* INDEX */
-/*
--- 1- General classes
--- 2- Top & Menu classes
-    - Top
-    - Menu
--- 3- Slider classes
--- 4- Page Title classes
--- 5- Page Content classes
-    - Section
-*/
-/* 1- General classes ************************************************************ */
-/* @import "https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"; */
-/* if custom font , we will upload to CMS storage */
-/* @font-face {
-    font-family: 'custom-font-bold';
-    src: url('/fonts/FFShamelFamily-SansOneBold.eot');
-    src: url('/fonts/FFShamelFamily-SansOneBold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/FFShamelFamily-SansOneBold.woff2') format('woff2'),
-        url('/fonts/FFShamelFamily-SansOneBold.woff') format('woff'),
-        url('/fonts/FFShamelFamily-SansOneBold.ttf') format('truetype'),
-        url('/fonts/FFShamelFamily-SansOneBold.svg#FFShamelFamily-SansOneBold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'custom-font-reg';
-    src: url('/fonts/FFShamelFamily-SansOneBook.eot');
-    src: url('/fonts/FFShamelFamily-SansOneBook.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/FFShamelFamily-SansOneBook.woff2') format('woff2'),
-        url('/fonts/FFShamelFamily-SansOneBook.woff') format('woff'),
-        url('/fonts/FFShamelFamily-SansOneBook.ttf') format('truetype'),
-        url('/fonts/FFShamelFamily-SansOneBook.svg#FFShamelFamily-SansOneBook') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-} */
-/* end to be removed */
-
 :root {
-  /*  FONTS
-    /*  if we use one font with built-in weights: we must use same name with different weights values
-    /*  if we use mutliple font src: we use different name-suffix -reg | -bold and so on */
-  /*--ep-main-font: 'Alexandria';
-    --ep-main-font-weight: '300';
-    --ep-med-font: 'Alexandria';
-    --ep-med-font-weight: '500';
-    --ep-bld-font: 'Alexandria';
-    --ep-bld-font-weight: '700';*/
-
     --ep-main-font: 'custom-font';
     --ep-main-font-weight: 300;
     --ep-bld-font: 'custom-font';
@@ -106,21 +10,6 @@
     --bs-primary-rgb: 189, 13, 68 !important;
 }
 
-/* @font-face {
-  font-family: 'custom-font-reg';
-  src: url('../fonts/custom-font-reg.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'custom-font-bold';
-  src: url('../fonts/custom-font-bold.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-} */
 
 html,
 body {
@@ -465,13 +354,11 @@ select option {
   /* Add custom icon */
   :lang(ar) .custom-date-input {
     text-align: right;
-    background: url('../images/hourly/calendar.svg') no-repeat left 16px center;
     padding-right: 35px; /* space for the icon */
 
   }
   :lang(en) .custom-date-input {
     text-align: left;
-    background: url('../images/hourly/calendar.svg') no-repeat right 16px center;
     padding-left: 35px; /* space for the icon */
   }
   .custom-date-input {
@@ -1502,7 +1389,6 @@ fieldset:disabled .btn {
 
 /* sign classes */
 .ep-login-bg {
-    background-image: url("/images/crm/signin-bg.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1545,14 +1431,6 @@ fieldset:disabled .btn {
 :dir(rtl) .toggle-icon {
     left: 16px;
     right: unset;
-}
-
-.toggle-icon.show {
-    background-image: url('/images/crm/show-password-1.svg');
-}
-
-.toggle-icon.hide {
-    background-image: url('/images/crm/hide-password-1.svg');
 }
 
 .forget-password a {
@@ -2532,13 +2410,11 @@ i.ep-footer-vseparator {
 
 .img-lightbox::after {
     content: "";
-    background: url(/images/image.svg) center no-repeat;
     background-size: cover;
 }
 
 .vid-lightbox::after {
     content: "";
-    background: url(/images/media.svg) center no-repeat;
     background-size: cover;
 }
 
@@ -2620,7 +2496,7 @@ i.ep-footer-vseparator {
 
 .step-check {
     position: absolute;
-    background-image: var(--ep-selectable-icon-image);
+    /* background-image: var(--ep-selectable-icon-image); */
     width: 28px;
     height: 28px;
     background-repeat: no-repeat;
@@ -2642,9 +2518,6 @@ i.ep-footer-vseparator {
     background-color: var(--ep-step-current-bg);
 }
 
-#app-section.ep-section-dark {
-    --ep-sectionDark-background-image: url(../images/crm/app-section-bg.jpg) !important;
-}
 
 /* fab menu */
 .ep-fab-menu-container {
@@ -3303,7 +3176,7 @@ i.ep-footer-vseparator {
   --ep-h5-font-size-resp: 14px; /* "h5" font size at mobile */
   --ep-h6-font-size: 14px; /* "h6" font size at desktop */
   --ep-h6-font-size-resp: 12px; /* "h6" font size at mobile */
-  --ep-p-font-size: 18px; /* "p" font size at desktop */
+  --ep-p-font-size: 16px; /* "p" font size at desktop */
   --ep-p-font-size-resp: 14px; /* "p" font size at mobile */
   --ep-sub-font-size: 14px; /* "sub text" font size at desktop */
   --ep-small-font-size: 12px; /* "small text" font size at desktop */
@@ -3311,7 +3184,7 @@ i.ep-footer-vseparator {
   /* GENERAL BUTTONS */
   --ep-btn-disabled-opacity: 0.3; /* disabled button opacity */
   --ep-btn-disabled-filter: 1; /* disabled button grayscale 0-to-1 */
-  --ep-btn-font-size: 18px; /* button font size at desktop */
+  --ep-btn-font-size: 16px; /* button font size at desktop */
   --ep-btn-font-size-resp: 14px; /* button font size at mobile */
   --ep-btn-border-radius: 16px; /* button border radius at desktop */
   --ep-btn-border-radius-resp: 12px; /* button border radius at mobile */
@@ -3344,10 +3217,8 @@ i.ep-footer-vseparator {
   --ep-btnSecondary-hover-border: 1px solid #F1A59E; /* secondary button:hover border color */
 
   --ep-list-iconed-padding: 4px;
-  /* --ep-list-iconed-image: url(../images/list/list-icon-1.svg); */
 
   --ep-list-iconed2-padding: 4px;
-  --ep-list-iconed2-image: url(../images/list/list-icon-2.svg);
   --ep-list-iconed2-bg: rgba(255, 255, 255, 0);
   --ep-list-iconed2-value: var(--ep-brand2-color);
 
@@ -3376,7 +3247,6 @@ i.ep-footer-vseparator {
   --ep-sectionLight-color: inherit; /* sectionLight text color */
   --ep-sectionLight-link-color: #faf60c; /* sectionLight link color */
   --ep-sectionLight-link-hover-color: #ff00d4; /* sectionLight link:hover color */
-  /* --ep-sectionLight-background-image: url(../images/bg-extracted-from-brand.png);sectionLight background image ( URL | none ) */
   /*designer upload to Umbraco then use it as url*/
   --ep-sectionLight-background-mask: rgba(
     255,
@@ -3393,7 +3263,6 @@ i.ep-footer-vseparator {
   --ep-sectionDark-color: #ffffff; /* sectionDark text color */
   --ep-sectionDark-link-color: #ff00ff; /* sectionDark link color */
   --ep-sectionDark-link-hover-color: #0004ff; /* sectionDark link:hover color */
-  --ep-sectionDark-background-image: url(../images/bg-extracted-from-brand.png);/* sectionDark background image ( URL | none ) */
   --ep-sectionDark-background-mask: rgba(
     0,
     0,
@@ -3475,8 +3344,6 @@ i.ep-footer-vseparator {
   --ep-accordionCard-btn-bg: #BD0D44;
   --ep-accordionCard-btn-border-radius: 50%;
   --ep-accordionCard-btn-icon-size: unset;
-  --ep-accordionCard-btn-plus-icon: url(../images/accordion-plus.svg);
-  --ep-accordionCard-btn-minus-icon: url(../images/accordion-minus.svg);
   --ep-accordionCard-outline-bg:transparent;
   --ep-accordionCard-outline-color: #ffffff;
   --ep-accordionCard-outline-border: 1px solid #ffffff3a;
@@ -3500,7 +3367,6 @@ i.ep-footer-vseparator {
   --ep-selectable-icon-bg: #F8E7EC;
   --ep-selectable-checked-icon-bg: #BD0D44;
   --ep-selectable-icon-border-radius: 90%;
-  --ep-selectable-icon-image: url(../images/selectable-icon.svg);
 
   /* packages css */
   --ep-discount-badge-color: rgb(255, 255, 255);
@@ -3516,7 +3382,6 @@ i.ep-footer-vseparator {
   --ep-basicPrice-slash: 1px solid #e5154f;
 
   /* worker card css */
-  --ep-user-image-zoom: url('../images/photo-zoom.svg');/* we need to generate dozen of outline icons to be used */
   --ep-user-image-zoom-size: 80px;
   --ep-user-image-border-radius: 40px;
 
@@ -3669,8 +3534,6 @@ i.ep-footer-vseparator {
   --ep-sliderImg-sliderImg: 100vh; /*if customer design banner at same resolution => unset ELSE 100vh*/
   --ep-sliderImg-sliderImg-resp: 80vh; /*if customer design banner at same resolution => unset ELSE 50vh*/
   --ep-slider-control-icon-size: 40px;
-  --ep-slider-next-icon: url('../images/slider/next-1.svg');/* we need to generate dozen of outline icons to be used */
-  --ep-slider-prev-icon: url('../images/slider/prev-1.svg');/* we need to generate dozen of outline icons to be used */
   --ep-slider-pagination-width: 12px;
   --ep-slider-pagination-height: 12px;
   --ep-slider-pagination-margin: 0 4px 0 4px;
