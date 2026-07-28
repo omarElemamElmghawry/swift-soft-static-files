@@ -133,6 +133,10 @@
     255,
     0.486
   ); /* sectionLight background second color  if gradiant*/
+  --ep-section-bg2: #f5fbfe; /* section background second color  if gradiant*/
+  /* Neutral surface behind service cards / candidate photos. Albilad leans on a faint
+     brand wash rather than a flat grey (see .ep-blog-card .fallback-blog-image). */
+  --ep-surface-muted: #f4f9fc;
   --ep-sectionLight-color: inherit; /* sectionLight text color */
   --ep-sectionLight-link-color: #faf60c; /* sectionLight link color */
   --ep-sectionLight-link-hover-color: #ff00d4; /* sectionLight link:hover color */

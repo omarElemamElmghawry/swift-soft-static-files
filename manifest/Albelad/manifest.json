@@ -43,16 +43,32 @@
     }
   ],
   "styles": [
-    { "href": "/media/gq5cld00/ep-layoutbundlemin.css", "defer": true },
-    { "href": "https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css", "defer": true }
+    { "href": "/media/gq5cld00/ep-layoutbundlemin.css", "defer": true }
   ],
 
   "scripts": [
-    { "src": "https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js", "defer": true },
-    { "src": "/media/hxunhd5i/custom.js", "defer": true },
-    { "src": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" , "defer": true }
+    {
+      "src": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js",
+      "defer": true
+    }
   ],
   "metaTags": [
-    {"name": "facebook-domain-verification", "content": "hpnkcysvzifvi97uo3e2vaj743nbxh"}
+    {
+      "name": "facebook-domain-verification",
+      "content": "hpnkcysvzifvi97uo3e2vaj743nbxh"
+    }
+  ],
+  "icons": [
+    {
+      "href": "/media/rlwjfuix/albilad-logo.png?width=32&quality=80",
+      "rel": "icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "href": "/media/rlwjfuix/albilad-logo.png?width=180&quality=80",
+      "rel": "apple-touch-icon",
+      "sizes": "180x180"
+    }
   ]
 }

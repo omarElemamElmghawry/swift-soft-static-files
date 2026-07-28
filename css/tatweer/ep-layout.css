@@ -1309,6 +1309,8 @@ fieldset:disabled .btn {
 
 /* Text color changes on hover */
 .ep-blog-card:hover h4,
+.ep-blog-card:hover h3,
+.ep-blog-card:hover a,
 .ep-blog-card:hover p {
   color: white !important;
 }
@@ -2678,25 +2680,35 @@ i.ep-footer-vseparator {
 
 .custom-input-group-value {
     word-spacing: 3px;
+    border: none !important;
+    text-align: center !important;
+}
+
+.custom-input-group-value:focus {
+    outline: none !important;
+    border: none !important;
 }
 
 .buttons-group-input {
     padding-top: 7px !important;
     padding-bottom: 7px !important;
     height: auto !important;
-    align-items: flex-start !important;
-    gap: 24px;
+    align-items: stretch !important;
+    gap: 8px;
+    flex-direction: column !important;
 }
 
 .buttons-group-input .custom-input-group-label {
-    flex-basis: 40% !important;
+    flex-basis: auto !important;
+    width: 100%;
     line-height: normal !important;
 }
 
 
 
 .check-button-group  {
-    flex-basis: 60%;
+    flex-basis: auto;
+    width: 100%;
 }
 
 .check-button-group .check-button {
@@ -2724,11 +2736,11 @@ i.ep-footer-vseparator {
 
 @media screen and (min-width: 992px) {
     .buttons-group-input.large .custom-input-group-label {
-        flex-basis: 19% !important;
+        flex-basis: auto !important;
     }
 
     .buttons-group-input.large .check-button-group {
-        flex-basis: 81% !important;
+        flex-basis: auto !important;
     }
 }
 
@@ -3108,3 +3120,396 @@ i.ep-footer-vseparator {
   }
 }
 /* End Pagination styles */
+/* ===== Theme 3 Mediation Candidate Card (premium selectable) ===========================
+   Used by the Angular theme3 cv-card (app-theme3-cv-card). Token-driven so it themes
+   per-tenant, matching the .ep-card / .ep-card-selectable conventions above. The PrimeNG
+   p-image overrides live in the component scss because they must pierce p-image via
+   ::ng-deep. */
+.ep-candidate-card {
+    color: var(--ep-card-color);
+    background-color: var(--ep-card-bg1, #ffffff);
+    border: 1px solid var(--ep-brand4-color, #e2e8f0);
+    border-radius: var(--ep-card-border-radius, 20px);
+    padding: var(--ep-card-padding, 24px);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ep-candidate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--ep-brand-color);
+}
+
+.ep-candidate-card.selected {
+    border-color: var(--ep-brand-color);
+    box-shadow: 0 0 0 2px var(--ep-brand-color), 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ep-candidate-check {
+    position: absolute;
+    top: 16px;
+    inset-inline-end: 16px;
+    z-index: 11;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.55;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+.ep-candidate-check img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ep-candidate-card.selected .ep-candidate-check {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.ep-candidate-img {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 200px;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ep-candidate-img .image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ep-candidate-name {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ep-body-color, #0f172a);
+    margin: 0 0 12px;
+}
+
+.ep-candidate-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: -36px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.ep-candidate-action-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ep-candidate-action-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.ep-candidate-action-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    background-color: var(--ep-brand-color);
+}
+
+.ep-candidate-action-btn:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.ep-candidate-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.ep-candidate-details .ep-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ep-candidate-details .ep-detail-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--ep-brand-color) 18%, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ep-candidate-details .ep-detail-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.ep-candidate-details .ep-detail-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    min-width: 0;
+}
+
+.ep-candidate-details .ep-detail-text small {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.ep-candidate-details .ep-detail-text strong {
+    font-size: 0.875rem;
+    color: var(--ep-body-color, #0f172a);
+    font-weight: 700;
+    word-break: break-word;
+}
+
+/* ==========================================================================
+   ng-select — skinned to match .form-control / .form-select (design tokens).
+   Shared across all public/themed dropdowns (city, region, etc.). Structure
+   comes from the library; only colours, border, radius and padding are set here.
+   ========================================================================== */
+.ng-select .ng-select-container {
+    color: var(--ep-formControl-basic-color) !important;
+    border: var(--ep-formControl-border) !important;
+    background-color: var(--ep-formControl-background-color) !important;
+    border-radius: var(--ep-formControl-border-radius) !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Placeholder, selected value and the typed search text all line up exactly.
+   The padding lives on the value-container (so placeholder/value inherit it and
+   never stack) and is mirrored on the absolutely-positioned .ng-input. */
+.ng-select .ng-select-container .ng-value-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    align-items: center !important;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-placeholder,
+.ng-select .ng-select-container .ng-value-container .ng-value {
+    padding: 0 !important;
+    color: var(--ep-formControl-basic-color) !important;
+    font-size: 14px !important;
+}
+
+/* ng-select renders the placeholder unconditionally and relies on its theme to
+   hide it once a value is picked. We don't load default.theme.css, so replicate
+   that one rule here — without it the placeholder sits under the selected value. */
+.ng-select .ng-select-container.ng-has-value .ng-placeholder {
+    display: none !important;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    top: auto !important;
+    left: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 40px !important;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-input > input {
+    padding: 0 !important;
+}
+
+/* RTL: the arrow sits on the left, so the clearance/alignment paddings flip. */
+[dir="rtl"] .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding-left: 40px !important;
+    padding-right: 16px !important;
+}
+
+.ng-select.ng-select-focused .ng-select-container {
+    border: var(--ep-formControl-focus-border) !important;
+    box-shadow: 0 0 0 .25rem var(--ep-brand4-bg) !important;
+}
+
+.ng-select .ng-arrow-wrapper {
+    width: 25px !important;
+    padding-right: 8px !important;
+}
+
+[dir="rtl"] .ng-select .ng-arrow-wrapper {
+    padding-right: 0 !important;
+    padding-left: 8px !important;
+}
+
+/* The arrow is a CSS border-triangle; the app doesn't load ng-select's theme,
+   so the triangle's size/style must be defined here (not just its colour). */
+.ng-select .ng-arrow-wrapper .ng-arrow {
+    border-style: solid !important;
+    border-width: 5px 5px 0 !important;
+    border-color: var(--ep-formControl-basic-color) transparent transparent !important;
+}
+
+.ng-select.ng-select-opened .ng-arrow-wrapper .ng-arrow {
+    border-width: 0 5px 5px !important;
+    border-color: transparent transparent var(--ep-formControl-basic-color) !important;
+}
+
+.ng-select.input-error .ng-select-container {
+    border-color: #dc3545 !important;
+}
+
+.ng-select.input-error.ng-select-focused .ng-select-container {
+    box-shadow: 0 0 0 .25rem rgba(220, 53, 69, .25) !important;
+}
+
+/* Disabled state — mirror the readonly/disabled look of .form-control so a
+   disabled select (e.g. the detection-only city field) reads as non-editable. */
+.ng-select.ng-select-disabled .ng-select-container {
+    background-color: var(--bs-secondary-bg, #e9ecef) !important;
+    color: var(--ep-formControl-basic-color, #6c757d) !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+.ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-placeholder,
+.ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-value {
+    color: var(--ep-formControl-basic-color, #6c757d) !important;
+}
+
+/* dropdown panel + options */
+.ng-dropdown-panel {
+    border: var(--ep-formControl-border) !important;
+    border-radius: var(--ep-formControl-border-radius) !important;
+    background-color: #fff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08) !important;
+    overflow: hidden !important;
+    margin-top: 4px !important;
+    z-index: 1056 !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    color: var(--ep-formControl-basic-color) !important;
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-highlighted {
+    background-color: var(--ep-brand4-bg) !important;
+    color: var(--ep-brand-color) !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+    background-color: var(--ep-brand-color) !important;
+    color: #fff !important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled {
+    color: #adb5bd !important;
+}
+
+/* ==========================================================================
+   Google Places autocomplete dropdown (.pac-container) — Google renders it at
+   <body>, so it can only be themed from global CSS. Matched to the ng-select
+   panel above so search and selects look identical.
+   ========================================================================== */
+.pac-container {
+    border: var(--ep-formControl-border) !important;
+    border-radius: var(--ep-formControl-border-radius) !important;
+    background-color: #fff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08) !important;
+    margin-top: 4px !important;
+    padding: 6px 0 !important;
+    font-family: inherit !important;
+    overflow: hidden !important;
+    z-index: 1056 !important;
+}
+
+.pac-item {
+    color: var(--ep-formControl-basic-color) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    padding: 8px 16px !important;
+    border-top: 0 !important;
+    cursor: pointer !important;
+}
+
+.pac-item:hover,
+.pac-item-selected {
+    background-color: var(--ep-brand4-bg) !important;
+}
+
+.pac-item-query {
+    color: var(--ep-body-color, #111827) !important;
+    font-size: 14px !important;
+}
+
+.pac-matched {
+    color: var(--ep-brand-color) !important;
+    font-weight: 600 !important;
+}
+
+.pac-icon {
+    margin-top: 3px !important;
+}
+
+/* breathing room around the "powered by Google" logo row */
+.pac-logo:after {
+    margin: 10px 16px !important;
+    background-position: right center !important;
+}
+
+/* Arabic (and any RTL) predictions otherwise render with the inter-word spaces collapsed:
+   Google lays each row out as inline spans (bold .pac-matched + plain text), and with the
+   default unicode-bidi they resolve against the row's base direction, swallowing the spaces
+   at the span boundaries. `plaintext` makes each row pick its direction from its own text
+   (like dir="auto"), which keeps the spaces for both LTR and RTL results. */
+.pac-item,
+.pac-item-query {
+    unicode-bidi: plaintext !important;
+}
+
+[dir="rtl"] .pac-item,
+[dir="rtl"] .pac-container {
+    text-align: right !important;
+}
+
+/* Google separates the prediction text from the trailing region name with only its built-in
+   `.pac-item-query { padding-right: 3px }` — there is no whitespace node between the two spans.
+   In RTL the row is reordered (region ends up left of the query), so that right padding lands on
+   the wrong side and the prediction collides with the region ("طريفالسعودية"). Move the gap to
+   the query's left edge — the side that actually faces the region in RTL. */
+[dir="rtl"] .pac-item-query {
+    padding-right: 0 !important;
+    padding-left: 6px !important;
+}
