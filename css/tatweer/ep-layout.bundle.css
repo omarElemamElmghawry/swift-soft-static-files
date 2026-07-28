@@ -3517,6 +3517,29 @@ i.ep-footer-vseparator {
     padding-left: 6px !important;
 }
 
+/* ngx-bootstrap datepicker per-tenant theme â€” wired via BsDatepickerConfig#containerClass='ep-dp-theme'.
+   Colors sourced from tenant design tokens (ep-main.css :root) so each tenant
+   recolors itself automatically. */
+
+.ep-dp-theme .bs-datepicker-head { background-color: var(--ep-brand-color); }
+.ep-dp-theme .btn-today-wrapper .btn-success,
+.ep-dp-theme .btn-clear-wrapper .btn-success { background-color: var(--ep-brand-color); border-color: var(--ep-brand-color); }
+.ep-dp-theme .btn-today-wrapper .btn-success:not(:disabled):not(.disabled):active,
+.ep-dp-theme .btn-clear-wrapper .btn-success:not(:disabled):not(.disabled):active { background-color: var(--ep-brand-color); border-color: var(--ep-brand-color); filter: brightness(0.92); }
+.ep-dp-theme .btn-today-wrapper .btn-success:not(:disabled):not(.disabled):active:focus,
+.ep-dp-theme .btn-clear-wrapper .btn-success:not(:disabled):not(.disabled):active:focus,
+.ep-dp-theme .btn-today-wrapper .btn-success:focus,
+.ep-dp-theme .btn-clear-wrapper .btn-success:focus { box-shadow: none; }
+.ep-dp-theme .btn-today-wrapper .btn-success:hover,
+.ep-dp-theme .btn-clear-wrapper .btn-success:hover { background-color: var(--ep-brand-color); border-color: var(--ep-brand-color); filter: brightness(1.08); }
+.ep-dp-theme .bs-datepicker-predefined-btns button.selected { background-color: var(--ep-brand-color); }
+.ep-dp-theme .bs-datepicker-body table td span.selected,
+.ep-dp-theme .bs-datepicker-body table td.selected span,
+.ep-dp-theme .bs-datepicker-body table td span[class*=select-]:after,
+.ep-dp-theme .bs-datepicker-body table td[class*=select-] span:after { background-color: var(--ep-brand-color); }
+.ep-dp-theme .bs-datepicker-body table td.week span { color: var(--ep-brand-color); }
+.ep-dp-theme .bs-datepicker-body table td.active-week span:hover { cursor: pointer; background-color: var(--ep-brand-color); color: #fff; }
+
 :root {
   --ep-heading-color: #ffffff;
   --ep-vheight-50: 50vh; /* general 50 height  of viewport */
