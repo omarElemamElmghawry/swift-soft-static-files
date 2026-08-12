@@ -4387,3 +4387,245 @@ i.ep-footer-vseparator {
 .ep-dp-theme .bs-datepicker-body table td[class*=select-] span:after { background-color: var(--ep-brand-color); }
 .ep-dp-theme .bs-datepicker-body table td.week span { color: var(--ep-brand-color); }
 .ep-dp-theme .bs-datepicker-body table td.active-week span:hover { cursor: pointer; background-color: var(--ep-brand-color); color: #fff; }
+
+/* ===== Visit evaluation =====================================================
+   Scoped to the dashboard evaluation so no other PrimeNG rating or card is
+   affected. The card deliberately reuses the same .ep-card surface as the
+   employees card above it. */
+.ep-evaluation {
+  --ep-evaluation-star-color: #f5b301;
+  --ep-evaluation-separator: var(--ep-card-separator, 1px dashed #c4c4c4);
+  color: var(--ep-card-color, var(--ep-body-color, #313131));
+}
+
+.ep-evaluation .ep-evaluation-state {
+  min-height: 132px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ep-evaluation .ep-evaluation-state .spinner-border,
+.ep-evaluation .ep-evaluation-modal .spinner-border {
+  color: var(--ep-brand-color);
+}
+
+.ep-evaluation .ep-evaluation-card {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ep-evaluation .ep-evaluation-header {
+  padding-bottom: 4px;
+}
+
+.ep-evaluation .ep-evaluation-title {
+  color: var(--ep-body-color, #313131) !important;
+  line-height: 1.5;
+}
+
+.ep-evaluation .ep-evaluation-overall {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 4px 12px;
+  color: var(--ep-body-color, #313131);
+  background: var(--ep-surface-muted, #f4f9fc);
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+.ep-evaluation .ep-evaluation-list,
+.ep-evaluation .ep-evaluation-modal-list {
+  width: 100%;
+}
+
+.ep-evaluation .ep-evaluation-item {
+  min-height: 58px;
+  padding: 14px 0;
+}
+
+.ep-evaluation .ep-evaluation-item + .ep-evaluation-item {
+  border-top: var(--ep-evaluation-separator);
+}
+
+.ep-evaluation .ep-evaluation-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--ep-body-color, #313131);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ep-evaluation .ep-evaluation-notes {
+  margin-top: 12px;
+  padding: 12px 16px;
+  color: var(--ep-body-color, #313131);
+  background: var(--ep-surface-muted, #f4f9fc);
+  border-inline-start: 3px solid var(--ep-brand-color);
+  border-radius: 8px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.ep-evaluation .ep-evaluation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 18px;
+}
+
+.ep-evaluation .ep-action-btn {
+  min-width: 160px;
+  box-shadow: none !important;
+}
+
+/* PrimeNG 17 renders one visually-hidden radio input for every star. Keep the
+   accessibility inputs in the DOM while preventing them from appearing as the
+   circles seen when the structural PrimeNG stylesheet has not loaded yet. */
+.ep-evaluation .p-hidden-accessible {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ep-evaluation .p-hidden-accessible input {
+  width: 1px !important;
+  height: 1px !important;
+  transform: scale(0) !important;
+}
+
+.ep-evaluation .p-rating {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  direction: ltr;
+}
+
+.ep-evaluation .p-rating .p-rating-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ep-evaluation-star-color) !important;
+  cursor: pointer;
+  opacity: 0.38;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.ep-evaluation .p-rating.p-readonly .p-rating-item,
+.ep-evaluation .p-rating.p-disabled .p-rating-item {
+  cursor: default;
+}
+
+.ep-evaluation .p-rating .p-rating-icon,
+.ep-evaluation .p-rating .p-rating-icon.p-icon {
+  width: 24px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  color: var(--ep-evaluation-star-color) !important;
+  border-color: var(--ep-evaluation-star-color) !important;
+}
+
+.ep-evaluation .p-rating .p-rating-item.p-rating-item-active {
+  color: var(--ep-evaluation-star-color) !important;
+  opacity: 1;
+}
+
+.ep-evaluation .p-rating:not(.p-disabled):not(.p-readonly) .p-rating-item:hover {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.08);
+}
+
+.ep-evaluation .p-rating .p-rating-item.p-focus {
+  border-radius: 4px;
+  outline: 2px solid var(--ep-evaluation-star-color);
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+.ep-evaluation .ep-evaluation-modal .modal-content {
+  color: var(--ep-body-color, #313131);
+  background: var(--ep-card-bg1, #fff);
+  border: var(--ep-popupCard-border, 0) !important;
+  border-radius: var(--ep-card-border-radius, 16px) !important;
+  box-shadow: var(--ep-popupCard-shadow, 0 12px 32px rgba(0, 0, 0, 0.15)) !important;
+  overflow: hidden;
+}
+
+.ep-evaluation .ep-evaluation-modal-header {
+  min-height: 72px;
+  padding: 20px 56px 16px !important;
+  border-bottom: var(--ep-evaluation-separator);
+}
+
+.ep-evaluation .ep-evaluation-modal-title {
+  width: 100%;
+  padding: 0 !important;
+  color: var(--ep-popupCard-heading, var(--ep-body-color, #313131)) !important;
+  border: 0 !important;
+}
+
+.ep-evaluation .ep-evaluation-modal .btn-close {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 20px;
+  left: auto;
+  top: auto;
+  margin: 0;
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+.ep-evaluation .ep-evaluation-modal-body {
+  padding: 24px !important;
+}
+
+.ep-evaluation .ep-evaluation-modal .modal-body .ep-evaluation-comment.form-control {
+  height: auto !important;
+  min-height: 112px;
+  padding: 12px 16px !important;
+  border-radius: var(--ep-formControl-border-radius, 8px) !important;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+@media (max-width: 575.98px) {
+  .ep-evaluation .ep-evaluation-card,
+  .ep-evaluation .ep-evaluation-modal-body {
+    padding: var(--ep-card-padding-resp, 16px 12px) !important;
+  }
+
+  .ep-evaluation .ep-evaluation-item {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .ep-evaluation .ep-evaluation-item .p-rating {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ep-evaluation .ep-evaluation-modal-header {
+    padding-inline: 48px !important;
+  }
+
+  .ep-evaluation .ep-action-btn {
+    width: 100%;
+  }
+}
