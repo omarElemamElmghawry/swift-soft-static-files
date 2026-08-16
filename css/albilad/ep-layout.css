@@ -380,7 +380,12 @@ select option {
       padding: 26px 16px 6px 16px  !important;
       height: 56px !important;
       font-size: 14px !important;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06);
+      box-shadow: var(--ep-formControl-shadow, none);
+  }
+
+  .form-control:hover:not(:focus):not(:disabled):not([readonly]),
+  .form-select:hover:not(:focus):not(:disabled) {
+      border: var(--ep-formControl-hover-border, var(--ep-formControl-border)) !important;
   }
 
   .form-control-iconed,
@@ -393,6 +398,7 @@ select option {
       height: 48px !important;
       min-height: unset !important;
       font-size: 14px !important;
+      box-shadow: var(--ep-formControl-shadow, none);
       /* line-height: 3.6 !important; */
   }
   :dir(ltr) .form-control-iconed,
@@ -1001,6 +1007,8 @@ fieldset:disabled .btn {
     background-color: #fff;
     padding: 16px;
     border-radius: 16px;
+    border: 1px solid var(--ep-surface-line);
+    box-shadow: var(--ep-popupCard-shadow);
 }
 
 @media (min-width: 992px) {
@@ -1342,7 +1350,7 @@ fieldset:disabled .btn {
 .ep-card.ep-card-selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
-
+    border-color: var(--ep-card-selected-bg1);
 }
 
 .ep-card-selectable {
@@ -1350,9 +1358,17 @@ fieldset:disabled .btn {
     transition: all 0.3s ease-in-out;
 }
 
+/* The hairline is what makes a white card readable on the white page; on hover
+   it warms to the brand colour instead of relying on the shadow alone. */
+.ep-card-selectable:not(.selected):hover {
+    border-color: var(--ep-card-hover-border-color, var(--ep-brand-color));
+    box-shadow: var(--ep-card-hover-shadow, var(--ep-card-shadow));
+}
+
 .ep-card-selectable.selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
+    border-color: var(--ep-card-selected-bg1);
     /* background-image: linear-gradient(63deg, var(--ep-card-selected-bg1) 0%, var(--ep-card-selected-bg2) 100%), var(--ep-card-background-image); */
     background-image: var(--ep-card-selected-bg1);
   }
@@ -1568,6 +1584,7 @@ fill: var(--ep-brand2-color);
   color: #000;
   background-color: #fff;
   border-radius:16px;
+  border: 1px solid var(--ep-surface-line);
   box-shadow: var(--ep-card-shadow);
   padding: 16px 20px;
   display:flex;
@@ -1622,7 +1639,8 @@ fill: var(--ep-brand2-color);
   width: 88%;
 
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  border: 1px solid var(--ep-surface-line);
+  box-shadow: 0 4px 12px rgba(15, 60, 90, .12);
   text-align: center;
 
   padding: 16px;
@@ -2364,6 +2382,7 @@ i.ep-footer-vseparator {
     background-color: var(--ep-side-user-menu-bg);
     overflow: hidden;
     border-radius: var(--ep-card-border-radius);
+    border: var(--ep-side-user-menu-border, 0);
     box-shadow: var(--ep-card-shadow);
 }
 
@@ -2442,6 +2461,7 @@ i.ep-footer-vseparator {
 .choosing-mothod {
     flex-direction: var(--ep-innerCard-icon-direction);
     background-color: var(--ep-innerCard-bg);
+    border: var(--ep-innerCard-border, 0);
     box-shadow: var(--ep-innerCard-shadow);
     border-radius: var(--ep-innerCard-border-radius);
     padding: var(--ep-innerCard-padding);
@@ -2481,12 +2501,14 @@ i.ep-footer-vseparator {
     cursor: pointer;
     padding: var(--ep-filter-chip-padding);
     border-radius: var(--ep-filter-chip-border-radius);
+    border: var(--ep-filter-chip-border, 0);
     box-shadow: var(--ep-filter-chip-shadow);
 }
 
 .ep-form-check .form-check-input:checked+.form-check-label {
     background-color: var(--ep-filter-chip-selected-bg);
     color: var(--ep-filter-chip-selected-color);
+    border-color: var(--ep-filter-chip-selected-bg);
 }
 
 /* tabs */
@@ -3096,6 +3118,8 @@ i.ep-footer-vseparator {
     max-width: 600px;
     padding: 20px;
     border-radius: 8px;
+    border: var(--ep-popupCard-border, 0);
+    box-shadow: var(--ep-popupCard-shadow);
     text-align: center;
 }
 
@@ -3541,7 +3565,8 @@ i.ep-footer-vseparator {
 .ep-branch-card{
   border-radius: 16px;
   background: #FFF;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.10);
+  border: 1px solid var(--ep-surface-line);
+  box-shadow: var(--ep-card-shadow);
   padding: 16px 24px;
   height: 100%;
 }
@@ -3842,7 +3867,11 @@ i.ep-footer-vseparator {
     display: flex !important;
     align-items: center !important;
     /* Match the resting shadow on .form-control / .form-select. */
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06) !important;
+    box-shadow: var(--ep-formControl-shadow, none) !important;
+}
+
+.ng-select:not(.ng-select-opened):not(.ng-select-disabled) .ng-select-container:hover {
+    border: var(--ep-formControl-hover-border, var(--ep-formControl-border)) !important;
 }
 
 /* Placeholder, selected value and the typed search text all line up exactly.
@@ -4063,6 +4092,7 @@ i.ep-footer-vseparator {
 /* Info Image Container */
 .info-image-container {
   background-color: white;
+  border: 1px solid var(--ep-surface-line);
   border-radius: 8px;
   padding: 40px !important;
   display: flex;
@@ -4197,7 +4227,7 @@ i.ep-footer-vseparator {
 .ep-candidate-card {
   color: var(--ep-card-color);
   background-color: var(--ep-card-bg1, #ffffff);
-  border: 1px solid var(--ep-brand4-color, #e2e8f0);
+  border: 1px solid var(--ep-surface-line, #dbe6ed);
   border-radius: var(--ep-card-border-radius, 20px);
   padding: var(--ep-card-padding, 24px);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),

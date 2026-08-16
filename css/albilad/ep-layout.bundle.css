@@ -384,7 +384,12 @@ select option {
       padding: 26px 16px 6px 16px  !important;
       height: 56px !important;
       font-size: 14px !important;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06);
+      box-shadow: var(--ep-formControl-shadow, none);
+  }
+
+  .form-control:hover:not(:focus):not(:disabled):not([readonly]),
+  .form-select:hover:not(:focus):not(:disabled) {
+      border: var(--ep-formControl-hover-border, var(--ep-formControl-border)) !important;
   }
 
   .form-control-iconed,
@@ -397,6 +402,7 @@ select option {
       height: 48px !important;
       min-height: unset !important;
       font-size: 14px !important;
+      box-shadow: var(--ep-formControl-shadow, none);
       /* line-height: 3.6 !important; */
   }
   :dir(ltr) .form-control-iconed,
@@ -1005,6 +1011,8 @@ fieldset:disabled .btn {
     background-color: #fff;
     padding: 16px;
     border-radius: 16px;
+    border: 1px solid var(--ep-surface-line);
+    box-shadow: var(--ep-popupCard-shadow);
 }
 
 @media (min-width: 992px) {
@@ -1346,7 +1354,7 @@ fieldset:disabled .btn {
 .ep-card.ep-card-selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
-
+    border-color: var(--ep-card-selected-bg1);
 }
 
 .ep-card-selectable {
@@ -1354,9 +1362,17 @@ fieldset:disabled .btn {
     transition: all 0.3s ease-in-out;
 }
 
+/* The hairline is what makes a white card readable on the white page; on hover
+   it warms to the brand colour instead of relying on the shadow alone. */
+.ep-card-selectable:not(.selected):hover {
+    border-color: var(--ep-card-hover-border-color, var(--ep-brand-color));
+    box-shadow: var(--ep-card-hover-shadow, var(--ep-card-shadow));
+}
+
 .ep-card-selectable.selected {
     color: var(--ep-card-selected-color);
     background-color: var(--ep-card-selected-bg1);
+    border-color: var(--ep-card-selected-bg1);
     /* background-image: linear-gradient(63deg, var(--ep-card-selected-bg1) 0%, var(--ep-card-selected-bg2) 100%), var(--ep-card-background-image); */
     background-image: var(--ep-card-selected-bg1);
   }
@@ -1572,6 +1588,7 @@ fill: var(--ep-brand2-color);
   color: #000;
   background-color: #fff;
   border-radius:16px;
+  border: 1px solid var(--ep-surface-line);
   box-shadow: var(--ep-card-shadow);
   padding: 16px 20px;
   display:flex;
@@ -1626,7 +1643,8 @@ fill: var(--ep-brand2-color);
   width: 88%;
 
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  border: 1px solid var(--ep-surface-line);
+  box-shadow: 0 4px 12px rgba(15, 60, 90, .12);
   text-align: center;
 
   padding: 16px;
@@ -2368,6 +2386,7 @@ i.ep-footer-vseparator {
     background-color: var(--ep-side-user-menu-bg);
     overflow: hidden;
     border-radius: var(--ep-card-border-radius);
+    border: var(--ep-side-user-menu-border, 0);
     box-shadow: var(--ep-card-shadow);
 }
 
@@ -2446,6 +2465,7 @@ i.ep-footer-vseparator {
 .choosing-mothod {
     flex-direction: var(--ep-innerCard-icon-direction);
     background-color: var(--ep-innerCard-bg);
+    border: var(--ep-innerCard-border, 0);
     box-shadow: var(--ep-innerCard-shadow);
     border-radius: var(--ep-innerCard-border-radius);
     padding: var(--ep-innerCard-padding);
@@ -2485,12 +2505,14 @@ i.ep-footer-vseparator {
     cursor: pointer;
     padding: var(--ep-filter-chip-padding);
     border-radius: var(--ep-filter-chip-border-radius);
+    border: var(--ep-filter-chip-border, 0);
     box-shadow: var(--ep-filter-chip-shadow);
 }
 
 .ep-form-check .form-check-input:checked+.form-check-label {
     background-color: var(--ep-filter-chip-selected-bg);
     color: var(--ep-filter-chip-selected-color);
+    border-color: var(--ep-filter-chip-selected-bg);
 }
 
 /* tabs */
@@ -3100,6 +3122,8 @@ i.ep-footer-vseparator {
     max-width: 600px;
     padding: 20px;
     border-radius: 8px;
+    border: var(--ep-popupCard-border, 0);
+    box-shadow: var(--ep-popupCard-shadow);
     text-align: center;
 }
 
@@ -3545,7 +3569,8 @@ i.ep-footer-vseparator {
 .ep-branch-card{
   border-radius: 16px;
   background: #FFF;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.10);
+  border: 1px solid var(--ep-surface-line);
+  box-shadow: var(--ep-card-shadow);
   padding: 16px 24px;
   height: 100%;
 }
@@ -3846,7 +3871,11 @@ i.ep-footer-vseparator {
     display: flex !important;
     align-items: center !important;
     /* Match the resting shadow on .form-control / .form-select. */
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06) !important;
+    box-shadow: var(--ep-formControl-shadow, none) !important;
+}
+
+.ng-select:not(.ng-select-opened):not(.ng-select-disabled) .ng-select-container:hover {
+    border: var(--ep-formControl-hover-border, var(--ep-formControl-border)) !important;
 }
 
 /* Placeholder, selected value and the typed search text all line up exactly.
@@ -4067,6 +4096,7 @@ i.ep-footer-vseparator {
 /* Info Image Container */
 .info-image-container {
   background-color: white;
+  border: 1px solid var(--ep-surface-line);
   border-radius: 8px;
   padding: 40px !important;
   display: flex;
@@ -4201,7 +4231,7 @@ i.ep-footer-vseparator {
 .ep-candidate-card {
   color: var(--ep-card-color);
   background-color: var(--ep-card-bg1, #ffffff);
-  border: 1px solid var(--ep-brand4-color, #e2e8f0);
+  border: 1px solid var(--ep-surface-line, #dbe6ed);
   border-radius: var(--ep-card-border-radius, 20px);
   padding: var(--ep-card-padding, 24px);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -4644,6 +4674,10 @@ i.ep-footer-vseparator {
   --ep-brand2-color: #594999; /* 2nd color */
   --ep-brand3-color: #12aae3; /* 3rd color */
   --ep-brand4-color: #e0e0e0;
+  /* Surface outlines. Page, cards, inputs and popovers are all white here, so a
+     hairline edge — not the shadow alone — is what separates one from the next.
+     One line colour for every surface: cards, inputs, selects, chips, popovers. */
+  --ep-surface-line: #dbe6ed;
   --ep-brand-bg: #12aae3; /* background = 1st color */
   --ep-onBrandBg-color: #ffffff; /* text color on up background */
   --ep-brand2-bg: #594999; /* background = 2nd color */
@@ -4810,10 +4844,10 @@ i.ep-footer-vseparator {
   --ep-card-padding: 32px 24px; /* card padding top at desktop*/
   --ep-service-card-padding: 16px 12px;
   --ep-card-padding-resp: 16px 12px; /* card padding top at mobile*/
-  --ep-card-borderTop: 0 solid #12aae3;
-  --ep-card-borderRight: 0px solid #12aae3;
-  --ep-card-borderBottom: 0 dashed #12aae3;
-  --ep-card-borderLeft: 0 dashed #12aae3;
+  --ep-card-borderTop: 1px solid var(--ep-surface-line);
+  --ep-card-borderRight: 1px solid var(--ep-surface-line);
+  --ep-card-borderBottom: 1px solid var(--ep-surface-line);
+  --ep-card-borderLeft: 1px solid var(--ep-surface-line);
   --ep-card-bg1: rgb(255, 255, 255); /* card background first color */
   --ep-card-bg2: rgb(255,255,255); /* card background second color  if gradiant*/
   --ep-card-selected-bg1: var(--ep-brand-color); /* card background first color */
@@ -4841,7 +4875,9 @@ i.ep-footer-vseparator {
   --ep-card-underline: none; /* "a" custom line */
   --ep-card-underline-margin: -4px; /* "a" custom line position */
   --ep-card-hover-underline: none; /*2px solid #f0f;/* "a:hover" custom line */
-  --ep-card-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); /* see https://cssgenerator.org/box-shadow-css-generator.html */
+  --ep-card-shadow: 0px 4px 14px 0px rgba(15, 60, 90, 0.07); /* soft lift; the hairline border does the separating */
+  --ep-card-hover-shadow: 0px 8px 22px 0px rgba(15, 60, 90, 0.12);
+  --ep-card-hover-border-color: rgba(var(--ep-brand-color-rgb), 0.45);
 
   /* servicesCARD ==================================================================================================================================================================== */
   --ep-serviceCard-bg1: rgb(255, 255, 255); /* card background first color */
@@ -4885,7 +4921,7 @@ i.ep-footer-vseparator {
 
   /* address card css */
   --ep-small-map-size: 100px;
-  --ep-small-map-iframe-border: 0px solid rgb(199, 199, 199);
+  --ep-small-map-iframe-border: 1px solid var(--ep-surface-line);
   --ep-small-map-iframe-border-radius: 8px;
   --ep-address-badge-color: var(--ep-brand-color);
   --ep-address-badge-selected-color: #fff;
@@ -4942,6 +4978,7 @@ i.ep-footer-vseparator {
   --ep-status-confirmedNotPaid-badge-bg: #e3f3f4;
 
   --ep-side-user-menu-bg: #fff;
+  --ep-side-user-menu-border: 1px solid var(--ep-surface-line);
   --ep-side-user-menu-hover-bg: #f5f5f5;
   --ep-side-user-menu-color: #313131;
   --ep-side-user-menu-link-color: #6b7280;
@@ -4953,23 +4990,27 @@ i.ep-footer-vseparator {
 
   /* form */
   --ep-formControl-basic-color: var(--ep-body-color);
-  --ep-formControl-border: 0px solid #c3c6cb;
+  /* Fields are cards: same hairline, same soft lift, same 16px radius. */
+  --ep-formControl-border: var(--ep-card-borderTop);
+  --ep-formControl-hover-border: 1px solid var(--ep-card-hover-border-color);
   --ep-formControl-focus-border: 1px solid #12AAE3;
   --ep-formControl-background-color: #fff;
+  --ep-formControl-shadow: var(--ep-card-shadow);
   --ep-formControl-border-radius: 1rem;
   --ep-formControl-label-color: #6b7280;
   --ep-formControl-label-font-size: 12px;
 
   /* popCard */
   --ep-popupCard-heading: var(--ep-body-color);
-  --ep-popupCard-border: 0px solid #ff0000;
-  --ep-popupCard-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.0009); /* see https://cssgenerator.org/box-shadow-css-generator.html */
+  --ep-popupCard-border: 1px solid var(--ep-surface-line);
+  --ep-popupCard-shadow: 0 16px 40px 0 rgba(15, 60, 90, 0.16); /* see https://cssgenerator.org/box-shadow-css-generator.html */
   /* card in card */
   --ep-innerCard-bg: rgb(255, 255, 255); /* card background first color */
   --ep-innerCard-icon-direction: column;
   --ep-innerCard-padding: 12px;
   --ep-innerCard-border-radius: 12px;
-  --ep-innerCard-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.09);
+  --ep-innerCard-border: 1px solid var(--ep-surface-line);
+  --ep-innerCard-shadow: 0 2px 8px 0 rgba(15, 60, 90, 0.06);
   --ep-innerCard-selected-bg: #12aae3;
   --ep-innerCard-selected-color: #fff;
   /* filter chips */
@@ -4979,7 +5020,8 @@ i.ep-footer-vseparator {
   --ep-filter-chip-selected-color: #ffffff;
   --ep-filter-chip-padding: 8px 12px;
   --ep-filter-chip-border-radius: 16px;
-  --ep-filter-chip-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.09);
+  --ep-filter-chip-border: 1px solid var(--ep-surface-line);
+  --ep-filter-chip-shadow: 0 2px 6px 0 rgba(15, 60, 90, 0.06);
 
   /* tabs */
   --ep-tabs-bg: #ebebeb;
