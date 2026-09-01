@@ -6,15 +6,15 @@
       "display": "swap",
       "sources": [
         {
-          "url": "/media/diphqfib/ffshamelfamily-sansonebook.woff2",
-          "format": "woff2",
+          "url": "/media/cjdc5ptn/almarai-regular.ttf",
+          "format": "truetype",
           "weight": "400",
           "style": "normal",
           "preload": true
         },
         {
-          "url": "/media/fg2kgrlw/ffshamelfamily-sansonebook.woff",
-          "format": "woff",
+          "url": "/media/v4klgky0/almarai-regular.ttf",
+          "format": "truetype",
           "weight": "400",
           "style": "normal",
           "preload": true
@@ -28,15 +28,15 @@
       "display": "swap",
       "sources": [
         {
-          "url": "/media/hwnlvd4t/ffshamelfamily-sansonebold.woff2",
-          "format": "woff2",
+          "url": "/media/cjdc5ptn/almarai-bold.ttf",
+          "format": "truetype",
           "weight": "600",
           "style": "normal",
           "preload": true
         },
         {
-          "url": "/media/vmsksmop/ffshamelfamily-sansonebold.woff",
-          "format": "woff",
+          "url": "/media/v4klgky0/almarai-bold.ttf",
+          "format": "truetype",
           "weight": "600",
           "style": "normal",
           "preload": true
@@ -50,15 +50,15 @@
       "display": "swap",
       "sources": [
         {
-          "url": "/media/hwnlvd4t/ffshamelfamily-sansonebold.woff2",
-          "format": "woff2",
+          "url": "/media/cjdc5ptn/almarai-bold.ttf",
+          "format": "truetype",
           "weight": "700",
           "style": "normal",
           "preload": true
         },
         {
-          "url": "/media/vmsksmop/ffshamelfamily-sansonebold.woff",
-          "format": "woff",
+          "url": "/media/v4klgky0/almarai-bold.ttf",
+          "format": "truetype",
           "weight": "700",
           "style": "normal",
           "preload": true
