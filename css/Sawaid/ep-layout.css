@@ -233,6 +233,7 @@ p {
 .modal-content {
     border: var(--ep-popupCard-border) !important;
     box-shadow: var(--ep-popupCard-shadow) !important;
+    border-radius: var(--ep-card-border-radius) !important;
 }
 
 .modal-header {
@@ -260,10 +261,6 @@ p {
     padding-top: 24px !important;
 }
 
-.modal-content {
-    border-radius: var(--ep-card-border-radius) !important;
-}
-
 select option {
     background-color: rgb(255, 255, 255);
 }
@@ -282,6 +279,7 @@ select option {
     height: 48px !important;
     min-height: unset !important;
     font-size: 14px !important;
+    line-height: 3 !important;
     /* line-height: 3.6 !important; */
 }
 
@@ -296,11 +294,6 @@ select option {
     min-height: unset !important;
     font-size: 14px !important;
     /* line-height: 3.6 !important; */
-}
-
-.form-select {
-  line-height: 3 !important;
-  font-size: 14px;
 }
 
 .form-floating .form-select {
@@ -461,7 +454,6 @@ a.ep-link:hover:after {
 
 @media (min-width: 992px) {
     .btn {
-        font-size: var(--ep-btn-font-size-resp) !important;
         border-radius: var(--ep-btn-border-radius) !important;
         padding: var(--ep-btn-padding) !important
     }
@@ -1159,6 +1151,10 @@ fieldset:disabled .btn {
     background-image: linear-gradient(63deg, var(--ep-card-selected-bg1) 0%, var(--ep-card-selected-bg2) 100%), var(--ep-card-background-image);
 }
 
+.card {
+    background-color: var(--ep-card-bg1, #F8F9FA);
+}
+
 
 .ep-card:after {
     position: absolute;
@@ -1194,11 +1190,6 @@ fieldset:disabled .btn {
 
 .ep-card a:not(.ep-action-btn):hover:after {
     border-bottom: var(--ep-card-hover-underline);
-}
-
-/* Helper Classes */
-.ep-text-heading {
-  color: var(--ep-heading-color1) !important;
 }
 
 .ep-list-iconed li::before {
@@ -1284,7 +1275,7 @@ fieldset:disabled .btn {
   border-radius: 8px !important;
   z-index: 1;
   overflow: hidden;
-  background: #f7f7f7 !important;
+  background: var(--ep-card-bg1, #F8F9FA) !important;
   border: none;
   display: flex;
   flex-direction: column;
@@ -1646,10 +1637,6 @@ i.ep-footer-vseparator {
     text-decoration: none;
 }
 
-.ep-footer.ep-footer-2 .ep-footer-2-sub-header {
-    color: var(--ep-footer-OP2-sub-header-color);
-}
-
 .ep-footerInfo-OP2-part1 {
     color: var(--ep-footerInfo-OP2-part1-color);
 }
@@ -1700,6 +1687,66 @@ i.ep-footer-vseparator {
 :dir(rtl) .ep-main-address-badge {
     left: var(--ep-address-badge-end);
     right: unset;
+}
+
+/* ---- shared star-photo mask (about-us, why-choose-us, services cards) ----
+   A reusable version of the mask + decorative "facet" treatment that used to be duplicated
+   verbatim per-component (theme4-about-us-section / theme4-why-choose-us-section). Markup shape:
+     <div class="ep-star-mask-figure">                (position:relative; aspect-ratio:1)
+       <img class="ep-star-mask-photo" ...>            (the full star)
+       <span class="ep-star-mask-facet">                (the same photo again, 89.684% size, offset)
+         <img class="ep-star-mask-photo" ...>
+         <span class="ep-star-mask-facet-line"></span>  (the white outline traced on the facet — a
+                                                          background-image, not an inline <svg>/<path>,
+                                                          so no per-component markup is needed for it)
+       </span>
+     </div>
+   Geometry (offsets/sizes) verified against the comp's star export, see --ep-star-mask in
+   ep-main.css for the mask shape itself. */
+
+.ep-star-mask-figure {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 1;
+}
+
+.ep-star-mask-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: var(--ep-star-mask);
+    mask-image: var(--ep-star-mask);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+/* 89.684% at (5.227%, 5.089%): the comp draws the photograph twice, once at the full star and
+   once at this smaller offset, which reads as a cut facet. */
+.ep-star-mask-facet {
+    position: absolute;
+    left: 5.227%;
+    top: 5.089%;
+    width: 89.684%;
+    aspect-ratio: 1;
+    pointer-events: none;
+}
+
+/* White at half strength, traced on the facet's inner edge — same curve as --ep-star-mask,
+   inlined here as a literal white stroke (not currentColor: a standalone background-image data
+   URI has no element to inherit color from) since this needs to render with zero markup beyond
+   the class itself. */
+.ep-star-mask-facet-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 652 652'%3E%3Cpath d='M326 79.4678C338.823 128.034 363.939 171.651 401.11 209.318C450.953 259.826 522.069 299.249 613.322 326C522.069 352.751 450.953 392.174 401.11 442.682C363.939 480.348 338.823 523.965 326 572.531C313.177 523.965 288.061 480.348 250.89 442.682C201.047 392.174 129.93 352.751 38.6768 326C129.93 299.249 201.047 259.826 250.89 209.318C288.061 171.651 313.177 128.034 326 79.4678Z' fill='none' stroke='white' stroke-width='20'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .ep-card-selectable {
@@ -1826,6 +1873,362 @@ i.ep-footer-vseparator {
     object-fit: cover;
 }
 
+/* theme4 shared accent-border card treatment — worker / address / contract cards.
+   Accent on the block-end + inline-END edges: the Sawaid design (Figma 2137:4169,
+   authored RTL) draws it on the bottom + physical-left, which in RTL is the
+   inline-end. Logical props keep that correct in both directions (LTR → bottom
+   + right) with no `:dir(rtl)` override. */
+.ep-accent-card {
+    border-bottom: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
+    border-inline-end: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
+}
+
+/* theme4 dashboard cards use shared Angular markup (`.ep-card`) across tenants.
+   Apply the same accent edges as `.ep-accent-card` for Sawaid only, without
+   touching any dashboard templates or shared class names. */
+app-dashboard .ep-card {
+    border-bottom: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
+    border-inline-end: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
+}
+
+/* theme4 dashboard card item rows (info cards, modal card, and contract details).
+   Keep it reusable: any `app-list-iems` rendered inside a dashboard `.ep-card`
+   gets the same soft pill treatment as theme4 address-card detail rows. */
+.ep-info-pill,
+app-dashboard .ep-card app-list-iems>div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: var(--ep-info-pill-radius);
+    background-color: var(--ep-info-pill-bg);
+}
+
+app-dashboard .ep-card app-list-iems>div {
+    margin-bottom: 8px !important;
+}
+
+app-dashboard .ep-card app-list-iems>div>span:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-inline-end: 0 !important;
+}
+
+app-dashboard .ep-card app-list-iems>div>span:last-child {
+    color: var(--ep-info-pill-value-color);
+    font-size: 12px !important;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.ep-info-pill-value {
+    color: var(--ep-info-pill-value-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ep-info-pill-label {
+    color: var(--ep-info-pill-label-color);
+    font-size: 10px;
+}
+
+/* theme4 shared select-check circle — a non-absolute, in-flow variant of
+   .ep-selectable-icon for cards whose comp places the check in normal flow
+   (worker, address) rather than pinned to a corner. */
+.ep-select-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--ep-selectable-icon-size);
+    height: var(--ep-selectable-icon-size);
+    border-radius: var(--ep-selectable-icon-border-radius);
+    background-color: var(--ep-selectable-icon-bg);
+    margin: 0 auto;
+}
+
+.ep-card-selectable.selected .ep-select-check {
+    background-color: var(--ep-selectable-checked-icon-bg);
+}
+
+/* theme4 individual package card (Figma 2137:4288). Compact selectable card:
+   sparkle + name, a discount pill and a price pill, and a "know more" link that
+   opens the details modal. The accent border, .ep-info-pill price chip and the
+   absolute .ep-selectable-icon are the shared theme4 treatments — only the
+   layout below is package-specific. Authored in logical order; the document
+   `dir` mirrors it for RTL/LTR (accent lands bottom + inline-end either way). */
+.ep-package-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+/* name + pricing group — 8px apart, per Figma frame 29600 */
+.ep-package-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ep-package-card__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.ep-package-card__logo {
+    flex-shrink: 0;
+    width: 48.61px;
+    height: auto;
+    object-fit: contain;
+}
+
+.ep-package-card__name {
+    flex: 1;
+    min-width: 0;
+    margin: 0 !important;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ep-brand-color);
+    text-align: start;
+}
+
+.ep-package-card__pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.ep-package-card__discount {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid var(--ep-brand-color);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ep-brand-color);
+    white-space: nowrap;
+}
+
+.ep-package-card__discount img {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.ep-package-card__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    /* always sit at the row's inline-end, with or without a discount pill */
+    margin-inline-start: auto;
+}
+
+.ep-package-card__was {
+    font-size: 12px;
+    color: var(--ep-basicPrice-color);
+    white-space: nowrap;
+}
+
+.ep-package-card__now {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ep-brand-color);
+    white-space: nowrap;
+}
+
+.ep-package-card__riyal {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+}
+
+.ep-package-card__riyal svg,
+.ep-package-card__riyal svg * {
+    fill: var(--ep-brand-color);
+}
+
+.ep-package-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* stick to the card's bottom edge when h-100 stretches it in a grid row */
+    margin-top: auto;
+    min-height: var(--ep-selectable-icon-size);
+    /* keep the link clear of the .ep-selectable-icon pinned at the inline-end */
+    padding-inline-end: calc(var(--ep-selectable-icon-size) + 8px);
+}
+
+.ep-package-card__more {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ep-brand-color);
+    cursor: pointer;
+}
+
+.ep-package-card__more:hover {
+    text-decoration: underline;
+}
+
+/* theme4 delivery-methods selectable option (Figma 2137:4346). White rounded
+   pill: method icon + label at the reading start, a check circle at the end.
+   Authored in logical order; the document `dir` mirrors it (RTL: check ends up
+   inline-start / physical-left, matching the Arabic comp). The check circle is a
+   self-contained SVG that already carries its own selected/unselected look, so
+   selection only swaps its [src] — the pill itself doesn't restyle. */
+.ep-delivery-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 24px;
+    background-color: var(--ep-card-bg1, #F8F9FA);
+    border-radius: 50px;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.ep-delivery-option__body {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.ep-delivery-option__icon {
+    flex-shrink: 0;
+    width: auto;
+    height: 32px;
+    max-width: 44px;
+    object-fit: contain;
+}
+
+.ep-delivery-option__label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--ep-card-color, #1a1c28);
+    text-align: start;
+}
+
+.ep-delivery-option__check {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.ep-delivery-option__riyal {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.ep-delivery-option__riyal svg,
+.ep-delivery-option__riyal svg * {
+    fill: currentColor;
+}
+
+.ep-delivery-option__map {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.ep-delivery-option__map svg-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* theme4 select-worker card (Figma 2137:4243). Name/profession at the reading
+   start + photo at the end, a 3-up metric grid (age / religion / experience) and
+   a skills pill — the metrics and skills always render (see the component; empty
+   values show "--") so cards in a grid stay the same height. */
+.ep-worker-card {
+    gap: 12px;
+}
+
+.ep-worker-name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--ep-card-color, #1a1c28);
+}
+
+/* inline metric icons (clock / star / briefcase) — same set as the theme4 CV card */
+.ep-worker-pill-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--ep-brand-color);
+}
+
+.ep-worker-role {
+    color: var(--ep-worker-role-color);
+    font-size: 13px;
+}
+
+.ep-worker-skills {
+    /* right-align (RTL start) so the label + values hug the card edge like Figma */
+    text-align: start;
+}
+
+.ep-worker-skills-label {
+    color: var(--ep-worker-skills-label-color);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.ep-worker-skills-value {
+    color: var(--ep-worker-skills-value-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* theme4 address card */
+.ep-address-map {
+    height: var(--ep-address-map-height);
+    border-radius: var(--ep-address-map-radius);
+    overflow: hidden;
+}
+
+.ep-address-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ep-address-status {
+    color: var(--ep-address-status-color);
+}
+
+.ep-address-status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--ep-address-status-dot-color);
+}
+
 .ep-status-badge {
     z-index: 1;
     position: absolute;
@@ -1846,11 +2249,30 @@ i.ep-footer-vseparator {
   left: unset;
   bottom: unset;
 }
-.ep-card-header {
-    background-color: var(--ep-card-header-bg);
-    color: var(--ep-card-header-color);
+
+/* Theme4 inline statuses should match the "Default Address" treatment:
+   plain text + colored dot (no filled badge background). */
+.ep-status-badge.ep-status-badge-default-position {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600 !important;
+    line-height: 1.5;
 }
 
+.ep-status-badge.ep-status-badge-default-position::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+    background-color: currentColor;
+}
 :dir(rtl) .ep-status-badge {
     left: var(--ep-status-badge-end);
     right: unset;
@@ -1874,6 +2296,30 @@ i.ep-footer-vseparator {
 .ep-status-primary {
     color: var(--ep-brand-color);
     background-color: var(--ep-status-primary-badge-bg);
+}
+
+/* Inline (default-position) variant: keep dot + text only, no filled badge. */
+.ep-status-badge-default-position.ep-status-confirmed-not-paid,
+.ep-status-badge-default-position.ep-status-confirmed,
+.ep-status-badge-default-position.ep-status-cancelled,
+.ep-status-badge-default-position.ep-status-primary {
+    background-color: transparent;
+}
+
+.ep-status-badge-default-position.ep-status-confirmed-not-paid {
+    color: var(--ep-status-confirmedNotPaid-badge-color);
+}
+
+.ep-status-badge-default-position.ep-status-confirmed {
+    color: var(--ep-status-confirmed-badge-color);
+}
+
+.ep-status-badge-default-position.ep-status-cancelled {
+    color: var(--ep-status-cancelled-badge-color);
+}
+
+.ep-status-badge-default-position.ep-status-primary {
+    color: var(--ep-brand-color);
 }
 
 .ep-side-user-menu {
@@ -2803,11 +3249,6 @@ i.ep-footer-vseparator {
     color: var(--ep-formControl-label-color);
 }
 /* end customize package */
-/* Helper class */
-.rounded-28 {
-  border-radius: 28px !important;
-}
-
 /* Base Button Style (Structural) */
 .ep-action-btn {
   position: relative;
@@ -3109,10 +3550,6 @@ i.ep-footer-vseparator {
     display: none;
   }
 
-  /* Show ellipsis items */
-  .ngx-pagination li.small-screen {
-    display: none !important;
-  }
 }
 
 @media (max-width: 480px) {
@@ -3140,7 +3577,7 @@ i.ep-footer-vseparator {
    ::ng-deep. */
 .ep-candidate-card {
     color: var(--ep-card-color);
-    background-color: var(--ep-card-bg1, #ffffff);
+    background-color: var(--ep-card-bg1, #F8F9FA);
     border: 1px solid var(--ep-brand4-color, #e2e8f0);
     border-radius: var(--ep-card-border-radius, 20px);
     padding: var(--ep-card-padding, 24px);
@@ -3549,3 +3986,203 @@ i.ep-footer-vseparator {
 .ep-dp-theme .bs-datepicker-body table td[class*=select-] span:after { background-color: var(--ep-brand-color); }
 .ep-dp-theme .bs-datepicker-body table td.week span { color: var(--ep-brand-color); }
 .ep-dp-theme .bs-datepicker-body table td.active-week span:hover { cursor: pointer; background-color: var(--ep-brand-color); color: #fff; }
+
+/* Reusable Nationality Cards — Figma Frame 29543 */
+.ep-nationality-card {
+  background-color: var(--ep-card-bg1, #F8F9FA);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 1.75rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ep-nationality-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--ep-brand-color, #217fa0);
+  box-shadow: 0 16px 36px rgba(33, 127, 160, 0.12);
+}
+
+.ep-flag-badge {
+  width: 44px;
+  height: 30px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ep-flag-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ep-nationality-title {
+  font-family: var(--ep-main-font, 'Cairo'), sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ep-nationality-title:hover {
+  color: var(--ep-brand-color, #217fa0);
+}
+
+.ep-nationality-pills {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.ep-nationality-pill {
+  flex: 1;
+  min-width: 0;
+  background-color: var(--ep-brand-light-bg, #e8f5fb);
+  border-radius: 14px;
+  padding: 0.75rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ep-nationality-pill .pill-icon {
+  margin-bottom: 4px;
+  color: var(--ep-brand-color, #217fa0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ep-nationality-pill .pill-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.ep-nationality-pill .pill-unit {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.ep-nationality-cta {
+  color: var(--ep-brand-color, #217fa0);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.ep-nationality-cta:hover {
+  color: #064a5f;
+}
+
+/* ---- Dashboard menu — circle-badged icons (Figma node 2137:4067) ----
+   Hook `.ep-dash-nav__icon` wraps every <svg-icon> in two places:
+     - the dashboard sidebar   (.ep-dash-nav, dashboard.component.html)
+     - the theme4 navbar user menu (.t4-nav__dropdown, theme4-navbar.component)
+   The icons themselves come from Umbraco (the `dashboard` content node), same as
+   every other tenant — this only adds the tinted disc + sizes/colours the glyph.
+   Tokens in ep-main.css. */
+
+.ep-dash-nav__icon {
+    inline-size: var(--ep-dash-nav-icon-size, 32px);
+    block-size: var(--ep-dash-nav-icon-size, 32px);
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-color: var(--ep-dash-nav-icon-bg, #c5e4f0);
+}
+
+.ep-dash-nav__icon svg-icon,
+.ep-dash-nav__icon svg {
+    /* Beats <svg-icon>'s width/height attributes (32 in the sidebar, 24 in the
+       navbar) so the glyph fits the disc at one size everywhere. */
+    inline-size: var(--ep-dash-nav-icon-glyph-size, 16px) !important;
+    block-size: var(--ep-dash-nav-icon-glyph-size, 16px) !important;
+    display: block;
+}
+
+.ep-dash-nav__icon svg,
+.ep-dash-nav__icon svg * {
+    fill: var(--ep-dash-nav-icon-color, #217fa0) !important;
+}
+
+/* Figma exports each icon wrapped in a full-bounds <clipPath> (a no-op crop).
+   angular-svg-icon inlines the SVG verbatim in BOTH places it's used, so the
+   sidebar and the navbar dropdown end up with two <clipPath> nodes sharing one
+   id — `url(#id)` then resolves to whichever comes first in the DOM (the navbar's,
+   inside its visibility:hidden closed dropdown), and the sidebar icon clips to
+   nothing until that dropdown is opened. The clips do nothing useful; drop them. */
+.ep-dash-nav__icon svg [clip-path],
+.ep-dash-nav__icon svg[clip-path] {
+    clip-path: none !important;
+}
+
+/* Desktop sidebar: the shared markup carries Bootstrap utilities tuned for the
+   other themes — `align-items-xl-start` (items shrink to content) and a wide
+   `gap-xl-5`. Override within .ep-dash-nav so the comp's tight, full-width list
+   comes through: rows span the panel so the hover/active pill fills the width,
+   and the gap collapses to the pill's own padding. Utilities are !important, so
+   the overrides have to be too. Mobile (the horizontal icon-over-label scroller)
+   is left alone. */
+@media (min-width: 1200px) {
+    .ep-dash-nav {
+        gap: 2px !important;
+        row-gap: 2px !important;
+        align-items: stretch !important;
+        padding: 16px 12px !important;
+    }
+
+    .ep-dash-nav .nav-link {
+        width: 100%;
+    }
+
+    .ep-dash-nav .dropdown-item {
+        width: 100%;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        column-gap: 10px !important;
+        row-gap: 0 !important;
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: var(--ep-dash-nav-link-font-size, 18px);
+        line-height: 1.5;
+        color: var(--ep-dash-nav-link-color, #217fa0) !important;
+        transition: background-color 140ms ease;
+    }
+}
+
+/* Hover + active share one treatment (so the current page reads the same as a
+   hovered row) — the tinted pill, matching the navbar dropdown's own :hover. */
+.ep-dash-nav a:hover .dropdown-item,
+.ep-dash-nav a.active .dropdown-item {
+    background-color: var(--ep-brand4-bg, #e8f5fb) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ep-dash-nav .dropdown-item {
+        transition: none;
+    }
+}

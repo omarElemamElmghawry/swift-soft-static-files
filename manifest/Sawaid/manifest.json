@@ -57,5 +57,19 @@
     }
   ],
   "scripts": [
+        { "src": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" }
+  ],
+  "icons":[
+    {
+      "href": "media/em1olrdz/fav32.png?width=32&quality=80",
+      "rel": "icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "href": "media/krmhogrr/fav180.png.png?width=180&quality=80",
+      "rel": "apple-touch-icon",
+      "sizes": "180x180"
+    }
   ]
 }

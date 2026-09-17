@@ -12,6 +12,14 @@
   --ep-brand2-bg: #064a5f; /* background = 2nd color */
   --ep-brand3-bg: #86cae4; /* background = 3rd color */
   --ep-brand4-bg: #e8f5fb;
+  /* Sawaid's decorative 4-point star silhouette, used to mask a plain square photo into the
+     comp's "star photo" motif (about-us, why-choose-us, and the services cards' tablet/desktop
+     treatment — see .ep-star-mask-photo in this file's layout half). preserveAspectRatio="none"
+     so it stretches to whatever box it's given rather than assuming a fixed ratio. White, not
+     black: mask-mode defaults to match-source, which reads an SVG image as a luminance mask — a
+     black shape would mask the photograph away entirely. Curve is Figma's own Vector22.svg,
+     verbatim, verified against the comp export to within 1px. */
+  --ep-star-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M50 0C50 24.1073 33.0357 41.9642 0 50C33.0357 58.0357 50 75.8928 50 100C50 75.8928 66.9642 58.0357 100 50C66.9642 41.9642 50 24.1073 50 0Z' fill='%23fff'/%3E%3C/svg%3E");
   --ep-body-font-size: 16px; /* HTML , body fonts size */
   --ep-body-bg: white;/* body background color */
   --ep-body-color: #1a1c28; /* body text color */
@@ -168,8 +176,8 @@
   --ep-card-borderRight: 0 solid #217fa0;
   --ep-card-borderBottom: 0 solid #217fa0;
   --ep-card-borderLeft: 0 solid #217fa0;
-  --ep-card-bg1: rgb(255, 255, 255); /* card background first color */
-  --ep-card-bg2: rgb(255,255,255); /* card background second color  if gradiant*/
+  --ep-card-bg1: #F8F9FA; /* card background first color */
+  --ep-card-bg2: #F8F9FA; /* card background second color  if gradiant*/
   --ep-card-selected-bg1: var(--ep-card-bg1); /* card background first color */
   --ep-card-selected-bg2: var(
     --ep-card-bg2
@@ -268,6 +276,27 @@
   /* worker card css */
   --ep-user-image-zoom-size: 80px;
   --ep-user-image-border-radius: 40px;
+  --ep-worker-photo-size: 72px;
+  --ep-worker-photo-border-radius: 12px;
+  --ep-worker-role-color: #217fa0;
+  --ep-worker-skills-label-color: #6b6d78;
+  --ep-worker-skills-value-color: #1a1c28;
+
+  /* theme4 accent-border card treatment — worker / address / contract cards */
+  --ep-accent-card-border-color: #3aa3cd;
+  --ep-accent-card-border-width: 4px;
+
+  /* theme4 shared info pill — worker mini-stats, address fields, etc. */
+  --ep-info-pill-bg: #e8f5fb;
+  --ep-info-pill-radius: 14px;
+  --ep-info-pill-value-color: #1a1c28;
+  --ep-info-pill-label-color: #6b6d78;
+
+  /* theme4 address card */
+  --ep-address-map-height: 100px;
+  --ep-address-map-radius: 16px;
+  --ep-address-status-color: #217fa0;
+  --ep-address-status-dot-color: #217fa0;
 
   --ep-status-badge-color: #b45309; /*waiting is default */
   --ep-status-badge-font-size: 14px;
@@ -309,7 +338,7 @@
   --ep-popupCard-border: 0px solid #217fa0;
   --ep-popupCard-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.0009); /* see https://cssgenerator.org/box-shadow-css-generator.html */
   /* card in card */
-  --ep-innerCard-bg: rgb(255, 255, 255); /* card background first color */
+  --ep-innerCard-bg: #F8F9FA; /* card background first color */
   --ep-innerCard-icon-direction: column;
   --ep-innerCard-padding: 12px;
   --ep-innerCard-border-radius: 12px;
@@ -536,4 +565,12 @@
   --ep-card-card-hover-color: var(--ep-card-link-color);
   --ep-card-hover-decoration: none;
   --ep-status-primary-badge-bg: #e8f5fb;
+
+  /* dashboard menu — circle-badged icons (sidebar + theme4 navbar user dropdown) */
+  --ep-dash-nav-icon-size: 32px;      /* Figma: Container size */
+  --ep-dash-nav-icon-glyph-size: 16px;
+  --ep-dash-nav-icon-bg: #c5e4f0;     /* Figma: color/primary/100 */
+  --ep-dash-nav-icon-color: var(--ep-brand-color);
+  --ep-dash-nav-link-color: var(--ep-brand-color);
+  --ep-dash-nav-link-font-size: 18px; /* Figma: Body/LG-SemiBold-18 */
 }
