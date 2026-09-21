@@ -2,25 +2,71 @@
    Sources: ep-layout.css, ep-main.css
 */
 
+/* Almarai is the typeface specified by the ABIR XD developer spec. */
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tsstApxBaigK_hnnQ1iFo0C3.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tsstApxBaigK_hnnQ12Fow.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tssoApxBaigK_hnnS-agtnqWo572.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tssoApxBaigK_hnnS-agtn-Wow.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tssoApxBaigK_hnnS_qjtnqWo572.woff2') format('woff2');
+    unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/almarai/v19/tssoApxBaigK_hnnS_qjtn-Wow.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
-    /* Cairo, served as a variable font (wght 400-800) by the manifest under the
-       family name `custom-font`. Weights below are real instances of that axis. */
-    /* `custom-font fallback` is the metric-matched companion face the manifest
-       declares (Tahoma for Arabic, Arial for Latin, with size-adjust and
-       ascent/descent overrides). It MUST sit directly after `custom-font` in the
-       stack or the overrides never apply and `font-display: swap` reflows. */
-    --ep-main-font: 'custom-font', 'custom-font fallback', sans-serif;
+    --ep-main-font: 'Almarai', 'custom-font', 'custom-font fallback', sans-serif;
     --ep-main-font-weight: 400;
-    /* `.fw-medium` consumes these; they were undefined here, so the class was a
-       no-op. Cairo Medium 500 is the Figma nav/label/button weight. */
-    --ep-med-font: 'custom-font', 'custom-font fallback', sans-serif;
-    --ep-med-font-weight: 500;
-    --ep-bld-font: 'custom-font', 'custom-font fallback', sans-serif;
+    --ep-med-font: 'Almarai', 'custom-font', 'custom-font fallback', sans-serif;
+    --ep-med-font-weight: 700;
+    --ep-bld-font: 'Almarai', 'custom-font', 'custom-font fallback', sans-serif;
     --ep-bld-font-weight: 700;
-    /* Headings in the Figma type scale are ExtraBold. */
-    --ep-xbld-font: 'custom-font', 'custom-font fallback', sans-serif;
+    --ep-xbld-font: 'Almarai', 'custom-font', 'custom-font fallback', sans-serif;
     --ep-xbld-font-weight: 800;
-    --bs-primary-rgb: 33, 127, 160 !important;
+    --bs-primary-rgb: 34, 65, 130 !important;
 }
 
 
@@ -108,7 +154,7 @@ h2 {
 .h3,
 h3 {
     font-size: var(--ep-h3-font-size-resp) !important;
-    color: var(--ep-brand-color);
+    color: var(--ep-heading-color);
 
 }
 
@@ -500,6 +546,20 @@ a.ep-link:hover:after {
     background: linear-gradient(63deg, var(--ep-btnSecondary-hover-bg1) 0%, var(--ep-btnSecondary-hover-bg2) 100%) !important;
     color: var(--ep-btnSecondary-hover-color) !important;
     border: var(--ep-btnSecondary-hover-border) !important
+}
+
+.btn-outline-primary {
+    background: var(--ep-btnOutline-bg) !important;
+    color: var(--ep-btnOutline-color) !important;
+    border: var(--ep-btnOutline-border) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus-visible,
+.btn-outline-primary:active {
+    background: var(--ep-btnOutline-hover-bg) !important;
+    color: var(--ep-btnOutline-hover-color) !important;
+    border: var(--ep-btnOutline-hover-border) !important;
 }
 
 
@@ -1205,11 +1265,12 @@ fieldset:disabled .btn {
 
 /* Base Service Card */
 .ep-service-card {
-  background-color: #f7f7f7 !important;
-  background: #f7f7f7 !important;
-  border: none !important;
-  border-radius: 8px !important;
-  padding: 28px !important;
+  background-color: var(--ep-serviceCard-bg1) !important;
+  background: var(--ep-serviceCard-bg1) !important;
+  border: 1px solid var(--ep-border-color) !important;
+  border-radius: var(--ep-card-border-radius) !important;
+  padding: var(--ep-service-card-padding) !important;
+  box-shadow: var(--ep-card-shadow);
   position: relative;
   overflow: hidden; /* Ensures the sliding background stays inside the card */
   z-index: 1;
@@ -1230,7 +1291,7 @@ fieldset:disabled .btn {
   background-color: var(--ep-brand-color) !important;
   background: var(--ep-brand-color) !important;
   border: none !important;
-  border-radius: 8px !important;
+  border-radius: var(--ep-card-border-radius) !important;
   z-index: -1;
   transition: all 0.3s ease;
   right: -100%;
@@ -1267,26 +1328,27 @@ fieldset:disabled .btn {
 .ep-service-card .ep-action-btn-outline {
   background-color: white !important;
   background: white !important;
-  color: var(--ep-brand-color) !important;
-  border: 1px solid var(--ep-brand-color) !important;
+  color: var(--ep-action-outline-color) !important;
+  border: 1px solid var(--ep-action-outline-color) !important;
 }
 /* --- Blog Card Component --- */
 .ep-blog-card {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
-  border-radius: 8px !important;
+  border-radius: var(--ep-card-border-radius) !important;
   z-index: 1;
   overflow: hidden;
-  background: var(--ep-card-bg1, #F8F9FA) !important;
-  border: none;
+  background: var(--ep-card-bg1, #ffffff) !important;
+  border: 1px solid var(--ep-border-color);
+  box-shadow: var(--ep-card-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .ep-blog-card .ep-blog-card-image {
   width: 100%;
-  border-radius: 8px 8px 0 0 !important;
+  border-radius: var(--ep-card-border-radius) var(--ep-card-border-radius) 0 0 !important;
   overflow: hidden;
 }
 
@@ -1299,7 +1361,7 @@ fieldset:disabled .btn {
   width: 100%;
   height: 100%;
   background: var(--ep-brand-color) !important;
-  border-radius: 8px !important;
+  border-radius: var(--ep-card-border-radius) !important;
   z-index: -1;
   transition: all 0.3s ease;
 }
@@ -1876,9 +1938,9 @@ i.ep-footer-vseparator {
     object-fit: cover;
 }
 
-/* theme4 shared accent-border card treatment — worker / address / contract cards.
-   Accent on the block-end + inline-END edges: the Sawaid design (Figma 2137:4169,
-   authored RTL) draws it on the bottom + physical-left, which in RTL is the
+/* Theme 5 shared accent-border treatment for worker / address / contract cards.
+   Accent on the block-end + inline-end edges. The original composition is RTL,
+   where this appears on the bottom + physical-left; inline-end keeps that
    inline-end. Logical props keep that correct in both directions (LTR → bottom
    + right) with no `:dir(rtl)` override. */
 .ep-accent-card {
@@ -1886,8 +1948,8 @@ i.ep-footer-vseparator {
     border-inline-end: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
 }
 
-/* theme4 dashboard cards use shared Angular markup (`.ep-card`) across tenants.
-   Apply the same accent edges as `.ep-accent-card` for Sawaid only, without
+/* Theme 5 dashboard cards use shared Angular markup (`.ep-card`) across tenants.
+   Apply the same accent edges as `.ep-accent-card` for ABIR only, without
    touching any dashboard templates or shared class names. */
 app-dashboard .ep-card {
     border-bottom: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
@@ -2130,7 +2192,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
     font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
-    color: var(--ep-card-color, #1a1c28);
+    color: var(--ep-card-color, #313131);
     text-align: start;
 }
 
@@ -2174,7 +2236,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.4;
-    color: var(--ep-card-color, #1a1c28);
+    color: var(--ep-card-color, #313131);
 }
 
 /* inline metric icons (clock / star / briefcase) — same set as the theme4 CV card */
@@ -3280,7 +3342,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 }
 /* --- 1. PRIMARY (Original) --- */
 .ep-action-btn-primary {
-  background-color: var(--ep-brand-color);
+  background-color: var(--ep-action-primary-bg);
   color: white !important;
   fill: white !important;
   position: relative;
@@ -3290,12 +3352,11 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-action-btn-primary::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--ep-btn-border-radius);
-  background-color: var(--ep-brand2-color);
+  inset-block: -1px;
+  right: calc(-100% - 2px);
+  width: calc(100% + 2px);
+  height: auto;
+  background-color: var(--ep-action-primary-hover-bg);
   opacity: 0;
   z-index: -1;
   transition: right 0.3s ease-out, opacity 0.1s ease-out;
@@ -3303,43 +3364,47 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-blog-card:hover .ep-action-btn-primary::before,
 .ep-service-card:hover .ep-action-btn-primary::before,
 .ep-action-btn-primary:hover::before {
-  right: 0;
+  right: -1px;
   opacity: 1;
+}
+.ep-action-btn-primary:hover {
+  border-color: var(--ep-action-primary-hover-bg);
 }
 
 /* --- 2. SECONDARY (Flipped) --- */
 .ep-action-btn-secondary {
-  background-color: var(--ep-brand2-color);
+  background-color: var(--ep-action-secondary-bg);
   color: #fff !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border: 1px solid var(--ep-brand2-color); /* Light border to define shape on white backgrounds */
+  border: 1px solid var(--ep-action-secondary-bg);
 }
 .ep-action-btn-secondary::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: var(--ep-brand-color); /* Slides in brand color */
+  inset-block: -1px;
+  right: calc(-100% - 2px);
+  width: calc(100% + 2px);
+  height: auto;
+  background-color: var(--ep-action-secondary-hover-bg);
   opacity: 0;
   z-index: -1;
   transition: right 0.3s ease-out, opacity 0.1s ease-out;
 }
 .ep-action-btn-secondary:hover {
   color: white !important;
+  border-color: var(--ep-action-secondary-hover-bg);
 }
 .ep-action-btn-secondary:hover::before {
-  right: 0;
+  right: -1px;
   opacity: 1;
 }
 
 /* --- 3. TRANSPARENT --- */
 .ep-action-btn-transparent {
   background-color: transparent;
-  color: var(--ep-brand-color) !important;
+  color: var(--ep-action-outline-color) !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -3347,28 +3412,29 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-action-btn-transparent::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: var(--ep-brand-color);
+  inset-block: -1px;
+  right: calc(-100% - 2px);
+  width: calc(100% + 2px);
+  height: auto;
+  background-color: var(--ep-action-outline-color);
   opacity: 0;
   z-index: -1;
   transition: right 0.3s ease-out, opacity 0.1s ease-out;
 }
 .ep-action-btn-transparent:hover {
   color: white !important;
+  border-color: var(--ep-action-outline-color);
 }
 .ep-action-btn-transparent:hover::before {
-  right: 0;
+  right: -1px;
   opacity: 1;
 }
 
 /* --- 4. OUTLINE --- */
 .ep-action-btn-outline {
   background-color: transparent;
-  color: var(--ep-brand-color) !important;
-  border: 1px solid var(--ep-brand-color);
+  color: var(--ep-action-outline-color) !important;
+  border: 1px solid var(--ep-action-outline-color);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -3377,11 +3443,11 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-action-btn-outline::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: var(--ep-brand-color);
+  inset-block: -1px;
+  right: calc(-100% - 2px);
+  width: calc(100% + 2px);
+  height: auto;
+  background-color: var(--ep-action-outline-color);
   opacity: 0;
   z-index: -1;
   transition: right 0.3s ease-out, opacity 0.1s ease-out;
@@ -3389,11 +3455,42 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-service-card:hover .ep-action-btn-outline,
 .ep-action-btn-outline:hover {
   color: white !important;
+  border-color: var(--ep-action-outline-color);
 }
 .ep-service-card:hover .ep-action-btn-outline::before,
 .ep-action-btn-outline:hover::before {
-  right: 0;
+  right: -1px;
   opacity: 1;
+}
+
+/* --- 5. TERTIARY / COLOR 3 --- */
+.ep-action-btn-tertiary {
+  background-color: var(--ep-action-tertiary-color);
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  border: 1px solid var(--ep-action-tertiary-color);
+}
+
+.ep-action-btn-tertiary:hover,
+.ep-action-btn-tertiary:focus-visible {
+  background-color: var(--ep-action-tertiary-color);
+  color: #ffffff !important;
+  border-color: var(--ep-action-tertiary-color);
+}
+
+.ep-action-btn-tertiary-outline {
+  background-color: transparent;
+  color: var(--ep-action-tertiary-color) !important;
+  fill: var(--ep-action-tertiary-color) !important;
+  border: 1px solid var(--ep-action-tertiary-color);
+}
+
+.ep-action-btn-tertiary-outline:hover,
+.ep-action-btn-tertiary-outline:focus-visible {
+  background-color: var(--ep-action-tertiary-color);
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  border-color: var(--ep-action-tertiary-color);
 }
 
 /* Active and Disabled states */
@@ -3992,23 +4089,23 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 
 /* Reusable Nationality Cards — Figma Frame 29543 */
 .ep-nationality-card {
-  background-color: var(--ep-card-bg1, #F8F9FA);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  border-radius: 20px;
-  padding: 1.75rem 1.25rem 1.5rem;
+  background-color: var(--ep-card-bg1, #ffffff);
+  border: 1px solid var(--ep-border-color);
+  border-radius: var(--ep-card-border-radius);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   height: 100%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--ep-card-shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .ep-nationality-card:hover {
   transform: translateY(-5px);
-  border-color: var(--ep-brand-color, #217fa0);
-  box-shadow: 0 16px 36px rgba(33, 127, 160, 0.12);
+  border-color: var(--ep-brand-color, #224182);
+  box-shadow: 0 10px 24px rgba(var(--ep-brand-color-rgb), 0.16);
 }
 
 .ep-flag-badge {
@@ -4028,17 +4125,17 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 }
 
 .ep-nationality-title {
-  font-family: var(--ep-main-font, 'Cairo'), sans-serif;
-  font-size: 1.375rem;
+  font-family: var(--ep-main-font), sans-serif;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 1.25rem;
+  color: var(--ep-card-color);
+  margin-bottom: 1rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .ep-nationality-title:hover {
-  color: var(--ep-brand-color, #217fa0);
+  color: var(--ep-brand-color, #224182);
 }
 
 .ep-nationality-pills {
@@ -4051,8 +4148,8 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-nationality-pill {
   flex: 1;
   min-width: 0;
-  background-color: var(--ep-brand-light-bg, #e8f5fb);
-  border-radius: 14px;
+  background-color: var(--ep-brand-light-bg, #f3fbfe);
+  border-radius: 16px;
   padding: 0.75rem 0.35rem;
   display: flex;
   flex-direction: column;
@@ -4063,7 +4160,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 
 .ep-nationality-pill .pill-icon {
   margin-bottom: 4px;
-  color: var(--ep-brand-color, #217fa0);
+  color: var(--ep-brand3-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4072,18 +4169,18 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 .ep-nationality-pill .pill-value {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--ep-brand-color);
   line-height: 1.2;
 }
 
 .ep-nationality-pill .pill-unit {
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--ep-muted-color);
   margin-top: 2px;
 }
 
 .ep-nationality-cta {
-  color: var(--ep-brand-color, #217fa0);
+  color: var(--ep-brand-color);
   font-size: 0.9375rem;
   font-weight: 700;
   text-decoration: none;
@@ -4095,7 +4192,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 }
 
 .ep-nationality-cta:hover {
-  color: #064a5f;
+  color: var(--ep-brand3-color);
 }
 
 /* ---- Dashboard menu — circle-badged icons (Figma node 2137:4067) ----
@@ -4114,7 +4211,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
     align-items: center;
     justify-content: center;
     border-radius: 50px;
-    background-color: var(--ep-dash-nav-icon-bg, #c5e4f0);
+    background-color: var(--ep-dash-nav-icon-bg, #eaf3f9);
 }
 
 .ep-dash-nav__icon svg-icon,
@@ -4128,7 +4225,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 
 .ep-dash-nav__icon svg,
 .ep-dash-nav__icon svg * {
-    fill: var(--ep-dash-nav-icon-color, #217fa0) !important;
+    fill: var(--ep-dash-nav-icon-color, #224182) !important;
 }
 
 /* Figma exports each icon wrapped in a full-bounds <clipPath> (a no-op crop).
@@ -4172,7 +4269,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
         font-weight: 600;
         font-size: var(--ep-dash-nav-link-font-size, 18px);
         line-height: 1.5;
-        color: var(--ep-dash-nav-link-color, #217fa0) !important;
+        color: var(--ep-dash-nav-link-color, #224182) !important;
         transition: background-color 140ms ease;
     }
 }
@@ -4181,7 +4278,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
    hovered row) — the tinted pill, matching the navbar dropdown's own :hover. */
 .ep-dash-nav a:hover .dropdown-item,
 .ep-dash-nav a.active .dropdown-item {
-    background-color: var(--ep-brand4-bg, #e8f5fb) !important;
+    background-color: var(--ep-brand4-bg, #f3fbfe) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4190,47 +4287,137 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
     }
 }
 
+/* ==========================================================================
+   ABIR public-site component skin
+
+   Theme 5 began as a structural copy of Theme 4. These tenant-scoped rules
+   translate that shared markup to the ABIR XD: four upright service cards,
+   circular editorial imagery, alternating pale-blue/pale-green sections, and
+   the 16px bordered card language used throughout the published spec.
+   ========================================================================== */
+
+app-theme5-about-us-section .t4-about,
+app-theme5-app .t4-app,
+app-theme5-faqs-section .t4-faqs {
+    background-color: var(--ep-brand-light-bg) !important;
+}
+
+app-theme5-why-choose-us-section .t4-wcu,
+app-theme5-contact-us-section .t4-contact {
+    background-color: var(--ep-surface-soft) !important;
+}
+
+app-theme5-about-us-section .t4-about__photo,
+app-theme5-why-choose-us-section .t4-wcu__star-photo {
+    border-radius: 50% !important;
+    -webkit-mask-image: var(--ep-star-mask) !important;
+    mask-image: var(--ep-star-mask) !important;
+    -webkit-mask-size: 100% 100% !important;
+    mask-size: 100% 100% !important;
+}
+
+app-theme5-about-us-section .t4-about__facet,
+app-theme5-why-choose-us-section .t4-wcu__star-facet,
+app-theme5-services .ep-star-mask-facet {
+    display: none !important;
+}
+
+app-theme5-services .t4-service-card {
+    overflow: hidden;
+    border: 1px solid var(--ep-border-color);
+    background-color: var(--ep-card-bg1);
+    box-shadow: var(--ep-card-shadow);
+}
+
+app-theme5-services .t4-service-card__figure {
+    inline-size: 100% !important;
+    aspect-ratio: 1.55 / 1;
+}
+
+app-theme5-services .t4-service-card__figure .ep-star-mask-photo {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    border-radius: var(--ep-card-border-radius) var(--ep-card-border-radius) 0 0 !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+app-theme5-services .t4-service-card__body {
+    padding: 0 16px 16px;
+}
+
+app-theme5-contact-us-section .t4-contact__map-card,
+app-theme5-contact-us-section .t4-contact__map-img,
+app-theme5-contact-us-section .t4-contact__map-canvas,
+app-theme5-contact-us-section .t4-contact__form-card,
+app-theme5-customer-reviews-section .t4-review-card {
+    border-radius: var(--ep-card-border-radius) !important;
+}
+
+app-theme5-contact-us-section .t4-contact__map-card,
+app-theme5-contact-us-section .t4-contact__form-card,
+app-theme5-customer-reviews-section .t4-review-card {
+    border: 1px solid var(--ep-border-color);
+    box-shadow: var(--ep-card-shadow);
+}
+
+@media (min-width: 992px) {
+    app-theme5-services .t4-services__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    app-theme5-services .t4-service-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 0 !important;
+    }
+}
+
 :root {
-  --ep-heading-color: #1a1c28;
+  /* ABIR Al Qarat — extracted from ABIRALQARAT_Web_V1.xd */
+  --ep-heading-color: #232929;
   --ep-vheight-50: 50vh; /* general 50 height  of viewport */
   --ep-vheight-100: 100vh; /* general 100 height  of viewport */
   --ep-offers-img-ratio: 1/0.667; /* general image ratio for offers section */
-  --ep-brand-color: #217fa0; /* 1st color */
-  --ep-brand2-color: #064a5f; /* 2nd color */
-  --ep-brand3-color: #86cae4; /* 3rd color */
-  --ep-brand4-color: #e2e4e8;
-  --ep-brand-bg: #217fa0; /* background = 1st color */
+  --ep-brand-color: #224182; /* ABIR navy — primary actions and footer */
+  --ep-brand-color-rgb: 34, 65, 130;
+  --ep-brand2-color: #8dc43e; /* ABIR green — secondary accent */
+  --ep-brand3-color: #1baae2; /* ABIR cyan — links and highlights */
+  --ep-brand4-color: #cad5e4;
+  --ep-brand-bg: #224182; /* background = 1st color */
   --ep-onBrandBg-color: #ffffff; /* text color on up background */
-  --ep-brand2-bg: #064a5f; /* background = 2nd color */
-  --ep-brand3-bg: #86cae4; /* background = 3rd color */
-  --ep-brand4-bg: #e8f5fb;
-  /* Sawaid's decorative 4-point star silhouette, used to mask a plain square photo into the
-     comp's "star photo" motif (about-us, why-choose-us, and the services cards' tablet/desktop
-     treatment — see .ep-star-mask-photo in this file's layout half). preserveAspectRatio="none"
-     so it stretches to whatever box it's given rather than assuming a fixed ratio. White, not
-     black: mask-mode defaults to match-source, which reads an SVG image as a luminance mask — a
-     black shape would mask the photograph away entirely. Curve is Figma's own Vector22.svg,
-     verbatim, verified against the comp export to within 1px. */
-  --ep-star-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M50 0C50 24.1073 33.0357 41.9642 0 50C33.0357 58.0357 50 75.8928 50 100C50 75.8928 66.9642 58.0357 100 50C66.9642 41.9642 50 24.1073 50 0Z' fill='%23fff'/%3E%3C/svg%3E");
+  --ep-brand2-bg: #8dc43e; /* background = 2nd color */
+  --ep-brand3-bg: #1baae2; /* background = 3rd color */
+  --ep-brand4-bg: #f3fbfe;
+  --ep-brand-light-bg: #f3fbfe;
+  --ep-brand-alt-light-bg: #f3f9eb;
+  --ep-surface-soft: #f9fcf5;
+  --ep-border-color: rgba(199, 199, 199, 0.5);
+  --ep-muted-color: #6b7280;
+  /* Theme 5 still exposes the historic star-mask hook. ABIR's XD uses round
+     editorial photography, so the hook is intentionally a circle. */
+  --ep-star-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23fff'/%3E%3C/svg%3E");
   --ep-body-font-size: 16px; /* HTML , body fonts size */
   --ep-body-bg: white;/* body background color */
-  --ep-body-color: #1a1c28; /* body text color */
+  --ep-body-color: #232929; /* body text color */
   --ep-body-border-radius: 16px;
-  --ep-link-color: #217fa0; /* "a" color */
-  --ep-colored-by-filter: brightness(0) saturate(100%) invert(45%) sepia(13%) saturate(5459%) hue-rotate(162deg) brightness(80%) contrast(74%);
+  --ep-link-color: #1baae2; /* "a" color */
+  --ep-colored-by-filter: brightness(0) saturate(100%) invert(24%) sepia(29%) saturate(2354%) hue-rotate(181deg) brightness(84%) contrast(94%);
   --ep-whited-by-filter: brightness(0) saturate(100%) invert(100%) sepia(2%)
     saturate(7%) hue-rotate(19deg) brightness(103%) contrast(100%);
   --ep-blacked-by-filter: brightness(0) saturate(100%) invert(0%) sepia(0%)
     saturate(7500%) hue-rotate(357deg) brightness(93%) contrast(103%);
   /*لازم اللون ده يمشي على الغامق و الفاتح*/
-  --ep-link-hover-color: #1a6a87; /* "a:hover" */
+  --ep-link-hover-color: #224182; /* "a:hover" */
   --ep-link-decoration: none; /* "a" decoration */
   --ep-link-hover-decoration: none; /* "a:hover" decoration*/
-  --ep-link-underline: none; /*2px solid #217fa0;/* "a" custom line */
+  --ep-link-underline: none; /* "a" custom line */
   --ep-link-underline-margin: -6px; /* "a" custom line position */
-  --ep-link-hover-underline: 2px solid #217fa0; /* "a:hover" custom line */
-  --ep-confirmed-bg: #e8f5fb; /* status confirmed not paid background */
-  --ep-confirmed-color: #0d5c78; /* status confirmed not paid text color */
+  --ep-link-hover-underline: 2px solid #1baae2; /* "a:hover" custom line */
+  --ep-confirmed-bg: #f3fbfe; /* status confirmed not paid background */
+  --ep-confirmed-color: #224182; /* status confirmed not paid text color */
   --ep-confirmedPaid-bg: #e6f7f1; /* status confirmed paid background */
   --ep-confirmedPaid-color: #047857; /* status confirmed paid color */
   --ep-waiting-bg: #fef3e2; /* status waiting background */
@@ -4239,19 +4426,19 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-cancelled-color: #b91c1c; /* status cancelled background */
 
   /*Typography*/
-  --ep-heading-color1: #1a1c28; /* header main color */
-  --ep-heading-color2: #217fa0; /* if we need gradiant => color ELSE transparent */
+  --ep-heading-color1: #232929; /* header main color */
+  --ep-heading-color2: #1baae2; /* if we need gradiant => color ELSE transparent */
   --ep-headerGradiant-textFillColor: none; /*  if we need gradiant => transparent ELSE none*/
   --ep-headerGradiant-fit-content: none; /*  if we need gradiant => fit-content ELSE none*/
   --ep-heading-margin-bottom: 24px;
   --ep-heading-margin-bottom-resp: 16px;
-  --ep-firstWord-color: #217fa0; /* if we need to colorfiy first word */
-  --ep-heading-underline: 0px solid #217fa0; /* border | none */
+  --ep-firstWord-color: #1baae2; /* highlighted words in XD */
+  --ep-heading-underline: 0px solid #1baae2; /* border | none */
   --ep-heading-underline-width: 5%; /* px % 0*/
   --ep-heading-underline-padding: 12px; /* px % 0*/
   --ep-h1-font-size: 56px; /* "h1" font size at desktop */
   --ep-h1-font-size-resp: 36px; /* "h1" font size at mobile */
-  --ep-h2-font-size: 38px; /* "h2" font size at desktop */
+  --ep-h2-font-size: 40px; /* XD section heading */
   --ep-h2-font-size-resp: 26px; /* "h2" font size at mobile */
   --ep-h3-font-size: 24px; /* "h3" font size at desktop */
   --ep-h3-font-size-resp: 20px; /* "h3" font size at mobile */
@@ -4269,37 +4456,53 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   /* GENERAL BUTTONS */
   --ep-btn-disabled-opacity: 0.3; /* disabled button opacity */
   --ep-btn-disabled-filter: 1; /* disabled button grayscale 0-to-1 */
-  --ep-btn-font-size: 14px; /* button font size at desktop */
+  --ep-btn-font-size: 16px; /* button font size at desktop */
   --ep-btn-font-size-resp: 14px; /* button font size at mobile */
-  --ep-btn-border-radius: 12px; /* button border radius at desktop */
-  --ep-btn-border-radius-resp: 12px; /* button border radius at mobile */
-  --ep-btn-padding: 12px 44px; /* button top & bottom padding at desktop */
+  --ep-btn-border-radius: 100px; /* XD pill actions */
+  --ep-btn-border-radius-resp: 100px; /* button border radius at mobile */
+  --ep-btn-padding: 12px 32px; /* button top & bottom padding at desktop */
   --ep-btn-padding-resp: 10px 24px; /* button top & bottom padding at desktop */
   --ep-btn-shadow: none;
   --ep-btnSm-font-size: 14px; /* small button "btn-sm" font size at all */
   --ep-btnSm-padding: 10px 20px; /* small button "btn-sm" top & bottom padding at all */
-  --ep-btnSm-border-radius: 10px; /* small button "btn-sm" border radius at mobile */
+  --ep-btnSm-border-radius: 100px; /* small button "btn-sm" border radius at mobile */
   --ep-btnXs-font-size: 12px; /* small button "btn-sm" font size at all */
   --ep-btnXs-padding: 6px 16px; /* small button "btn-sm" top & bottom padding at all */
-  --ep-btnXs-border-radius: 8px; /* small button "btn-sm" border radius at mobile */
+  --ep-btnXs-border-radius: 100px; /* small button "btn-sm" border radius at mobile */
   /* btn-primary */
-  --ep-btnPrimary-bg1: #217fa0; /* primary button background first color */
-  --ep-btnPrimary-bg2: #217fa0; /* primary button background second color if gradiant */
-  --ep-btnPrimary-hover-bg1: #1a6a87; /* primary button:hover background first color */
-  --ep-btnPrimary-hover-bg2: #1a6a87; /* primary button:hover background second color if gradiant */
+  --ep-btnPrimary-bg1: #224182; /* primary button background first color */
+  --ep-btnPrimary-bg2: #224182; /* primary button background second color if gradiant */
+  --ep-btnPrimary-hover-bg1: #8dc43e; /* primary button:hover = ABIR color 2 */
+  --ep-btnPrimary-hover-bg2: #8dc43e; /* primary button:hover = ABIR color 2 */
   --ep-btnPrimary-color: #fff; /* primary button text color */
   --ep-btnPrimary-hover-color: #fff; /* primary button:hover text color */
-  --ep-btnPrimary-border: 1px solid #217fa0; /* primary button border color */
-  --ep-btnPrimary-hover-border: 1px solid #1a6a87; /* primary button:hover border color */
+  --ep-btnPrimary-border: 1px solid #224182; /* primary button border color */
+  --ep-btnPrimary-hover-border: 1px solid #8dc43e; /* primary button:hover border color */
   /* btn-secondary */
   --ep-btnSecondary-bg1: #ffffff; /* secondary button background first color */
   --ep-btnSecondary-bg2: #ffffff; /* secondary button background second color if gradiant */
-  --ep-btnSecondary-hover-bg1: #e8f5fb; /* secondary button:hover background first color */
-  --ep-btnSecondary-hover-bg2: #e8f5fb; /* secondary button:hover background second color if gradiant */
-  --ep-btnSecondary-color: #217fa0; /* secondary button text color */
-  --ep-btnSecondary-hover-color: #064a5f; /* secondary button:hover text color */
-  --ep-btnSecondary-border: 1px solid #217fa0; /* secondary button border color */
-  --ep-btnSecondary-hover-border: 1px solid #064a5f; /* secondary button:hover border color */
+  --ep-btnSecondary-hover-bg1: #f3fbfe; /* secondary button:hover background first color */
+  --ep-btnSecondary-hover-bg2: #f3fbfe; /* secondary button:hover background second color if gradiant */
+  --ep-btnSecondary-color: #1baae2; /* secondary button text color */
+  --ep-btnSecondary-hover-color: #224182; /* secondary button:hover text color */
+  --ep-btnSecondary-border: 1px solid #1baae2; /* secondary button border color */
+  --ep-btnSecondary-hover-border: 1px solid #224182; /* secondary button:hover border color */
+
+  /* btn-outline-primary — ABIR color 3 */
+  --ep-btnOutline-bg: transparent;
+  --ep-btnOutline-color: #1baae2;
+  --ep-btnOutline-border: 1px solid #1baae2;
+  --ep-btnOutline-hover-bg: #1baae2;
+  --ep-btnOutline-hover-color: #ffffff;
+  --ep-btnOutline-hover-border: 1px solid #1baae2;
+
+  /* Shared action-button component palette */
+  --ep-action-primary-bg: #224182;
+  --ep-action-primary-hover-bg: #8dc43e;
+  --ep-action-secondary-bg: #8dc43e;
+  --ep-action-secondary-hover-bg: #719d32;
+  --ep-action-outline-color: #1baae2;
+  --ep-action-tertiary-color: #1baae2;
 
   --ep-list-iconed-padding: 4px;
 
@@ -4328,10 +4531,10 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
     255,
     0.486
   ); /* sectionLight background second color  if gradiant*/
-  --ep-section-bg2: #e8f5fb; /* section background second color  if gradiant*/
+  --ep-section-bg2: #f3fbfe; /* XD pale-blue section surface */
   --ep-sectionLight-color: inherit; /* sectionLight text color */
-  --ep-sectionLight-link-color: #217fa0; /* sectionLight link color */
-  --ep-sectionLight-link-hover-color: #1a6a87; /* sectionLight link:hover color */
+  --ep-sectionLight-link-color: #1baae2; /* sectionLight link color */
+  --ep-sectionLight-link-hover-color: #224182; /* sectionLight link:hover color */
   /*designer upload to Umbraco then use it as url*/
   --ep-sectionLight-background-mask: rgba(
     255,
@@ -4343,11 +4546,11 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-sectionLight-background-repeat: no-repeat; /* sectionLight background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
   --ep-sectionLight-background-size: contain; /* sectionLight background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
   /* --if section is dark style*/
-  --ep-sectionDark-bg1: #064a5fa8; /* sectionDark background first color */
-  --ep-sectionDark-bg2: #217fa08a; /* sectionDark background second color  if gradiant*/
+  --ep-sectionDark-bg1: #224182; /* sectionDark background first color */
+  --ep-sectionDark-bg2: #224182; /* sectionDark background second color */
   --ep-sectionDark-color: #ffffff; /* sectionDark text color */
-  --ep-sectionDark-link-color: #217fa0; /* sectionDark link color */
-  --ep-sectionDark-link-hover-color: #1a6a87; /* sectionDark link:hover color */
+  --ep-sectionDark-link-color: #ffffff; /* sectionDark link color */
+  --ep-sectionDark-link-hover-color: #8dc43e; /* sectionDark link:hover color */
   --ep-sectionDark-background-mask: rgba(
     0,
     0,
@@ -4361,15 +4564,15 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   /* GeneralCARD Addresses&Packages&Workers&x ==================================================================================================================== */
   --ep-card-border-radius: 16px; /* card border radius  at desktop*/
   --ep-card-border-radius-resp: 16px; /* card border radius  at mobile*/
-  --ep-card-padding: 16px 24px; /* card padding top at desktop*/
-  --ep-service-card-padding: 16px 24px;
+  --ep-card-padding: 16px; /* XD card padding */
+  --ep-service-card-padding: 16px;
   --ep-card-padding-resp: 16px; /* card padding top at mobile*/
-  --ep-card-borderTop: 0 solid #217fa0;
-  --ep-card-borderRight: 0 solid #217fa0;
-  --ep-card-borderBottom: 0 solid #217fa0;
-  --ep-card-borderLeft: 0 solid #217fa0;
-  --ep-card-bg1: #F8F9FA; /* card background first color */
-  --ep-card-bg2: #F8F9FA; /* card background second color  if gradiant*/
+  --ep-card-borderTop: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-card-borderRight: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-card-borderBottom: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-card-borderLeft: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-card-bg1: #ffffff; /* card background first color */
+  --ep-card-bg2: #ffffff; /* card background second color */
   --ep-card-selected-bg1: var(--ep-card-bg1); /* card background first color */
   --ep-card-selected-bg2: var(
     --ep-card-bg2
@@ -4386,20 +4589,20 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-card-background-repeat: no-repeat; /* card background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
   --ep-card-background-size: 100% 100%; /* card background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
   --ep-card-font-size: 16px; /*not used*/
-  --ep-card-separator: 1px solid #e2e4e8; /* --ep-card-value-color:#217fa0; */
+  --ep-card-separator: 1px solid rgba(199, 199, 199, 0.5);
   /* --ep-card-value-weight:700; */
-  --ep-card-color: #1a1c28; /* card text color */
-  --ep-card-link-color: #217fa0; /* card link color */
-  /* --ep-card-link-hover-color:#217fa0; */
+  --ep-card-color: #313131; /* card text color */
+  --ep-card-link-color: #1baae2; /* card link color */
+  /* --ep-card-link-hover-color:#224182; */
   --ep-card-decoration: none; /* --ep-card-hover-decoration: none; */
   --ep-card-underline: none; /* "a" custom line */
   --ep-card-underline-margin: -4px; /* "a" custom line position */
-  --ep-card-hover-underline: none; /*2px solid #217fa0;/* "a:hover" custom line */
-  --ep-card-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.1); /* see https://cssgenerator.org/box-shadow-css-generator.html */
+  --ep-card-hover-underline: none; /* "a:hover" custom line */
+  --ep-card-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 
   /* servicesCARD ==================================================================================================================================================================== */
-  --ep-serviceCard-bg1: #e8f5fb; /* card background first color */
-  --ep-serviceCard-bg2: #e8f5fb; /* card background second color  if gradiant*/
+  --ep-serviceCard-bg1: #ffffff; /* service cards are white in the XD */
+  --ep-serviceCard-bg2: rgba(0, 0, 0, 0.16); /* shadow colour */
   --ep-serviceCard-background-image: none; /* card background image ( URL | none ) */
   --ep-serviceCard-background-mask: rgba(
     0,
@@ -4410,22 +4613,21 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-serviceCard-background-position: center center; /* card background image position */
   --ep-serviceCard-background-repeat: no-repeat; /* card background image repeated ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat*/
   --ep-serviceCard-background-size: 100% 100%; /* card background image size ? https://developer.mozilla.org/en-US/docs/Web/CSS/background-size */
-  /* Body text on the tinted service card. Figma uses #6b7280, which is only
-     4.35:1 on #e8f5fb; neutral-500 keeps the same read at 4.62:1. */
-  --ep-serviceCard-color: #6b6d78;
-  --ep-serviceCard-link-color: #0d5c78; /* card link color */
-  --ep-serviceCard-link-hover-color: #064a5f; /* card link:hover color */
+  --ep-serviceCard-color: #313131;
+  --ep-serviceCard-link-color: #1baae2; /* card link color */
+  --ep-serviceCard-link-hover-color: #224182; /* card link:hover color */
   --ep-serviceCardImage-width: 100%;
   --ep-serviceCardImage-width-resp: 40%;
   --ep-serviceCardImage-aspect-ratio: 1/1;
   --ep-serviceCardImage-padding: 20px;
-  --ep-serviceCardImage-background: rgb(232, 245, 251);
-  --ep-serviceCardImage-border-radius: 50%;
-  --ep-serviceCardImage-object-fit: unset;
+  --ep-serviceCardImage-background: #f3fbfe;
+  --ep-serviceCardImage-border-radius: 16px 16px 0 0;
+  --ep-serviceCardImage-object-fit: cover;
 
   /* accordionCARD ================================================================================================================================================================= */
   --ep-accordionCard-btn-size: 32px;
-  --ep-accordionCard-btn-bg: #217fa0;
+  --ep-accordionCard-btn-bg: #1baae2;
+  --ep-accordionCard-collapsed-btn-bg: #224182;
   --ep-accordionCard-btn-border-radius: 50%;
   --ep-accordionCard-btn-icon-size: unset;
   --ep-accordionCard-outline-bg:transparent;
@@ -4434,11 +4636,11 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
 
   /* address card css */
   --ep-small-map-size: 100px;
-  --ep-small-map-iframe-border: 0px solid rgb(226, 228, 232);
-  --ep-small-map-iframe-border-radius: 8px;
+  --ep-small-map-iframe-border: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-small-map-iframe-border-radius: 16px;
   --ep-address-badge-color: #fff;
   --ep-address-badge-font-size: 12px;
-  --ep-address-badge-bg: #217fa0;
+  --ep-address-badge-bg: #224182;
   --ep-address-badge-border-radius: 8px;
   --ep-address-badge-padding: 4px 8px;
   --ep-address-badge-top: 12px;
@@ -4448,20 +4650,20 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-selectable-icon-bottom: 16px;
   --ep-selectable-icon-end: 16px;
   --ep-selectable-icon-size: 32px;
-  --ep-selectable-icon-bg: #e8f5fb;
-  --ep-selectable-checked-icon-bg: #217fa0;
+  --ep-selectable-icon-bg: #f3fbfe;
+  --ep-selectable-checked-icon-bg: #224182;
   --ep-selectable-icon-border-radius: 90%;
 
   /* packages css */
   --ep-discount-badge-color: rgb(255, 255, 255);
   --ep-discount-badge-font-size: 12px;
-  --ep-discount-badge-bg: #064a5f;
+  --ep-discount-badge-bg: #8dc43e;
   --ep-discount-badge-border-radius: 8px;
   --ep-discount-badge-padding: 8px 16px 4px;
 
-  --ep-grandPrice-color: #217fa0;
+  --ep-grandPrice-color: #224182;
   --ep-grandPrice-font-size: 20px;
-  --ep-basicPrice-color: #6b6d78;
+  --ep-basicPrice-color: #6b7280;
   --ep-basicPrice-font-size: 20px;
   --ep-basicPrice-slash: 1px solid #b91c1c;
 
@@ -4470,25 +4672,25 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-user-image-border-radius: 40px;
   --ep-worker-photo-size: 72px;
   --ep-worker-photo-border-radius: 12px;
-  --ep-worker-role-color: #217fa0;
-  --ep-worker-skills-label-color: #6b6d78;
-  --ep-worker-skills-value-color: #1a1c28;
+  --ep-worker-role-color: #1baae2;
+  --ep-worker-skills-label-color: #6b7280;
+  --ep-worker-skills-value-color: #232929;
 
   /* theme4 accent-border card treatment — worker / address / contract cards */
-  --ep-accent-card-border-color: #3aa3cd;
+  --ep-accent-card-border-color: #8dc43e;
   --ep-accent-card-border-width: 4px;
 
   /* theme4 shared info pill — worker mini-stats, address fields, etc. */
-  --ep-info-pill-bg: #e8f5fb;
-  --ep-info-pill-radius: 14px;
-  --ep-info-pill-value-color: #1a1c28;
-  --ep-info-pill-label-color: #6b6d78;
+  --ep-info-pill-bg: #f3fbfe;
+  --ep-info-pill-radius: 16px;
+  --ep-info-pill-value-color: #224182;
+  --ep-info-pill-label-color: #6b7280;
 
   /* theme4 address card */
   --ep-address-map-height: 100px;
   --ep-address-map-radius: 16px;
-  --ep-address-status-color: #217fa0;
-  --ep-address-status-dot-color: #217fa0;
+  --ep-address-status-color: #224182;
+  --ep-address-status-dot-color: #8dc43e;
 
   --ep-status-badge-color: #b45309; /*waiting is default */
   --ep-status-badge-font-size: 14px;
@@ -4503,67 +4705,67 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-status-confirmed-badge-bg: #e6f7f1;
   --ep-status-cancelled-badge-color: #b91c1c;
   --ep-status-cancelled-badge-bg: #fdeaea;
-  --ep-status-confirmedNotPaid-badge-color: #0d5c78;
-  --ep-status-confirmedNotPaid-badge-bg: #e8f5fb;
+  --ep-status-confirmedNotPaid-badge-color: #224182;
+  --ep-status-confirmedNotPaid-badge-bg: #f3fbfe;
 
   --ep-side-user-menu-bg: #fff;
-  --ep-side-user-menu-hover-bg: #f2f7fa;
-  --ep-side-user-menu-color: #1a1c28;
+  --ep-side-user-menu-hover-bg: #f3fbfe;
+  --ep-side-user-menu-color: #232929;
   --ep-side-user-menu-link-color: #6B7280;
-  --ep-side-user-menu-link-hover-color: #217fa0;/* card link:hover color */
+  --ep-side-user-menu-link-hover-color: #224182;/* card link:hover color */
 
   /*if card has header*/
-  --ep-card-header-bg: #217fa0; /*not used*/
+  --ep-card-header-bg: #224182; /*not used*/
   --ep-card-header-color: #fff; /*not used*/
 
   /* form */
-  --ep-formControl-basic-color: #6b6d78;
-  --ep-formControl-border: 1.5px solid #e2e4e8;
-  --ep-formControl-focus-border: 1.5px solid #217fa0;
+  --ep-formControl-basic-color: #232929;
+  --ep-formControl-border: 1px solid #cad5e4;
+  --ep-formControl-focus-border: 1px solid #1baae2;
   --ep-formControl-background-color: #fff;
-  --ep-formControl-border-radius: 8px;
-  --ep-formControl-label-color: #1a1c28;
-  --ep-formControl-label-font-size: 13px;
+  --ep-formControl-border-radius: 16px;
+  --ep-formControl-label-color: #6b7280;
+  --ep-formControl-label-font-size: 12px;
 
   /* popCard */
-  --ep-popupCard-heading: #1a1c28;
-  --ep-popupCard-border: 0px solid #217fa0;
-  --ep-popupCard-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.0009); /* see https://cssgenerator.org/box-shadow-css-generator.html */
+  --ep-popupCard-heading: #232929;
+  --ep-popupCard-border: 1px solid rgba(199, 199, 199, 0.5);
+  --ep-popupCard-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   /* card in card */
-  --ep-innerCard-bg: #F8F9FA; /* card background first color */
+  --ep-innerCard-bg: #ffffff; /* card background first color */
   --ep-innerCard-icon-direction: column;
   --ep-innerCard-padding: 12px;
-  --ep-innerCard-border-radius: 12px;
-  --ep-innerCard-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.09);
-  --ep-innerCard-selected-bg: #217fa0;
+  --ep-innerCard-border-radius: 16px;
+  --ep-innerCard-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  --ep-innerCard-selected-bg: #224182;
   --ep-innerCard-selected-color: #fff;
   /* filter chips */
   --ep-filter-chip-bg: #ffffff;
   --ep-filter-chip-color: var(--ep-body-color);
-  --ep-filter-chip-selected-bg: #217fa0;
+  --ep-filter-chip-selected-bg: #224182;
   --ep-filter-chip-selected-color: #ffffff;
   --ep-filter-chip-padding: 10px 16px;
-  --ep-filter-chip-border-radius: 12px;
+  --ep-filter-chip-border-radius: 100px;
   --ep-filter-chip-shadow: none;
 
   /* tabs */
   --ep-tabs-bg: transparent;
   --ep-tabs-border-radius: 0;
   --ep-tabs-item-bg: transparent;
-  --ep-tabs-item-color: #6b6d78;
-  --ep-tabs-op2-item-color: #6b6d78;
+  --ep-tabs-item-color: #6b7280;
+  --ep-tabs-op2-item-color: #6b7280;
   --ep-tabs-op2-color: transparent;
-  --ep-tabs-item-color-active: #217fa0;
+  --ep-tabs-item-color-active: #224182;
   --ep-tabs-item-bg-active: transparent;
   --ep-tabs-item-border-radius: 0;
 
 
 
   /*pagination*/
-  --ep-pagination-border-radius: 8px;
+  --ep-pagination-border-radius: 50%;
   --ep-pagination-link-bg: #ffffff;
-  --ep-pagination-link-color: #1a1c28;
-  --ep-pagination-link-active-bg: #217fa0;
+  --ep-pagination-link-color: #232929;
+  --ep-pagination-link-active-bg: #224182;
   --ep-pagination-link-active-color: #ffffff;
 
   /*alert */
@@ -4577,68 +4779,63 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-alert-danger-border:1px solid #f3b5b5;
   --ep-alert-danger-h4-color:#b91c1c;
   --ep-alert-danger-p-color:#991b1b;
-  --ep-alert-primary-background-color:#e8f5fb;
-  --ep-alert-primary-border:1px solid #a9cfe0;
-  --ep-alert-primary-h4-color:#0d5c78;
-  --ep-alert-primary-p-color:#0d5c78;
+  --ep-alert-primary-background-color:#f3fbfe;
+  --ep-alert-primary-border:1px solid #cad5e4;
+  --ep-alert-primary-h4-color:#224182;
+  --ep-alert-primary-p-color:#224182;
   --ep-alert-success-background-color:#e6f7f1;
   --ep-alert-success-border:1px solid #8fd2bb;
   --ep-alert-success-h4-color:#047857;
   --ep-alert-success-p-color:#047857;
   --ep-alert-light-background-color:#FFFFFF;
   --ep-alert-light-border:1px solid #e2e4e8;
-  --ep-alert-light-h4-color:#1a1c28;
-  --ep-alert-light-p-color:#1a1c28;
+  --ep-alert-light-h4-color:#232929;
+  --ep-alert-light-p-color:#232929;
   --ep-alert-warning-background-color:#fef3e2;
   --ep-alert-warning-border:1px solid #e8c9a0;
   --ep-alert-warning-h4-color:#b45309;
   --ep-alert-warning-p-color:#b45309;
 
   /*menu option#1*/
-  --ep-top-bg1: #217fa0;
-  --ep-top-bg2: #217fa0;
+  --ep-top-bg1: #224182;
+  --ep-top-bg2: #224182;
   --ep-top-font-size: 14px;
-  --ep-top-scrolled-bg1: #217fa0;
-  --ep-top-scrolled-bg2: #217fa0;
+  --ep-top-scrolled-bg1: #224182;
+  --ep-top-scrolled-bg2: #224182;
   --ep-top-color: #ffffff;
-  /* Height of the fixed navbar; sections that must clear it offset by this. */
-  /* Fill of the hero's brand sweep. Deeper than --ep-brand-color on purpose:
-     at 70% opacity over the photograph, #217fa0 leaves the 18px lede at
-     3.60:1, while this step measures 5.00:1 over the same box. */
-  --ep-hero-sweep-color: #0d5c78;
-  /* Figma's `sizes/spacing/screen_top` — the full-bleed screen gutter the
-     navbar and the hero copy both align to. */
+  /* Hero overlay and shared full-bleed gutter from the XD desktop artboard. */
+  --ep-hero-sweep-color: #224182;
   --ep-screen-gutter: 80px;
   --ep-navbar-height: 81px;
   --ep-menu-bg: #ffffff;
-  --ep-menu-color: #1a1c28;
-  --ep-menu-color-active: #217fa0;
+  --ep-menu-color: #232929;
+  --ep-menu-color-active: #224182;
   --ep-menu-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
   --ep-menu-border-radius: 0;
   --ep-menu-padding: 0;
 
   --ep-menu-OP2-scrolled-bg: #ffffff;
-  --ep-menu-OP2-color: #1a1c28;
-  --ep-menu-OP2-scrolled-color: #1a1c28;
-  --ep-menu-OP2-color-active: #217fa0;
-  --ep-menu-OP2-scrolled-color-active: #217fa0;
+  --ep-menu-OP2-color: #232929;
+  --ep-menu-OP2-scrolled-color: #232929;
+  --ep-menu-OP2-color-active: #224182;
+  --ep-menu-OP2-scrolled-color-active: #224182;
 
   /*menu-option2 */
   /*--ep-top-OP2-bg1:transparent;
     --ep-top-OP2-bg2:transparent;
     --ep-top-OP2-font-size:14px;
-    --ep-top-OP2-scrolled-bg1:#064a5f;
-    --ep-top-OP2-scrolled-bg2:#064a5f;
+    --ep-top-OP2-scrolled-bg1:#224182;
+    --ep-top-OP2-scrolled-bg2:#224182;
     --ep-top-OP2-color:#ffffff;
     --ep-menu-OP2-bg:transparent;
-    --ep-menu-OP2-color: #1a1c28;
+    --ep-menu-OP2-color: #232929;
     --ep-menu-OP2-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.0);
     --ep-menu-OP2-border-radius:0;
     --ep-menu-OP2-padding:0;*/
 
   /*mega menu */
-  --ep-mega-menu-card-bg:#f2f7fa;
-  --ep-mega-menu-card-color:#1a1c28;
+  --ep-mega-menu-card-bg:#f3fbfe;
+  --ep-mega-menu-card-color:#232929;
   --ep-mega-menu-card-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
   --ep-mega-menu-image-size: 80px;
   --ep-mega-menu-imageLg-size: 240px;
@@ -4687,28 +4884,28 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   ); /* map border radius  at desktop*/
 
   /*FOOTER */
-  --ep-footer-bg: #064a5f; /* footer background background color */
+  --ep-footer-bg: #224182; /* XD footer navy */
   --ep-footer-color: #ffffff; /* footer text color */
-  --ep-footer-color2: #a8b5bf; /* footer text secondary color */
+  --ep-footer-color2: #ffffff; /* footer text secondary color */
   --ep-footer-font-size: 14px; /* "footer default text" font  at desktop */
   --ep-footerLink-color: #ffffff; /* footer link color */
-  --ep-footerLink-hover-color: #86cae4; /* footer link:hover color */
+  --ep-footerLink-hover-color: #8dc43e; /* footer link:hover color */
   /**/--ep-footerLinkIcons-color: #ffffff; /* footer SVG icon color */
   --ep-footerHeaders-font-size: 16px; /* "footer headers" font size at desktop */
   /**/--ep-footerHeaders-font-size-resp: 14px; /* "footer headers" font size at mobile */
   --ep-footerHeaders-color: #ffffff; /* "footer headers" color */
-  --ep-footer-sub-header-color: #86cae4; /* "footer sub headers" color */
-  --ep-footerInfo-part1-color: #86cae4; /* "footer info part1" color */
+  --ep-footer-sub-header-color: #8dc43e; /* "footer sub headers" color */
+  --ep-footerInfo-part1-color: #8dc43e; /* "footer info part1" color */
   --ep-footerInfo-part2-color: #ffffff; /* "footer info part2" color */
   --ep-footerInfo-font-size: 14px; /* informations in footer font size */
-  --ep-footerInfo-link-color: #86cae4; /* informations in footer font size */
+  --ep-footerInfo-link-color: #1baae2; /* informations in footer font size */
   --ep-footerInfo-link-hover-color: #ffffff; /* informations in footer font size */
-  --ep-footer-separator-color: #217fa0; /*if border exist */
-  --ep-copyrights-bg: #0b2a3594; /* informations in footer background color */
-  --ep-social-links-bg1: rgba(33, 127, 160, 0);
+  --ep-footer-separator-color: rgba(255, 255, 255, 0.35); /*if border exist */
+  --ep-copyrights-bg: #193368; /* informations in footer background color */
+  --ep-social-links-bg1: rgba(255, 255, 255, 0);
   --ep-social-links-bg2: rgba(255, 0, 0, 0);
-  --ep-social-links-hover-bg1: #217fa0;
-  --ep-social-links-hover-bg2: #217fa0;
+  --ep-social-links-hover-bg1: #1baae2;
+  --ep-social-links-hover-bg2: #1baae2;
   --ep-social-links-border-radius: 0;
   --ep-social-padding: 0;
   --ep-footerLink-color: #ffffff; /* footer link color */
@@ -4716,23 +4913,23 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-footer-padding-top: 64px;
 
   /* footer option2 */
-  --ep-footer-OP2-bg: #05384a; /* footer-OP2 background background color */
+  --ep-footer-OP2-bg: #224182; /* footer-OP2 background background color */
   --ep-footer-OP2-sub-header-color: #ffffff; /* "footer-OP2 sub headers" color */
   --ep-footerLink-OP2-color: #ffffff; /* footer link color */
-  --ep-footerLink-OP2-hover-color: #86cae4;
+  --ep-footerLink-OP2-hover-color: #8dc43e;
   --ep-footerInfo-OP2-part1-color: #ffffff; /* "footer-OP2 info part1" color */
   --ep-footerInfo-OP2-part2-color: #ffffff; /* "footer-OP2 info part2" color */
   --ep-footerLink-OP2-color: #ffffff; /* footer link color */
-  --ep-footerLink-OP2-hover-color: #86cae4; /* footer link color */
+  --ep-footerLink-OP2-hover-color: #8dc43e; /* footer link color */
   --ep-footer-OP2-separator-color: #fff; /*if border exist */
-  --ep-copyrights-OP2-bg: #0b2a3513; /* informations in footer background color */
+  --ep-copyrights-OP2-bg: #193368; /* informations in footer background color */
 
-  --ep-loader-bg: #1a1c28; /* loader background color */
+  --ep-loader-bg: #224182; /* loader background color */
 
   /* stepper */
-  --ep-stepper-bg: #6b6d78; /* stepper background color */
-  --ep-stepper-bg-previous: #064a5f; /* stepper background color */
-  --ep-step-current-bg: #217fa0; /* stepper background color */
+  --ep-stepper-bg: #6b7280; /* stepper background color */
+  --ep-stepper-bg-previous: #8dc43e; /* stepper background color */
+  --ep-step-current-bg: #224182; /* stepper background color */
   --ep-stepper-color: #ffffff; /* stepper text color */
   --ep-circle-border-radius: 50%; /* stepper circle border radius */
 
@@ -4740,7 +4937,7 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-circle-OP2-border-radius: 12%; /* stepper circle border radius */
 
   /* hourly */
-  --ep-hourly-filter-btn-color: #6b6d78;
+  --ep-hourly-filter-btn-color: #6b7280;
 
   /* --------------------------------------------------------------------
      Declared because ep-layout.css references them with no var() fallback.
@@ -4756,13 +4953,13 @@ app-dashboard .ep-card app-list-iems>div>span:last-child {
   --ep-accordionCard-btn-minus-icon: none;
   --ep-card-card-hover-color: var(--ep-card-link-color);
   --ep-card-hover-decoration: none;
-  --ep-status-primary-badge-bg: #e8f5fb;
+  --ep-status-primary-badge-bg: #f3fbfe;
 
   /* dashboard menu — circle-badged icons (sidebar + theme4 navbar user dropdown) */
   --ep-dash-nav-icon-size: 32px;      /* Figma: Container size */
   --ep-dash-nav-icon-glyph-size: 16px;
-  --ep-dash-nav-icon-bg: #c5e4f0;     /* Figma: color/primary/100 */
-  --ep-dash-nav-icon-color: var(--ep-brand-color);
-  --ep-dash-nav-link-color: var(--ep-brand-color);
+  --ep-dash-nav-icon-bg: #eaf3f9;
+  --ep-dash-nav-icon-color: #224182;
+  --ep-dash-nav-link-color: #224182;
   --ep-dash-nav-link-font-size: 18px; /* Figma: Body/LG-SemiBold-18 */
 }
