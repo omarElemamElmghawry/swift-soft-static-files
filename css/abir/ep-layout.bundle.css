@@ -1938,23 +1938,7 @@ i.ep-footer-vseparator {
     object-fit: cover;
 }
 
-/* Theme 5 shared accent-border treatment for worker / address / contract cards.
-   Accent on the block-end + inline-end edges. The original composition is RTL,
-   where this appears on the bottom + physical-left; inline-end keeps that
-   inline-end. Logical props keep that correct in both directions (LTR → bottom
-   + right) with no `:dir(rtl)` override. */
-.ep-accent-card {
-    border-bottom: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
-    border-inline-end: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
-}
-
-/* Theme 5 dashboard cards use shared Angular markup (`.ep-card`) across tenants.
-   Apply the same accent edges as `.ep-accent-card` for ABIR only, without
-   touching any dashboard templates or shared class names. */
-app-dashboard .ep-card {
-    border-bottom: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
-    border-inline-end: var(--ep-accent-card-border-width) solid var(--ep-accent-card-border-color);
-}
+/* ABIR Theme 5 cards use the base card treatment without accent edges. */
 
 /* theme4 dashboard card item rows (info cards, modal card, and contract details).
    Keep it reusable: any `app-list-iems` rendered inside a dashboard `.ep-card`
@@ -4924,7 +4908,7 @@ app-theme5-customer-reviews-section .t4-review-card {
   --ep-footer-OP2-separator-color: #fff; /*if border exist */
   --ep-copyrights-OP2-bg: #193368; /* informations in footer background color */
 
-  --ep-loader-bg: #224182; /* loader background color */
+  --ep-loader-bg: #224182cc; /* loader background color */
 
   /* stepper */
   --ep-stepper-bg: #6b7280; /* stepper background color */

@@ -547,7 +547,7 @@
   --ep-footer-OP2-separator-color: #fff; /*if border exist */
   --ep-copyrights-OP2-bg: #193368; /* informations in footer background color */
 
-  --ep-loader-bg: #224182; /* loader background color */
+  --ep-loader-bg: #224182cc; /* loader background color */
 
   /* stepper */
   --ep-stepper-bg: #6b7280; /* stepper background color */
